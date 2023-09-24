@@ -195,19 +195,17 @@ const Dashboard = () => {
                     <div className="col-md-12">
                         <div className="container-wrapper">
                             <h1>Playstation Games</h1>
-                            <div className="row">
+                            <div className="grid">
                                 {
                                     productList.map((item, key) => {
-                                        return <div key={key} className="col-md-12">
-                                            <div className="card mb-4 box-shadow">
+                                        return <div key={key} className="grid-item">
+                                            <div className="card">
                                                 <img className="card-img-top" src={item.image} alt="NBA 2k23" />
                                                 <div className="card-body">
                                                     <h5 className="card-title">{item.title}</h5>
                                                     <p className="card-text">{item.description}</p>
-                                                    <div className="d-flex justify-content-between align-items-center">
-                                                        <div className="btn-group">
-                                                            <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to Cart</Button>
-                                                        </div>
+                                                    <div className="d-flex justify-content-between align-items-center">                                                        
+                                                        <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to Cart</Button>
                                                         <large className="text-muted">{item.priceLabel}</large>
                                                     </div>
                                                 </div>
