@@ -1,14 +1,14 @@
 import io from "socket.io-client";
 import "./App.scss";
 import React, { useEffect, useState } from "react";
-import nbaImage from './images/nba.jpeg';
-import acvalhallaImage from './images/acvalhalla.jpeg';
-import gta5Image from './images/gta5.jpg';
-import hgImage from './images/hg.jpeg';
-import spideyImage from './images/spidey.jpeg';
-import witcherImage from './images/thewitcher.jpg';
-import descendersImage from './images/descenders.jpg';
-import tyrannyImage from './images/tyranny.jpg';
+import skullcandyImage from './images/skullcandy.png';
+import nanoleafImage from './images/nanoleaf.jpg';
+import macbookairImage from './images/macbookair.jpg';
+import vrcontrollerImage from './images/vrcontroller.jpg';
+import ipadAirImage from './images/ipadAir.jpg';
+import controllerImage from './images/controller.jpg';
+import samsungOdysseyImage from './images/odyssey.jpg';
+import iphone12Image from './images/iphone12.jpg';
 
 import { Button } from 'react-bootstrap';
 import { FaRegTrashAlt} from "react-icons/fa";
@@ -22,60 +22,60 @@ const Dashboard = () => {
 
     let productList = [
         {
-            title: "NBA 2k23",
-            description: "A basketball video game with updated rosters, improved graphics, and new features.",
-            priceLabel: "₱ 3000",
-            price: "3000",
-            image: nbaImage,
+            title: "Nanoleaf Remote",
+            description: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
+            priceLabel: "₱ 850",
+            price: "850",
+            image: nanoleafImage,
         },
         {
-            title: "Assasins Creed Valhalla",
-            description: "An action-adventure game where players control Eivor, a Viking warrior, as they lead their clan to England.",
-            priceLabel: "₱ 3000",
-            price: "3000",
-            image: acvalhallaImage,
+            title: "SkullCandy Earbuds",
+            description: "The Indy True Wireless Earbuds by Skullcandy combine premium sound quality and a great design.",
+            priceLabel: "₱ 3300",
+            price: "3300",
+            image: skullcandyImage,
         },
         {
-            title: "Grand Theft Auto V",
-            description: "An action-adventure game set in a fictional open-world city of Los Santos, based on Los Angeles.",
-            priceLabel: "₱ 2000",
-            price: "2000",
-            image: gta5Image,
+            title: "Macbook Air",
+            description: "13-inch MacBook Air laptop supercharged by the M2 chip. All-day battery life and strikingly thin design.",
+            priceLabel: "₱ 83,000",
+            price: "83000",
+            image: macbookairImage,
         },
         {
-            title: "Hogwarts Legacy",
-            description: "An upcoming action role-playing game set in the Harry Potter universe set in the 1800s.",
-            priceLabel: "₱ 3000",
-            price: "3000",
-            image: hgImage,
+            title: "Oculus Quest",
+            description: "The first-generation Oculus Quest is a discontinued virtual reality headset developed by Oculus.",
+            priceLabel: "₱ 45,512",
+            price: "45512",
+            image: vrcontrollerImage,
         },
         {
-            title: "Spiderman",
-            description: "A 2018 action-adventure game where players control Peter Parker as he fights crime and protects New York City.",
-            priceLabel: "₱ 2800",
-            price: "2800",
-            image: spideyImage,
+            title: "Ipad Air Wi-Fi",
+            description: "Apple's 2022 iPad Air is the epitome of a mobile tablet, with a nearly perfect balance of features and performance.",
+            priceLabel: "₱ 39,000",
+            price: "39000",
+            image: ipadAirImage,
         },
         {
-            title: "The Witcher 3: Wild Hunt",
-            description: "A 2015 action role-playing game developed and published by CD Projekt.",
-            priceLabel: "₱ 2000",
-            price: "2000",
-            image: witcherImage,
+            title: "PS5 DualSense Controller",
+            description: "Meet the DualSense wireless controller featuring haptic feedback, adaptive triggers and an iconic new design.",
+            priceLabel: "₱ 3,450",
+            price: "3450",
+            image: controllerImage,
         },
         {
-            title: "Descenders",
-            description: "A cycling video game developed by Dutch studio RageSquid and published by No More Robots.",
-            priceLabel: "₱ 1250",
-            price: "1250",
-            image: descendersImage,
+            title: "Samsung Odyssey",
+            description: "Enter a new frontier of immersion with a 55” curved screen featuring 4K resolution.",
+            priceLabel: "₱ 125,000",
+            price: "125000",
+            image: samsungOdysseyImage,
         },
         {
-            title: "Tyranny",
-            description: "A role-playing video game developed by Obsidian Entertainment and published by Paradox Interactive.",
-            priceLabel: "₱ 1000",
-            price: "1000",
-            image: tyrannyImage,
+            title: "Iphone 12",
+            description: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
+            priceLabel: "₱ 44,570",
+            price: "44570",
+            image: iphone12Image,
         },
     ];
     let [roomKey, setRoomKey] = useState(null);
@@ -252,7 +252,7 @@ const Dashboard = () => {
                             </div>
                             <div className="d-flex">
                                 <h1 className="firstword-title">Featured</h1>
-                                <h1 className="secondword-title">Games</h1>
+                                <h1 className="secondword-title">Products</h1>
                             </div>
                             <div className="grid">
                                 {

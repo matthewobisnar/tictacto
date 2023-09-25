@@ -15,7 +15,7 @@
 
 .card-body {
     flex: 1 1 auto;
-    padding: 15px 10px 15px 0px;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
     color: var(--bs-card-color);
 }
 
