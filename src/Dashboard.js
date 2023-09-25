@@ -6,11 +6,14 @@ import acvalhallaImage from './images/acvalhalla.jpeg';
 import gta5Image from './images/gta5.jpg';
 import hgImage from './images/hg.jpeg';
 import spideyImage from './images/spidey.jpeg';
+import witcherImage from './images/thewitcher.jpg';
+import descendersImage from './images/descenders.jpg';
+import tyrannyImage from './images/tyranny.jpg';
 
 import { Button } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { RiDeleteBinLine } from 'react-icons/ri';
-    
+
 const socket = io.connect("http://localhost:3002");
 
 const Dashboard = () => {
@@ -20,38 +23,59 @@ const Dashboard = () => {
     let productList = [
         {
             title: "NBA 2k23",
-            description: "NBA 2K23 is a basketball video game with updated rosters, improved graphics, and new features. Players can compete in game modes like MyCareer and MyTeam, controlling their favorite NBA teams and players. It offers a deep and engaging simulation experience for fans of the sport.",
+            description: "A basketball video game with updated rosters, improved graphics, and new features.",
             priceLabel: "PHP 3,000.00",
             price: "3000",
             image: nbaImage,
         },
         {
             title: "Assasins Creed Valhalla",
-            description: "Assassin's Creed Valhalla is an action-adventure game where players control Eivor, a Viking warrior, as they lead their clan to England. The game includes open-world exploration, combat, and stealth mechanics, as well as modern-day storyline elements.",
+            description: "An action-adventure game where players control Eivor, a Viking warrior, as they lead their clan to England.",
             priceLabel: "PHP 1,500.00",
             price: "1500",
             image: acvalhallaImage,
         },
         {
             title: "Grand Theft Auto V",
-            description: "Grand Theft Auto V (GTA V) is an action-adventure game set in a fictional open-world city of Los Santos, based on Los Angeles. Players control three criminals who commit heists and engage in criminal activities in both single-player and multiplayer modes.",
+            description: "An action-adventure game set in a fictional open-world city of Los Santos, based on Los Angeles.",
             priceLabel: "PHP 1,299.00",
             price: "1299",
             image: gta5Image,
         },
         {
             title: "Hogwarts Legacy",
-            description: "Hogwarts Legacy is an upcoming action role-playing game set in the Harry Potter universe, allowing players to create their own character and attend Hogwarts School of Witchcraft and Wizardry in the 1800s. Players can explore the magical world, attend classes, learn spells, and engage in combat.",
+            description: "An upcoming action role-playing game set in the Harry Potter universe set in the 1800s.",
             priceLabel: "PHP 3,200.00",
             price: "3200",
             image: hgImage,
         },
         {
             title: "Spiderman",
-            description: "Spider-Man is a 2018 action-adventure game where players control Peter Parker as he fights crime and protects New York City. The game features an open-world setting, combat, and stealth mechanics. It was developed by Insomniac Games and published by Sony Interactive Entertainment.",
+            description: "A 2018 action-adventure game where players control Peter Parker as he fights crime and protects New York City.",
             priceLabel: "PHP 1,200.00",
             price: "1200",
             image: spideyImage,
+        },
+        {
+            title: "The Witcher 3: Wild Hunt",
+            description: "A 2015 action role-playing game developed and published by CD Projekt.",
+            priceLabel: "PHP 1,200.00",
+            price: "1200",
+            image: witcherImage,
+        },
+        {
+            title: "Descenders",
+            description: "A cycling video game developed by Dutch studio RageSquid and published by No More Robots.",
+            priceLabel: "PHP 2,200.00",
+            price: "2200",
+            image: descendersImage,
+        },
+        {
+            title: "Tyranny",
+            description: "A role-playing video game developed by Obsidian Entertainment and published by Paradox Interactive.",
+            priceLabel: "PHP 1,500.00",
+            price: "1500",
+            image: tyrannyImage,
         },
     ];
 
@@ -194,21 +218,36 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="container-wrapper">
-                            <h1>Playstation Games</h1>
-                            <div className="row">
+                            <div className="d-flex">
+                                <h1 className="firstword-title">Playstation</h1>
+                                <h1 className="secondword-title">Games</h1>
+                            </div>
+                            <div className="grid">
                                 {
                                     productList.map((item, key) => {
-                                        return <div key={key} className="col-md-12">
-                                            <div className="card mb-4 box-shadow">
+                                        return <div key={key} className="grid-item">
+                                            <div className="card">
                                                 <img className="card-img-top" src={item.image} alt="NBA 2k23" />
                                                 <div className="card-body">
                                                     <h5 className="card-title">{item.title}</h5>
-                                                    <p className="card-text">{item.description}</p>
-                                                    <div className="d-flex justify-content-between align-items-center">
-                                                        <div className="btn-group">
-                                                            <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to Cart</Button>
+                                                    <div class="inner-card-text">
+                                                        <p className="card-text">{item.description}</p>
+                                                            <div class="rate">
+                                                                <input type="radio" id="star5" name="rate" value="5" />
+                                                                <label for="star5" title="text">5 stars</label>
+                                                                <input type="radio" id="star4" name="rate" value="4" />
+                                                                <label for="star4" title="text">4 stars</label>
+                                                                <input type="radio" id="star3" name="rate" value="3" />
+                                                                <label for="star3" title="text">3 stars</label>
+                                                                <input type="radio" id="star2" name="rate" value="2" />
+                                                                <label for="star2" title="text">2 stars</label>
+                                                                <input type="radio" id="star1" name="rate" value="1" />
+                                                                <label for="star1" title="text">1 star</label>
+                                                            </div>
+                                                        <large className="text-price">{item.priceLabel}</large>
+                                                        <div className="add-to-cart">                                                        
+                                                            <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to cart</Button>
                                                         </div>
-                                                        <large className="text-muted">{item.priceLabel}</large>
                                                     </div>
                                                 </div>
                                             </div>
