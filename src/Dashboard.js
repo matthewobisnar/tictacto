@@ -276,14 +276,14 @@ const Dashboard = () => {
                                             <div className="shopcart-border" />
                                             <div className="row">
                    
-                                                <div className="col-6">
+                                                <div className="col-5">
                                                     <b>Total:</b>
                                                 </div>
-                                                <div className="col-3">
+                                                <div className="col-7">
                                                     <b>PHP {total}</b>
                                                 </div>
-                                                <div className="col-3">
-                                                </div>
+                                                {/* <div className="col-3">
+                                                </div> */}
                                             </div>
                                         </div>
                                         <div className="container">
@@ -291,7 +291,7 @@ const Dashboard = () => {
                                                 <div className="form-group">
                                                     <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                                 </div>
-                                                <button onClick={() => checkOut()} type="button" class="btn btn-block btn-primary">Checkout</button>
+                                                <button onClick={() => checkOut()} type="button" class=" btn btn-checkout btn-block btn-primary">Checkout</button>
                                             </div>
                                         </div>
                                     </div>
