@@ -217,7 +217,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 cart-container">
+                    <div className="col-md-4 cart-container">
                         {
                             cartList.length > 0 ? (
                                 <div>
@@ -257,15 +257,15 @@ const Dashboard = () => {
                                                 Object.values(keyCounts).map((item, key) => {
                                                     return <div className="row">
 
-                                                        <div className="image-src"><img src={item.image} />
+                                                        <div className="col-3"><img src={item.image} />
                                                         </div>
-                                                        <div className="col-6">
+                                                        <div className="col-5">
                                                              {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                         </div>
                                                         <div className="col-3">
                                                             PHP {item.price}
                                                         </div>
-                                                        <div className="col-3">
+                                                        <div className="col-1">
                                                             <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
                                                         </div>
                                                     </div>

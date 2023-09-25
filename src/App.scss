@@ -59,7 +59,7 @@
 
 .shopcart-icon {
     position: absolute;
-    right: 11%;
+    right: 7%;
     top: 37px;
 }
 .shopcart-border{
@@ -104,6 +104,39 @@
     color: white;
 }
 
-// .image-src{
-//     display: flex;
-// }
+// AddToCart Modal
+.col-1 {
+    flex: 0 0 auto;
+    width: 8.33333333%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+.col-3 img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #250c3b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.col-3{
+    
+    flex: 0 0 auto;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+}
+.col-5 {
+    flex: 0 0 auto;
+    width: 41.66666667%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
