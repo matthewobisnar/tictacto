@@ -8,8 +8,8 @@ import hgImage from './images/hg.jpeg';
 import spideyImage from './images/spidey.jpeg';
 
 import { Button } from 'react-bootstrap';
-import { FaShoppingCart } from 'react-icons/fa';
-import { RiDeleteBinLine } from 'react-icons/ri';
+import { FaRegTrashAlt} from "react-icons/fa";
+import { FiShoppingCart } from "react-icons/fi";
 
 const socket = io.connect("http://localhost:3002");
 
@@ -70,11 +70,12 @@ const Dashboard = () => {
         return result;
     }
 
-    const addToCart = async (title, price) => {
+    const addToCart = async (title, price, image) => {
 
         let data = {
             "title": title,
             "price": price,
+            "image":image,
             "room": roomKey
         }
 
@@ -205,7 +206,7 @@ const Dashboard = () => {
                                                     <h5 className="card-title">{item.title}</h5>
                                                     <p className="card-text">{item.description}</p>
                                                     <div className="d-flex justify-content-between align-items-center">                                                        
-                                                        <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to Cart</Button>
+                                                        <Button onClick={() => addToCart(item.title, item.price, item.image)} variant="primary">Add to Cart</Button>
                                                         <large className="text-muted">{item.priceLabel}</large>
                                                     </div>
                                                 </div>
@@ -223,7 +224,7 @@ const Dashboard = () => {
                                     <div className="card cart-wrapper box-shadow">
                                         <h4>Your Cart</h4>
                                         <div className="shopcart-icon">
-                                            <FaShoppingCart size={32} color="blue" />
+                                            <FiShoppingCart size={28} color="#ffff" />
                                         </div>
                                         <div>
                                             {
@@ -236,12 +237,17 @@ const Dashboard = () => {
                                                             title: item.title,
                                                             quantity: 1,
                                                             price: item.price * 1,
+                                                            image:item.image,
+                                                            
+                                                    
                                                         };
                                                     } else {
                                                         keyCounts[item.title] = {
                                                             title: item.title,
                                                             quantity: parseInt(keyCounts[item.title].quantity) + 1,
                                                             price: parseInt(item.price) * (parseInt(keyCounts[item.title].quantity) + 1),
+                                                            image:item.image,
+                                                            
                                                         };
                                                     }
                                                 })
@@ -250,21 +256,26 @@ const Dashboard = () => {
                                             {
                                                 Object.values(keyCounts).map((item, key) => {
                                                     return <div className="row">
+
+                                                        <div className="image-src"><img src={item.image} />
+                                                        </div>
                                                         <div className="col-6">
-                                                            {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
+                                                             {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                         </div>
                                                         <div className="col-3">
                                                             PHP {item.price}
                                                         </div>
                                                         <div className="col-3">
-                                                            <RiDeleteBinLine onClick={() => removeToCart(key, item.title)} size={20} />
+                                                            <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
                                                         </div>
                                                     </div>
+                                                    
                                                 })
                                             }
 
                                             <div className="shopcart-border" />
                                             <div className="row">
+                   
                                                 <div className="col-6">
                                                     <b>Total:</b>
                                                 </div>
