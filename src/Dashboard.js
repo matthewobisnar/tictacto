@@ -356,8 +356,8 @@ const Dashboard = () => {
                                                         <div className="col-3">
                                                             PHP {formatPHPCurrency(item.price)}
                                                         </div>
-                                                        <div className="col-1">
-                                                            <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
+                                                        <div className="col-1 delete-icon">
+                                                            <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={24} />
                                                         </div>
                                                     </div>
                                                     
