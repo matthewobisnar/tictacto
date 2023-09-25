@@ -1,5 +1,5 @@
 import io from "socket.io-client";
-import "./App.scss";
+import "./Game.scss";
 import React, { useEffect, useState } from "react";
 import nbaImage from './images/nba.jpeg';
 import acvalhallaImage from './images/acvalhalla.jpeg';
