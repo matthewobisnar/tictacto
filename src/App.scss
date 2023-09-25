@@ -5,7 +5,7 @@
 }
 
 .shop-body {
-    background: #ebebeb;
+    background: #fff;
     padding: 20px;
 }
 
@@ -81,11 +81,12 @@
 
 .grid-item > .card {
     border-radius: 0;
+    border: none;
 }
 
 .grid-item .card-img-top {
     width: 100%;
-    height: 150px;
+    height: 250px;
     object-fit: cover;
     border-radius: 0;
 
@@ -93,7 +94,7 @@
 
 .grid-item button {
     background-color: transparent;
-    border: 1px solid #8a2be2;
+    border: 3px solid #8a2be2;
     border-radius: 0;
     padding: 10px 20px;
     color: #8a2be2;
@@ -102,6 +103,55 @@
 .grid-item button:hover {
     background-color: #8a2be2;
     color: white;
+}
+
+.add-to-cart {
+    margin-top: 10px;
+    font-family: Andale Mono, monospace;
+}
+
+/* star-shaped icons */
+.rate {
+    float: left;
+    height: 36px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    font-size:30px;
+    color:#8a2be2;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+
+
+.text-price {
+    --bs-text-opacity: 1;
+    font-size: x-large;
+    font-weight: bold;
+    width: 200px;
+    display: flex;
+}
+
+p.card-text {
+    margin-bottom: 0px;
+}
+
+h1.firstword-title {
+    color: black;
+    margin-right: 5px;
+}
+
+h1.secondword-title {
+    color: #8a2be2;
 }
 
 // AddToCart Modal
