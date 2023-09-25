@@ -196,6 +196,9 @@ const Dashboard = () => {
                     <div className="col-md-12">
                         <div className="container-wrapper">
                             <h1>PLAYSTATION GAMES</h1>
+                            <div className="landingpage">
+                            </div>
+                
                             <div className="grid">
                                 {
                                     productList.map((item, key) => {
