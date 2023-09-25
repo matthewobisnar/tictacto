@@ -195,7 +195,38 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="container-wrapper">
-                            <h1>Playstation Games</h1>
+                            <div className="landingpage">
+    <div>
+        <div>
+            <div>
+                <h1 class="mt-0">PLAYSTATION GAMES</h1>
+                <p>The best place to buy videogames!</p>
+                <div>
+                    <a href="#">Call to Action</a>
+                    <div>
+                        <input type="checkbox" id="toggle-switch"></input>
+                        <label for="toggle-switch"><span>Toggle Me <span>Mode</span></span></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="dist/images/illustration-light.svg" alt="Illustration" class="asset-light"></img>
+                    <img src="dist/images/illustration-dark.svg" alt="Illustration" class="asset-dark"></img>
+                </div>
+                <div>
+                    <img src="dist/images/media-illustration-light.svg" alt="Media Illustration" class="asset-light"></img>
+                    <img src="dist/images/media-illustration-dark.svg" alt="Media Illustration" class="asset-dark"></img>
+                </div>
+                <div>
+                    <img src="dist/images/media-light.svg" alt="Media" class="asset-light"></img>
+                    <img src="dist/images/media-dark.svg" alt="Media" class="asset-dark"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+                            </div>
+                
                             <div className="grid">
                                 {
                                     productList.map((item, key) => {

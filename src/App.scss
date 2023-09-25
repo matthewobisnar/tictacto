@@ -140,16 +140,7 @@
     justify-content: space-between;
     padding: 10px;
 }
-.col-6 {
-    flex: 0 0 auto;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    padding-left: 93px;
-
-}.col-7 {
-    flex: 0 0 auto;
-    width: 58.33333333%;
+.col-7{
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -158,10 +149,10 @@ input#email {
     border: var(--bs-border-width) solid #250c3b;
 }
 input#email:focus {
+    border: var(--bs-border-width) solid #250c3b;
     box-shadow: 0 0 0 0.25rem rgba(37,12,59,.25);
 }
-.cart-wrapper button:hover{
-    background: #250c3b;
-    border:1p solid #250c3b;
+button.btn.btn-checkout.btn-block.btn-primary {
+    background-color: #250c3b;
+    border-color: #250c3b;
 }
-
