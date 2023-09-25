@@ -9,22 +9,27 @@ import ipadAirImage from './images/ipadAir.jpg';
 import controllerImage from './images/controller.jpg';
 import samsungOdysseyImage from './images/odyssey.jpg';
 import iphone12Image from './images/iphone12.jpg';
+import { useHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
 import { FaRegTrashAlt} from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "@mui/material";
+
 
 const socket = io.connect("http://localhost:3002");
 
 const Dashboard = () => {
 
     let keyCounts = {};
+    
+    const history = useHistory();
 
     let productList = [
         {
             title: "Nanoleaf Remote",
             description: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
-            priceLabel: "₱ 850",
+            priceLabel: "₱850",
             price: "850",
             image: nanoleafImage,
         },
@@ -169,6 +174,10 @@ const Dashboard = () => {
         }
     };
 
+    const handleButtonClick = () => {
+        history.push("/order");
+    };
+
     const checkOut = async () => {
         let data;
 
@@ -185,13 +194,23 @@ const Dashboard = () => {
 
             alert("Your order has successfully submitted!");
 
-            window.location.reload()
-
-
-
+            window.location.reload();
+            // handleButtonClick();
         } else {
             alert("Please input email before checkout!");
         }
+    }
+
+    function formatPHPCurrency(amount, locale = 'en-PH') {
+        const options = {
+          style: 'currency',
+          currency: 'PHP', // ISO currency code for Philippine Peso
+          currencyDisplay: 'symbol', // Display currency symbol (₱)
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        };
+    
+        return new Intl.NumberFormat(locale, options).format(amount);
     }
 
     useEffect(() => {
@@ -219,7 +238,7 @@ const Dashboard = () => {
                     <div className="col-md-12">
                         <div className="container-wrapper">
                             <div className="landingpage">
-    <div>
+                                <div>
         <div>
             <div>
                 <h1 class="landing-header">Paragon Games</h1>
@@ -276,7 +295,7 @@ const Dashboard = () => {
                                                                 <input type="radio" id="star1" name="rate" value="1" />
                                                                 <label for="star1" title="text">1 star</label>
                                                             </div>
-                                                        <large className="text-price">{item.priceLabel}</large>
+                                                        <large className="text-price">{formatPHPCurrency(item.price)}</large>
                                                         <div className="add-to-cart">                                                        
                                                             <Button onClick={() => addToCart(item.title, item.price, item.image)} variant="primary">Add to cart</Button>
                                                         </div>
@@ -335,7 +354,7 @@ const Dashboard = () => {
                                                              {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                         </div>
                                                         <div className="col-3">
-                                                            PHP {item.price}
+                                                            PHP {formatPHPCurrency(item.price)}
                                                         </div>
                                                         <div className="col-1">
                                                             <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
@@ -352,7 +371,7 @@ const Dashboard = () => {
                                                     <b>Total:</b>
                                                 </div>
                                                 <div className="col-7">
-                                                    <b>PHP {total}</b>
+                                                    <b>PHP {formatPHPCurrency(total)}</b>
                                                 </div>
                                         
                                             </div>
@@ -362,7 +381,7 @@ const Dashboard = () => {
                                                 <div className="form-group">
                                                     <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                                 </div>
-                                                <button onClick={() => checkOut()} type="button" class="btn btn-block btn-primary">Checkout</button>
+                                                <button onClick={() => checkOut()} type="button">Checkout</button>
                                             </div>
                                         </div>
                                     </div>

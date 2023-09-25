@@ -3,12 +3,13 @@ import "./App.scss";
 import React, { useEffect, useState } from "react";
 
 import CollapsibleList from "./CollapsibleList";
-
+import { useHistory } from "react-router-dom";
 const socket = io.connect("http://localhost:3002");
 
 const Order = () => {
 
     let [orderList, setOrderList] = useState([]);
+    const history = useHistory();
 
     useEffect(() => {
         if (socket) {
@@ -45,13 +46,17 @@ const Order = () => {
         }
     }, []);
 
+    const handleBackClick = () => {
+        history.push("/");
+    };
+
     return (
         <>
             <div className="order-body">
                 <div className="container section">
                     <div className="row">
                         <div className="col-md-12">
-                            <h3>Order List</h3>
+                            <button onClick={handleBackClick}>Back</button>
                             <CollapsibleList items={orderList} />
                         </div>
                     </div>
