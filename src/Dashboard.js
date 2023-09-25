@@ -219,7 +219,36 @@ const Dashboard = () => {
                     <div className="col-md-12">
                         <div className="container-wrapper">
                             <div className="landingpage">
-                                <h5 className="landing-title">"PLAYSTATION GAMES"</h5>
+    <div>
+        <div>
+            <div>
+                <h1 class="landing-header">Paragon Games</h1>
+                <h5 class="landing-bodyheader">Playstation Games</h5> 
+                <p>The best place to buy videogames!</p>
+                <div>
+                    <a href="#">Call to Action</a>
+                    <div>
+                        <input type="checkbox" id="toggle-switch"></input>
+                        <label for="toggle-switch"><span>Toggle Me <span>Mode</span></span></label>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <img src="dist/images/illustration-light.svg" alt="Illustration" class="asset-light"></img>
+                    <img src="dist/images/illustration-dark.svg" alt="Illustration" class="asset-dark"></img>
+                </div>
+                <div>
+                    <img src="dist/images/media-illustration-light.svg" alt="Media Illustration" class="asset-light"></img>
+                    <img src="dist/images/media-illustration-dark.svg" alt="Media Illustration" class="asset-dark"></img>
+                </div>
+                <div>
+                    <img src="dist/images/media-light.svg" alt="Media" class="asset-light"></img>
+                    <img src="dist/images/media-dark.svg" alt="Media" class="asset-dark"></img>
+                </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="d-flex">
                                 <h1 className="firstword-title">Featured</h1>
