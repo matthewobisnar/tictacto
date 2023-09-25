@@ -195,8 +195,8 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="container-wrapper">
-                            <h1>PLAYSTATION GAMES</h1>
                             <div className="landingpage">
+                                <h5 className="landing-title">"PLAYSTATION GAMES"</h5>
                             </div>
                 
                             <div className="grid">
