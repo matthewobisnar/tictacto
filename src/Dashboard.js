@@ -278,7 +278,7 @@ const Dashboard = () => {
                                                             </div>
                                                         <large className="text-price">{item.priceLabel}</large>
                                                         <div className="add-to-cart">                                                        
-                                                            <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to cart</Button>
+                                                            <Button onClick={() => addToCart(item.title, item.price, item.image)} variant="primary">Add to cart</Button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -348,14 +348,13 @@ const Dashboard = () => {
                                             <div className="shopcart-border" />
                                             <div className="row">
                    
-                                                <div className="col-6">
+                                                <div className="col-5">
                                                     <b>Total:</b>
                                                 </div>
-                                                <div className="col-3">
+                                                <div className="col-7">
                                                     <b>PHP {total}</b>
                                                 </div>
-                                                <div className="col-3">
-                                                </div>
+                                        
                                             </div>
                                         </div>
                                         <div className="container">
