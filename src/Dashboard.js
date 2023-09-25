@@ -199,7 +199,8 @@ const Dashboard = () => {
     <div>
         <div>
             <div>
-                <h1 class="mt-0">PLAYSTATION GAMES</h1>
+                <h1 class="landing-header">Paragon Games</h1>
+                <h5 class="landing-bodyheader">Playstation Games</h5> 
                 <p>The best place to buy videogames!</p>
                 <div>
                     <a href="#">Call to Action</a>
@@ -222,9 +223,9 @@ const Dashboard = () => {
                     <img src="dist/images/media-light.svg" alt="Media" class="asset-light"></img>
                     <img src="dist/images/media-dark.svg" alt="Media" class="asset-dark"></img>
                 </div>
-            </div>
-        </div>
-    </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                 
                             <div className="grid">
