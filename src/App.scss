@@ -191,6 +191,23 @@ h1.secondword-title {
     padding: 10px;
 }
 
+.col-7{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+input#email {
+    border: var(--bs-border-width) solid #250c3b;
+}
+input#email:focus {
+    border: var(--bs-border-width) solid #250c3b;
+    box-shadow: 0 0 0 0.25rem rgba(37,12,59,.25);
+}
+button.btn.btn-checkout.btn-block.btn-primary {
+    background-color: #250c3b;
+    border-color: #250c3b;
+}
+
 //--------------------------- Dashboard ------------------
 .landingpage{
     height: 100vh;
@@ -223,19 +240,3 @@ h1.secondword-title {
     height: 80px;
   }
   
-.col-7{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-input#email {
-    border: var(--bs-border-width) solid #250c3b;
-}
-input#email:focus {
-    border: var(--bs-border-width) solid #250c3b;
-    box-shadow: 0 0 0 0.25rem rgba(37,12,59,.25);
-}
-button.btn.btn-checkout.btn-block.btn-primary {
-    background-color: #250c3b;
-    border-color: #250c3b;
-}
