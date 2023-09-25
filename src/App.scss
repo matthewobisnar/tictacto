@@ -1,5 +1,5 @@
 .shop-body {
-    background: #ebebeb;
+    background: #79c2d0;
     padding: 20px;
 }
 
@@ -43,7 +43,6 @@
 
 .container-wrapper {
     width: 60%;
-    margin: 0 auto;
 }
 
 .text-right {
@@ -58,4 +57,18 @@
 
 .shopcart-border{
     border-bottom: 1px solid #b1b1b1;
+}
+
+@media (min-width: 768px) {
+    .col-md-12 {
+    flex: 0 0 auto;
+    width: 50% !important;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        width: 900px;
+    }
+
 }

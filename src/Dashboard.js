@@ -10,7 +10,7 @@ import spideyImage from './images/spidey.jpeg';
 import { Button } from 'react-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { RiDeleteBinLine } from 'react-icons/ri';
-
+    
 const socket = io.connect("http://localhost:3002");
 
 const Dashboard = () => {
