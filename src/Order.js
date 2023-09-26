@@ -50,7 +50,10 @@ const Order = () => {
                 <div className="container section">
                     <div className="row">
                         <div className="col-md-12">
-                            <h3>Order List</h3>
+                        <div className="d-flex">
+                                <h1 className="firstword-title">Order</h1>
+                                <h1 className="secondword-title">List</h1>
+                            </div>
                             <CollapsibleList items={orderList} />
                         </div>
                     </div>

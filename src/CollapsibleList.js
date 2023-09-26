@@ -22,22 +22,22 @@ const CollapsibleList = ({ items }) => {
     return (
         <>
             <p>Orders {items.length}</p>
-            <ol className="list-group">
+            <ol className="order-list list-group">
                 {
                     items.length > 0 ? (
                         items.map((item, index) => {
                             return <li className="list-group-item" key={index}>
                                 <div className="row">
                                     <div className="col-md-4">
-                                        <div className="fw-bold">Transaction code : {'TRD-' + item.room}</div>
-                                        <div className="fw-bold">Emaill Address : {item.email}</div>
+                                        <div className="fw-bold">Transaction code : <span>{'TRD-' + item.room}</span> </div>
+                                        <div className="fw-bold">Emaill Address : <span>{item.email}</span> </div>
                                     </div>
                                     <div className="col-md-4">
-                                        <div className="fw-bold">Total items ordered : {item.cart?.length}</div>
-                                        <div className="fw-bold">Total Price : {formatPHPCurrency(item.total)}</div>
+                                        <div className="fw-bold">Total items ordered : <span>{item.cart?.length}</span></div>
+                                        <div className="fw-bold">Total Price : <span>{formatPHPCurrency(item.total)}</span></div>
                                     </div>
                                     <div className="col-md-4">
-                                        <div className="fw-bold">Date & Time : {item.timeStamp}</div>
+                                        <div className="fw-bold">Date & Time : <span>{item.timeStamp}</span></div>
                                     </div>
                                 </div>
                                 <div className="grid items-row">
@@ -46,7 +46,7 @@ const CollapsibleList = ({ items }) => {
                                             item.cart.map((cartItem, cartKey) => {
                                                 return <div className="items-container"key={cartKey}>
                                                         <div className="fw-bold">{cartItem.title}</div>
-                                                        <div className="fw-bold">{formatPHPCurrency(cartItem.price)}</div>
+                                                        <div className="">{formatPHPCurrency(cartItem.price)}</div>
                                                 </div>
                                             })
                                         ) : null

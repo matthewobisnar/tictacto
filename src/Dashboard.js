@@ -265,10 +265,6 @@ const Dashboard = () => {
 
     let itemTitles = [];
 
-<<<<<<< HEAD
-    return (
-        <div className="shop shop-body">
-=======
     document.addEventListener('DOMContentLoaded', function() {
         const landing = document.getElementById('landingId');
         if (landing) {
@@ -333,7 +329,6 @@ const Dashboard = () => {
 </div>
 
 
->>>>>>> a49b8468fcfdea639d828454c40f9021f20e563b
             <div className="container section">
                 <div className="row">
                     <div className="col-md-12">
