@@ -230,7 +230,7 @@ const Dashboard = () => {
     }, [])
 
     let itemTitles = [];
-
+    
     return (
         <div className="shop-body">
             <div className="container section">
