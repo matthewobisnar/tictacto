@@ -283,6 +283,7 @@ const Dashboard = () => {
         const image = document.createElement('img');
         image.src = landingeagleImage;
         image.alt = 'eagle'
+        image.style.marginTop = '55px';
         const rightCol = document.querySelector('.right-col');
         rightCol.appendChild(image);
       });
