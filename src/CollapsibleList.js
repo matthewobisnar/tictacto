@@ -7,18 +7,6 @@ const CollapsibleList = ({ items }) => {
 
     const toggle = () => setIsOpen(!isOpen);
 
-    function formatPHPCurrency(amount, locale = 'en-PH') {
-        const options = {
-          style: 'currency',
-          currency: 'PHP', 
-          currencyDisplay: 'symbol',
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        };
-    
-        return new Intl.NumberFormat(locale, options).format(amount);
-    }
-
     return (
         <>
             <p className="order-counter">Orders <span>{items.length}</span></p>
@@ -28,32 +16,32 @@ const CollapsibleList = ({ items }) => {
                         items.map((item, index) => {
                             return <li className="list-group-item" key={index}>
                                 <div className="row">
-                                    <div className="col-md-4">
-                                        <div className="fw-bold">Transaction code : <span>{'TRD-' + item.room}</span> </div>
-                                        <div className="fw-bold">Emaill Address : <span>{item.email}</span> </div>
+                                    <div className="col-md-6">
+                                        <div className="fw-bold">Transaction code : {'TRD-' + item.room}</div>
+                                        <div className="fw-bold">Emaill Address : {item.email}</div>
                                     </div>
-                                    <div className="col-md-4">
-                                        <div className="fw-bold">Total item(s) ordered : <span>{item.cart?.length}</span></div>
-                                        <div className="fw-bold">Total Price : <span>{formatPHPCurrency(item.total)}</span></div>
-                                    </div>
-                                    <div className="col-md-4">
-                                        <div className="fw-bold">Date & Time : <span>{item.timeStamp}</span></div>
+                                    <div className="col-md-6">
+                                        <div className="fw-bold">Total items ordered : {item.cart?.length}</div>
+                                        <div className="fw-bold">Total Price : {'PHP ' + item.total}</div>
+                                        <div className="fw-bold">Time : {item.timeStamp}</div>
                                     </div>
                                 </div>
-                                <div className="fw-bold">Item(s) Ordered: </div>
-                                <div className="grid items-row">
+                                <div className="row">
                                     {
                                         item.cart.length > 0 ? (
                                             item.cart.map((cartItem, cartKey) => {
-                                                return <div className="items-container"key={cartKey}>
+                                                return <div key={cartKey}>
+                                                    <div className="col-md-6">
                                                         <div className="fw-bold">{cartItem.title}</div>
-                                                        <div className="">{formatPHPCurrency(cartItem.price)}</div>
+                                                    </div>
+                                                    <div className="col-md-6">
+                                                        <div className="fw-bold">PHP {cartItem.price}</div>
+                                                    </div>
                                                 </div>
                                             })
                                         ) : null
                                     }
                                 </div>
-                                
                             </li>
                         })
                     ) : "No Available Transactions"

@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 import "./App.scss";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import skullcandyImage from './images/skullcandy.png';
 import nanoleafImage from './images/nanoleaf.jpg';
 import macbookairImage from './images/macbookair.jpg';
@@ -201,7 +201,7 @@ const Dashboard = () => {
             });
         }
     }
-
+    
     const inputChangedHandler = (value, input) => {
         if (input === "email") {
             setEmail(value);
@@ -238,11 +238,12 @@ const Dashboard = () => {
     function formatPHPCurrency(amount, locale = 'en-PH') {
         const options = {
           style: 'currency',
-          currency: 'PHP', 
-          currencyDisplay: 'symbol',
+          currency: 'PHP', // ISO currency code for Philippine Peso
+          currencyDisplay: 'symbol', // Display currency symbol (₱)
           minimumFractionDigits: 2,
           maximumFractionDigits: 2,
         };
+
     
         return new Intl.NumberFormat(locale, options).format(amount);
     }
@@ -285,10 +286,20 @@ const Dashboard = () => {
         const rightCol = document.querySelector('.right-col');
         rightCol.appendChild(image);
       });
+  
+      document.addEventListener('click', function(event) {
+        const target = event.target;
+        if (target.classList.contains('shopnow')) {
+          const dFlexElement = target.closest('.d-flex');
+          if (dFlexElement) {
+            dFlexElement.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      }); 
+
 
     return (     
         <div className="shop-body">
-
 
 <div className="landingpage">
      <div>
@@ -297,8 +308,8 @@ const Dashboard = () => {
                 <div id="landingwrapper">
                 <div class="landing-navbar">
                 <div class="display-flex">
-                <h1 class="landing-header">Paragon</h1>
-                <h1 className="secondword-title">Hub</h1>
+                <h1 class="landing-header">Paragon
+                <span class="purple">Hub</span></h1>
                 </div>
                 <div>
                 <button type="button">Home</button>
@@ -318,8 +329,8 @@ const Dashboard = () => {
             <div class="outer-container">
                 <div class="left-col">
                     <h5 class="landing-bodyheader">Empowering the world with latest <span class="landing-bodyheader purple">Top Of The Line</span><span class="landing-bodyheader"> Tech</span> </h5>
-                    <p>Elevate Your Lifestyle Using The Latest Technological Marvels Of The 21st Century</p>
-                    <button class="shopnow">Shop Now</button>
+                    <p class="landing-bodyheader">Selling High-Quality, State-Of-The-Art Technologies and Equipment Guaranteed To Make Living Your Everyday Life <span class="orange"> 120% </span> Better</p>
+                    <button className="shopnow">Shop Now</button>
                 </div>
                 <div class="right-col">
                 </div>
@@ -333,7 +344,6 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="container-wrapper">
-
                             <div className="d-flex">
                                 <h1 className="firstword-title">Featured</h1>
                                 <h1 className="secondword-title">Products</h1>

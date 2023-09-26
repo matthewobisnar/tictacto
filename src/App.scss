@@ -10,7 +10,17 @@
     font-family: 'Public Sans', sans-serif;
 }
 
+.purple{
+    color: #8a2be2;
+}
 
+.orange{
+    color: #f47b15!important;
+}
+
+.bold{
+    font-weight: bold;
+}
 
 .shop-body {
     background: #fff;
@@ -243,6 +253,7 @@ button.btn.btn-checkout.btn-block.btn-primary {
     border-color: #250c3b;
 }
 
+//--------------------------- LandingPage ------------------
 // Order Page
 .order-body {
     .list-group .list-group-item {
@@ -290,12 +301,12 @@ button.btn.btn-checkout.btn-block.btn-primary {
 }
 
 //--------------------------- Dashboard ------------------
-.landingpage{
+//.landingpage{}
  //   height: 100vh;
  //   background-repeat: no-repeat;
  //   background-size: auto;
  //   background-attachment: fixed;
-}
+//}
 
 .landingpage p, .landingpage h5, .landingpage h1{
     color: white;
@@ -339,7 +350,6 @@ button.btn.btn-checkout.btn-block.btn-primary {
     flex: 60%;
 }
 
-/* Style for the right div (40%) */
 .right-col {
     flex: 40%;
 }
@@ -348,6 +358,66 @@ h5.landing-bodyheader{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 50px;
+}
+
+p.landing-bodyheader{
+    font-family: 'Poppins', sans-serif;
+    color: grey;
+    font-size: 16px;
+    margin-top: 30px;
+    padding-right: 100px;
+}
+
+.landingpage .shopnow{
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #8a2be2;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #ffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'Poppins',sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 220px;
+  text-transform: capitalize;
+}
+
+.landingpage .shopnow:hover,
+.landingpage .shopnow:focus {
+  background-color: #8129d3f5;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.landingpage .shopnow:hover {
+  transform: translateY(-1px);
+}
+
+.landingpage .shopnow:active {
+  background-color:#7b28c9;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.landingpage .shopnow button:hover{
+  border: none;
+}
+
+.landingpage .shopnow button:active{
+    border: none; 
 }
 
 //--------------------------- tic tac toe css -----------------------------------
