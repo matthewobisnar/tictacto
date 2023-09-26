@@ -46,11 +46,11 @@ const Order = () => {
 
     return (
         <>
-            <div className="order-body">
+            <div className="shop order-body">
                 <div className="container section">
                     <div className="row">
                         <div className="col-md-12">
-                            <div>Order List</div>
+                            <h3>Order List</h3>
                             <CollapsibleList items={orderList} />
                         </div>
                     </div>

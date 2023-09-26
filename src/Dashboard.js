@@ -204,8 +204,8 @@ const Dashboard = () => {
     function formatPHPCurrency(amount, locale = 'en-PH') {
         const options = {
           style: 'currency',
-          currency: 'PHP', // ISO currency code for Philippine Peso
-          currencyDisplay: 'symbol', // Display currency symbol (₱)
+          currency: 'PHP', 
+          currencyDisplay: 'symbol',
           minimumFractionDigits: 2,
           maximumFractionDigits: 2,
         };
@@ -232,7 +232,7 @@ const Dashboard = () => {
     let itemTitles = [];
 
     return (
-        <div className="shop-body">
+        <div className="shop shop-body">
             <div className="container section">
                 <div className="row">
                     <div className="col-md-12">
