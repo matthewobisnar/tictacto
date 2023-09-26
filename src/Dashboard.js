@@ -9,6 +9,11 @@ import ipadAirImage from './images/ipadAir.jpg';
 import controllerImage from './images/controller.jpg';
 import samsungOdysseyImage from './images/odyssey.jpg';
 import iphone12Image from './images/iphone12.jpg';
+import lenovoLaptopBagImage from './images/lenovoLaptopBag.jpg';
+import forniteHoodieImage from './images/forniteHoodie.jpg';
+import keyboardImage from './images/keyboard.jpg';
+import lightpanelsImage from './images/lightpanel.jpg';
+
 import { useHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
@@ -81,6 +86,34 @@ const Dashboard = () => {
             priceLabel: "₱ 44,570",
             price: "44570",
             image: iphone12Image,
+        },
+        {
+            title: "Lenovo Laptop Bag",
+            description: "A built for gamers, this 17 inches Armored Backpack II seamlessly combines durability, convenience, and style.",
+            priceLabel: "₱ 3,472",
+            price: "3472",
+            image: lenovoLaptopBagImage,
+        },
+        {
+            title: "Fortnite The Raven Cosplay Hoodie",
+            description: "A polyester cotton with thin fleece, soft and comfortable, the power of Raven is unleashed.",
+            priceLabel: "₱ 1,975",
+            price: "1975",
+            image: forniteHoodieImage,
+        },
+        {
+            title: "NPKC Doubleshot Sidelit Keycaps",
+            description: "Standard ANSI Keycaps are truly unique gradual color gradient with charming appearance.",
+            priceLabel: "₱ 1,250",
+            price: "1250",
+            image: keyboardImage,
+        },
+        {
+            title: "Govee - Hexa Wall Light Panels",
+            description: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category.",
+            priceLabel: "₱ 6,500",
+            price: "6500",
+            image: lightpanelsImage,
         },
     ];
     let [roomKey, setRoomKey] = useState(null);
@@ -230,7 +263,7 @@ const Dashboard = () => {
     }, [])
 
     let itemTitles = [];
-    
+
     return (
         <div className="shop-body">
             <div className="container section">
