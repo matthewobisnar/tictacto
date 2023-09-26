@@ -385,85 +385,84 @@ const Dashboard = () => {
             </div>
             
             <div className="cart-container">
-                        {
-                            cartList.length > 0 ? (
+                {
+                    cartList.length > 0 ? (
+                        <div>
+                            <div className="card cart-wrapper box-shadow">
+                                <h4>Your Cart</h4>
+                                <div className="shopcart-icon">
+                                    <FiShoppingCart size={28} color="#ffff" />
+                                </div>
                                 <div>
-                                    <div className="card cart-wrapper box-shadow">
-                                        <h4>Your Cart</h4>
-                                        <div className="shopcart-icon">
-                                            <FiShoppingCart size={28} color="#ffff" />
-                                        </div>
-                                        <div>
-                                            {
-                                                cartList.map((item, key) => {
-                                                    if (!itemTitles.includes(item.title)) {
-                                                        itemTitles.push(item.title)
+                                    {
+                                        cartList.map((item, key) => {
+                                            if (!itemTitles.includes(item.title)) {
+                                                itemTitles.push(item.title)
 
-                                                        keyCounts[item.title] = {
-                                                            title: item.title,
-                                                            quantity: 1,
-                                                            price: item.price * 1,
-                                                            image: item.image,
+                                                keyCounts[item.title] = {
+                                                    title: item.title,
+                                                    quantity: 1,
+                                                    price: item.price * 1,
+                                                    image: item.image,
 
 
-                                                        };
-                                                    } else {
-                                                        keyCounts[item.title] = {
-                                                            title: item.title,
-                                                            quantity: parseInt(keyCounts[item.title].quantity) + 1,
-                                                            price: parseInt(item.price) * (parseInt(keyCounts[item.title].quantity) + 1),
-                                                            image: item.image,
+                                                };
+                                            } else {
+                                                keyCounts[item.title] = {
+                                                    title: item.title,
+                                                    quantity: parseInt(keyCounts[item.title].quantity) + 1,
+                                                    price: parseInt(item.price) * (parseInt(keyCounts[item.title].quantity) + 1),
+                                                    image: item.image,
 
-                                                        };
-                                                    }
-                                                })
+                                                };
                                             }
+                                        })
+                                    }
 
-                                            {
-                                                Object.values(keyCounts).map((item, key) => {
-                                                    return <div className="row">
+                                    {
+                                        Object.values(keyCounts).map((item, key) => {
+                                            return <div className="cart-items">
 
-                                                        <div className="col-3"><img src={item.image} />
-                                                        </div>
-                                                        <div className="col-5">
-                                                            {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
-                                                        </div>
-                                                        <div className="col-3">
-                                                            {formatPHPCurrency(item.price)}
-                                                        </div>
-                                                        <div className="col-1 delete-icon">
-                                                            <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={24} />
-                                                        </div>
-                                                    </div>
-
-                                                })
-                                            }
-
-                                            <div className="shopcart-border" />
-                                            <div className="row">
-
-                                                <div className="col-5">
-                                                    <b>Total:</b>
+                                                <div className="cart-img-container"><img src={item.image} /></div>
+                                                <div className="">
+                                                    {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                 </div>
-                                                <div className="col-7">
-                                                    <b>{formatPHPCurrency(total)}</b>
+                                                <div className="">
+                                                    {formatPHPCurrency(item.price)}
                                                 </div>
-
+                                                <div className="delete-icon">
+                                                    <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
+                                                </div>
                                             </div>
+
+                                        })
+                                    }
+
+                                    <div className="shopcart-border" />
+                                    <div className="row">
+
+                                        <div className="col-5">
+                                            <b>Total:</b>
                                         </div>
-                                        <div className="container">
-                                            <div>
-                                                <div className="form-group">
-                                                    <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
-                                                </div>
-                                                <button onClick={() => checkOut()} type="button">Checkout</button>
-                                            </div>
+                                        <div className="col-7">
+                                            <b>{formatPHPCurrency(total)}</b>
                                         </div>
+
                                     </div>
                                 </div>
-                            ) : null
-                        }
-                    </div>
+                                <div className="container">
+                                    <div>
+                                        <div className="form-group">
+                                            <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                        </div>
+                                        <button onClick={() => checkOut()} type="button">Checkout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ) : null
+                }
+            </div>
         </div>
     );
 };
