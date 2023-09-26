@@ -9,6 +9,7 @@ import ipadAirImage from './images/ipadAir.jpg';
 import controllerImage from './images/controller.jpg';
 import samsungOdysseyImage from './images/odyssey.jpg';
 import iphone12Image from './images/iphone12.jpg';
+import landingpageImage from './images/landingbg.png';
 import { useHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
@@ -231,6 +232,16 @@ const Dashboard = () => {
 
     let itemTitles = [];
 
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const landing = document.getElementById('landingId');
+        if (landing) {
+          landing.style.backgroundImage = `url(${landingpageImage})`;
+        }
+    });
+
+
     return (
         <div className="shop-body">
             <div className="container section">
@@ -239,7 +250,7 @@ const Dashboard = () => {
                         <div className="container-wrapper">
                             <div className="landingpage">
                                 <div>
-        <div>
+        <div id="landingId">
             <div>
                 <h1 class="landing-header">Paragon Games</h1>
                 <h5 class="landing-bodyheader">Playstation Games</h5> 
@@ -265,8 +276,10 @@ const Dashboard = () => {
                     <img src="dist/images/media-light.svg" alt="Media" class="asset-light"></img>
                     <img src="dist/images/media-dark.svg" alt="Media" class="asset-dark"></img>
                 </div>
-                                        </div>
-                                    </div>
+           </div>
+    </div>
+
+
                                 </div>
                             </div>
                             <div className="d-flex">
