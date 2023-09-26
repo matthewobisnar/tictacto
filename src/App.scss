@@ -299,6 +299,15 @@ button.btn.btn-checkout.btn-block.btn-primary {
 }
 
 //--------------------------- Dashboard ------------------
+#landingId {
+    background-image: url('/images/landingbg.png');
+    padding: 25px 120px;
+    height: 100vh;
+    margin-bottom: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 .landingpage{
  //   height: 100vh;
  //   background-repeat: no-repeat;
