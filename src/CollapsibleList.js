@@ -9,7 +9,8 @@ const CollapsibleList = ({ items }) => {
 
     return (
         <>
-            <ol className="list-group">
+            <p className="order-counter">Orders <span>{items.length}</span></p>
+            <ol className="order-list list-group">
                 {
                     items.length > 0 ? (
                         items.map((item, index) => {
