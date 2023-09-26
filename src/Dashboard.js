@@ -287,7 +287,6 @@ const Dashboard = () => {
         rightCol.appendChild(image);
       });
   
-
       document.addEventListener('click', function(event) {
         const target = event.target;
         if (target.classList.contains('shopnow')) {
@@ -298,9 +297,9 @@ const Dashboard = () => {
         }
       }); 
 
+
     return (     
         <div className="shop-body">
-
 
 <div className="landingpage">
      <div>
@@ -309,8 +308,8 @@ const Dashboard = () => {
                 <div id="landingwrapper">
                 <div class="landing-navbar">
                 <div class="display-flex">
-                <h1 class="landing-header">Paragon</h1>
-                <h1 className="secondword-title">Hub</h1>
+                <h1 class="landing-header">Paragon
+                <span class="purple">Hub</span></h1>
                 </div>
                 <div>
                 <button type="button">Home</button>
