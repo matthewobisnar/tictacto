@@ -237,14 +237,18 @@ button.btn.btn-checkout.btn-block.btn-primary {
 
 //--------------------------- Dashboard ------------------
 .landingpage{
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: auto;
-    background-attachment: fixed;
+ //   height: 100vh;
+ //   background-repeat: no-repeat;
+ //   background-size: auto;
+ //   background-attachment: fixed;
 }
 
 .landingpage p, .landingpage h5, .landingpage h1{
     color: white;
+}
+
+.landingpage h5{
+    padding-top: 100px;
 }
 
 .landing-navbar{

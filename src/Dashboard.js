@@ -274,7 +274,11 @@ const Dashboard = () => {
         const landing = document.getElementById('landingId');
         if (landing) {
           landing.style.backgroundImage = `url(${landingpageImage})`;
-          landing.style.padding = '40px';
+          landing.style.padding = '10px 40px';
+          landing.style.height = '100vh';
+          landing.style.backgroundRepeat = 'no-repeat';
+          landing.style.backgroundSize = 'auto';
+          landing.style.backgroundAttachment = 'fixed';
         }
     });
 
