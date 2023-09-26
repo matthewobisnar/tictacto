@@ -238,11 +238,19 @@ button.btn.btn-checkout.btn-block.btn-primary {
 //--------------------------- Dashboard ------------------
 .landingpage{
     height: 100vh;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: auto;
     background-attachment: fixed;
 }
 
+.landingpage p, .landingpage h5, .landingpage h1{
+    color: white;
+}
+
+.landing-navbar{
+    display: flex;
+    justify-content: space-between;
+}
 
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */

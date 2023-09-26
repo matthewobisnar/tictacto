@@ -22,6 +22,7 @@ const CollapsibleList = ({ items }) => {
                                     <div className="col-md-6">
                                         <div className="fw-bold">Total items ordered : {item.cart?.length}</div>
                                         <div className="fw-bold">Total Price : {'PHP ' + item.total}</div>
+                                        <div className="fw-bold">Time : {item.timeStamp}</div>
                                     </div>
                                 </div>
                                 <div className="row">

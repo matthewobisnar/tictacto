@@ -9,11 +9,15 @@ import ipadAirImage from './images/ipadAir.jpg';
 import controllerImage from './images/controller.jpg';
 import samsungOdysseyImage from './images/odyssey.jpg';
 import iphone12Image from './images/iphone12.jpg';
+<<<<<<< HEAD
 import lenovoLaptopBagImage from './images/lenovoLaptopBag.jpg';
 import forniteHoodieImage from './images/forniteHoodie.jpg';
 import keyboardImage from './images/keyboard.jpg';
 import lightpanelsImage from './images/lightpanel.jpg';
 
+=======
+import landingpageImage from './images/landingbg.png';
+>>>>>>> 8e90cabc506dd8b59142fc4f60a93fb195918a14
 import { useHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
@@ -220,7 +224,7 @@ const Dashboard = () => {
                 total: total,
                 email: email,
                 room: roomKey,
-                timeStamp: `${new Date(Date.now()).toDateString()} ${new Date(Date.now()).toLocaleTimeString("en-US")}`,
+                timeStamp: `${new Date(Date.now()).toDateString()} ${new Date(Date.now()).toLocaleTimeString("en-PH")}`,
             }
 
             await socket.emit("addOrder", data);
@@ -264,6 +268,17 @@ const Dashboard = () => {
 
     let itemTitles = [];
 
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const landing = document.getElementById('landingId');
+        if (landing) {
+          landing.style.backgroundImage = `url(${landingpageImage})`;
+          landing.style.padding = '40px';
+        }
+    });
+
+
     return (
         <div className="shop-body">
             <div className="container section">
@@ -272,9 +287,15 @@ const Dashboard = () => {
                         <div className="container-wrapper">
                             <div className="landingpage">
                                 <div>
-        <div>
-            <div>
-                <h1 class="landing-header">Paragon Games</h1>
+        <div id="landingId">
+            <div id="landingwrapper">
+                <div class="landing-navbar">
+                <h1 class="landing-header">Paragon</h1>
+                <div>
+                <button type="button">Home</button>
+                <button type="button">Products</button>
+                <button type="button">About</button>
+                </div></div>
                 <h5 class="landing-bodyheader">Playstation Games</h5> 
                 <p>The best place to buy videogames!</p>
                 <div>
@@ -298,8 +319,10 @@ const Dashboard = () => {
                     <img src="dist/images/media-light.svg" alt="Media" class="asset-light"></img>
                     <img src="dist/images/media-dark.svg" alt="Media" class="asset-dark"></img>
                 </div>
-                                        </div>
-                                    </div>
+           </div>
+    </div>
+
+
                                 </div>
                             </div>
                             <div className="d-flex">
