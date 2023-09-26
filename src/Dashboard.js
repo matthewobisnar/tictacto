@@ -9,6 +9,10 @@ import ipadAirImage from './images/ipadAir.jpg';
 import controllerImage from './images/controller.jpg';
 import samsungOdysseyImage from './images/odyssey.jpg';
 import iphone12Image from './images/iphone12.jpg';
+import lenovoLaptopBagImage from './images/lenovoLaptopBag.jpg';
+import forniteHoodieImage from './images/forniteHoodie.jpg';
+import keyboardImage from './images/keyboard.jpg';
+import lightpanelsImage from './images/lightpanel.jpg';
 import landingpageImage from './images/landingbg.png';
 import { useHistory } from "react-router-dom";
 
@@ -30,58 +34,86 @@ const Dashboard = () => {
         {
             title: "Nanoleaf Remote",
             description: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
-            priceLabel: "₱850",
+            priceLabel: "PHP 850",
             price: "850",
             image: nanoleafImage,
         },
         {
             title: "SkullCandy Earbuds",
             description: "The Indy True Wireless Earbuds by Skullcandy combine premium sound quality and a great design.",
-            priceLabel: "₱ 3300",
+            priceLabel: "PHP 3300",
             price: "3300",
             image: skullcandyImage,
         },
         {
             title: "Macbook Air",
             description: "13-inch MacBook Air laptop supercharged by the M2 chip. All-day battery life and strikingly thin design.",
-            priceLabel: "₱ 83,000",
+            priceLabel: "PHP 83,000",
             price: "83000",
             image: macbookairImage,
         },
         {
             title: "Oculus Quest",
             description: "The first-generation Oculus Quest is a discontinued virtual reality headset developed by Oculus.",
-            priceLabel: "₱ 45,512",
+            priceLabel: "PHP 45,512",
             price: "45512",
             image: vrcontrollerImage,
         },
         {
             title: "Ipad Air Wi-Fi",
             description: "Apple's 2022 iPad Air is the epitome of a mobile tablet, with a nearly perfect balance of features and performance.",
-            priceLabel: "₱ 39,000",
+            priceLabel: "PHP 39,000",
             price: "39000",
             image: ipadAirImage,
         },
         {
             title: "PS5 DualSense Controller",
             description: "Meet the DualSense wireless controller featuring haptic feedback, adaptive triggers and an iconic new design.",
-            priceLabel: "₱ 3,450",
+            priceLabel: "PHP 3,450",
             price: "3450",
             image: controllerImage,
         },
         {
             title: "Samsung Odyssey",
             description: "Enter a new frontier of immersion with a 55” curved screen featuring 4K resolution.",
-            priceLabel: "₱ 125,000",
+            priceLabel: "PHP 125,000",
             price: "125000",
             image: samsungOdysseyImage,
         },
         {
             title: "Iphone 12",
             description: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
-            priceLabel: "₱ 44,570",
+            priceLabel: "PHP 44,570",
             price: "44570",
             image: iphone12Image,
+        },
+        {
+            title: "Lenovo Laptop Bag",
+            description: "A built for gamers, this 17 inches Armored Backpack II seamlessly combines durability, convenience, and style.",
+            priceLabel: "PHP 3,472",
+            price: "3472",
+            image: lenovoLaptopBagImage,
+        },
+        {
+            title: "Fortnite The Raven Cosplay Hoodie",
+            description: "A polyester cotton with thin fleece, soft and comfortable, the power of Raven is unleashed.",
+            priceLabel: "PHP 1,975",
+            price: "1975",
+            image: forniteHoodieImage,
+        },
+        {
+            title: "NPKC Doubleshot Sidelit Keycaps",
+            description: "Standard ANSI Keycaps are truly unique gradual color gradient with charming appearance.",
+            priceLabel: "PHP 1,250",
+            price: "1250",
+            image: keyboardImage,
+        },
+        {
+            title: "Govee - Hexa Wall Light Panels",
+            description: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category.",
+            priceLabel: "PHP 6,500",
+            price: "6500",
+            image: lightpanelsImage,
         },
     ];
     let [roomKey, setRoomKey] = useState(null);
@@ -244,7 +276,7 @@ const Dashboard = () => {
           landing.style.backgroundSize = 'auto';
           landing.style.backgroundAttachment = 'fixed';
         }
-    });
+    })
 
 
     return (
@@ -391,7 +423,7 @@ const Dashboard = () => {
                                                              {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                         </div>
                                                         <div className="col-3">
-                                                            PHP {formatPHPCurrency(item.price)}
+                                                            {formatPHPCurrency(item.price)}
                                                         </div>
                                                         <div className="col-1 delete-icon">
                                                             <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={24} />
@@ -408,7 +440,7 @@ const Dashboard = () => {
                                                     <b>Total:</b>
                                                 </div>
                                                 <div className="col-7">
-                                                    <b>PHP {formatPHPCurrency(total)}</b>
+                                                    <b>{formatPHPCurrency(total)}</b>
                                                 </div>
                                         
                                             </div>
