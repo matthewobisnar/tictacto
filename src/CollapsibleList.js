@@ -33,13 +33,14 @@ const CollapsibleList = ({ items }) => {
                                         <div className="fw-bold">Emaill Address : <span>{item.email}</span> </div>
                                     </div>
                                     <div className="col-md-4">
-                                        <div className="fw-bold">Total items ordered : <span>{item.cart?.length}</span></div>
+                                        <div className="fw-bold">Total item(s) ordered : <span>{item.cart?.length}</span></div>
                                         <div className="fw-bold">Total Price : <span>{formatPHPCurrency(item.total)}</span></div>
                                     </div>
                                     <div className="col-md-4">
                                         <div className="fw-bold">Date & Time : <span>{item.timeStamp}</span></div>
                                     </div>
                                 </div>
+                                <div className="fw-bold">Item(s) Ordered: </div>
                                 <div className="grid items-row">
                                     {
                                         item.cart.length > 0 ? (
