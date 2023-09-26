@@ -9,11 +9,11 @@ import ipadAirImage from './images/ipadAir.jpg';
 import controllerImage from './images/controller.jpg';
 import samsungOdysseyImage from './images/odyssey.jpg';
 import iphone12Image from './images/iphone12.jpg';
-<<<<<<< HEAD
 import lenovoLaptopBagImage from './images/lenovoLaptopBag.jpg';
 import forniteHoodieImage from './images/forniteHoodie.jpg';
 import keyboardImage from './images/keyboard.jpg';
 import lightpanelsImage from './images/lightpanel.jpg';
+<<<<<<< HEAD
 
 =======
 import landingpageImage from './images/landingbg.png';
