@@ -243,6 +243,14 @@ button.btn.btn-checkout.btn-block.btn-primary {
     background-attachment: fixed;
 }
 
+.landingpage p, .landingpage h5, .landingpage h1{
+    color: white;
+}
+
+.landing-navbar{
+    display: flex;
+    justify-content: space-between;
+}
 
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */

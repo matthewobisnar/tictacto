@@ -238,6 +238,7 @@ const Dashboard = () => {
         const landing = document.getElementById('landingId');
         if (landing) {
           landing.style.backgroundImage = `url(${landingpageImage})`;
+          landing.style.padding = '40px';
         }
     });
 
@@ -251,8 +252,14 @@ const Dashboard = () => {
                             <div className="landingpage">
                                 <div>
         <div id="landingId">
-            <div>
-                <h1 class="landing-header">Paragon Games</h1>
+            <div id="landingwrapper">
+                <div class="landing-navbar">
+                <h1 class="landing-header">Paragon</h1>
+                <div>
+                <button type="button">Home</button>
+                <button type="button">Products</button>
+                <button type="button">About</button>
+                </div></div>
                 <h5 class="landing-bodyheader">Playstation Games</h5> 
                 <p>The best place to buy videogames!</p>
                 <div>
