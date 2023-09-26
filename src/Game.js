@@ -125,7 +125,17 @@ const Game = () => {
     let [board, setBoard] = useState(Array(9).fill(null));
     let [xIsNext, setXIsNext] = useState(true);
 
-    
+    // useEffect(() => {
+    // // Listen for updates from the server
+    //     socket.on('updateBoard', ({ board, nextPlayer }) => {
+    //     setBoard(board);
+    //     setNextPlayer(nextPlayer);
+    // }, []);
+
+    // socket.on('updateBoard', (data) => {
+    //     setBoard(data.board);
+    //     setCurrentPlayer(data.currentPlayer);
+    // });
 
     const handleClick = (index) => {
         const newBoard = [...board];
@@ -135,15 +145,16 @@ const Game = () => {
         newBoard[index] = xIsNext ? 'X' : 'O';
         setBoard(newBoard);
         setXIsNext(!xIsNext);
+        // socket.emit('makeMove', { board: newBoard, currentPlayer });
     };
 
     const renderSquare = (i) => {
         return (
-          <button className="square" onClick={() => handleClick(i)}>
+            <button className="square" onClick={() => handleClick(i)}>
             {board[i]}
-          </button>
+            </button>
         );
-      };
+    };
 
     function calculateWinner(squares) {
         const lines = [
