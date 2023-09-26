@@ -21,7 +21,7 @@ const CollapsibleList = ({ items }) => {
 
     return (
         <>
-            <p>Orders {items.length}</p>
+            <p className="order-counter">Orders <span>{items.length}</span></p>
             <ol className="order-list list-group">
                 {
                     items.length > 0 ? (
