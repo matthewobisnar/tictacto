@@ -187,7 +187,7 @@ const Dashboard = () => {
                 total: total,
                 email: email,
                 room: roomKey,
-                timeStamp: `${new Date(Date.now()).toDateString()} ${new Date(Date.now()).toLocaleTimeString("en-US")}`,
+                timeStamp: `${new Date(Date.now()).toDateString()} ${new Date(Date.now()).toLocaleTimeString("en-PH")}`,
             }
 
             await socket.emit("addOrder", data);
