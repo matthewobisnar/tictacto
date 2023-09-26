@@ -76,7 +76,7 @@ const Dashboard = () => {
         },
         {
             title: "Samsung Odyssey",
-            description: "Enter a new frontier of immersion with a 55” curved screen featuring 4K resolution.",
+            description: "Get your head in the game with the 55” curved display, featuring 4K resolution, which matches the curve of the human eye.",
             priceLabel: "PHP 125,000",
             price: "125000",
             image: samsungOdysseyImage,
@@ -90,7 +90,7 @@ const Dashboard = () => {
         },
         {
             title: "Lenovo Laptop Bag",
-            description: "A built for gamers, this 17 inches Armored Backpack II seamlessly combines durability, convenience, and style.",
+            description: "A 17 inches Armored Backpack II that utilizes a water-repellent fabric and a clean, streamlined design to create a case that's suited to modern life and aesthetic approach.",
             priceLabel: "PHP 3,472",
             price: "3472",
             image: lenovoLaptopBagImage,
@@ -111,7 +111,7 @@ const Dashboard = () => {
         },
         {
             title: "Govee - Hexa Wall Light Panels",
-            description: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category.",
+            description: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category. It is composed of 7/10 panels that can be assorted into various shapes.",
             priceLabel: "PHP 6,500",
             price: "6500",
             image: lightpanelsImage,
