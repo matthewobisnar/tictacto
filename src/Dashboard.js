@@ -13,11 +13,7 @@ import lenovoLaptopBagImage from './images/lenovoLaptopBag.jpg';
 import forniteHoodieImage from './images/forniteHoodie.jpg';
 import keyboardImage from './images/keyboard.jpg';
 import lightpanelsImage from './images/lightpanel.jpg';
-<<<<<<< HEAD
-
-=======
 import landingpageImage from './images/landingbg.png';
->>>>>>> 8e90cabc506dd8b59142fc4f60a93fb195918a14
 import { useHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
@@ -280,7 +276,7 @@ const Dashboard = () => {
           landing.style.backgroundSize = 'auto';
           landing.style.backgroundAttachment = 'fixed';
         }
-    });
+    })
 
 
     return (
