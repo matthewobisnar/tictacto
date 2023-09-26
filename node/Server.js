@@ -15,6 +15,11 @@ const io = new Server(server, {
         methods: ["GET", "POST"],
     }
 });
+
+let board = Array(9).fill(null);
+let currentPlayer = 'X';
+let winner = null;
+
 io.on("connection", (socket) => {
 
     socket.on("get_rooms", () => {
@@ -37,12 +42,35 @@ io.on("connection", (socket) => {
     });
 
     socket.on("addOrder", (data) => {
-        console.log(data);
-
-
-
-        socket.broadcast.emit("receiveOrder", data);
+        console.log(data);socket.broadcast.emit("receiveOrder", data);
     });
+
+    socket.emit('updateBoard', board);
+
+    socket.on('move', ({ board: newBoard, player }) => {
+    if (!winner && currentPlayer === player) {
+        board = newBoard;
+        socket.emit('updateBoard', board);
+        socket.broadcast.emit('updateBoard', board);
+
+        if (checkWinner()) {
+        winner = currentPlayer;
+        socket.emit('gameOver', winner);
+        socket.broadcast.emit('gameOver', winner);
+        } else {
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        }
+    }
+    });
+
+    socket.on('disconnect', () => {
+    console.log('A user disconnected');
+    });
+    
+    //   socket.on('disconnect', () => {
+    //     console.log('A user disconnected');
+    //   });
+
 
     // socket.on("disconnect", () => {
     //     console.log(`Disconnect user: ${socket.id}`);
@@ -52,5 +80,26 @@ io.on("connection", (socket) => {
     //     });
     // });
 });
+
+function checkWinner() {
+    const lines = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6],
+    ];
+  
+    for (let line of lines) {
+      const [a, b, c] = line;
+      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+        return true;
+      }
+    }
+    return false;
+  }
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
