@@ -1,81 +1,86 @@
 import io from "socket.io-client";
 import "./App.scss";
 import React, { useEffect, useState } from "react";
-import nbaImage from './images/nba.jpeg';
-import acvalhallaImage from './images/acvalhalla.jpeg';
-import gta5Image from './images/gta5.jpg';
-import hgImage from './images/hg.jpeg';
-import spideyImage from './images/spidey.jpeg';
-import witcherImage from './images/thewitcher.jpg';
-import descendersImage from './images/descenders.jpg';
-import tyrannyImage from './images/tyranny.jpg';
+import skullcandyImage from './images/skullcandy.png';
+import nanoleafImage from './images/nanoleaf.jpg';
+import macbookairImage from './images/macbookair.jpg';
+import vrcontrollerImage from './images/vrcontroller.jpg';
+import ipadAirImage from './images/ipadAir.jpg';
+import controllerImage from './images/controller.jpg';
+import samsungOdysseyImage from './images/odyssey.jpg';
+import iphone12Image from './images/iphone12.jpg';
+import { useHistory } from "react-router-dom";
 
 import { Button } from 'react-bootstrap';
 import { FaRegTrashAlt} from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
+import { Link } from "@mui/material";
+
 
 const socket = io.connect("http://localhost:3002");
 
 const Dashboard = () => {
 
     let keyCounts = {};
+    
+    const history = useHistory();
 
     let productList = [
         {
-            title: "NBA 2k23",
-            description: "A basketball video game with updated rosters, improved graphics, and new features.",
-            priceLabel: "PHP 3,000.00",
-            price: "3000",
-            image: nbaImage,
+            title: "Nanoleaf Remote",
+            description: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
+            priceLabel: "₱850",
+            price: "850",
+            image: nanoleafImage,
         },
         {
-            title: "Assasins Creed Valhalla",
-            description: "An action-adventure game where players control Eivor, a Viking warrior, as they lead their clan to England.",
-            priceLabel: "PHP 1,500.00",
-            price: "1500",
-            image: acvalhallaImage,
+            title: "SkullCandy Earbuds",
+            description: "The Indy True Wireless Earbuds by Skullcandy combine premium sound quality and a great design.",
+            priceLabel: "₱ 3300",
+            price: "3300",
+            image: skullcandyImage,
         },
         {
-            title: "Grand Theft Auto V",
-            description: "An action-adventure game set in a fictional open-world city of Los Santos, based on Los Angeles.",
-            priceLabel: "PHP 1,299.00",
-            price: "1299",
-            image: gta5Image,
+            title: "Macbook Air",
+            description: "13-inch MacBook Air laptop supercharged by the M2 chip. All-day battery life and strikingly thin design.",
+            priceLabel: "₱ 83,000",
+            price: "83000",
+            image: macbookairImage,
         },
         {
-            title: "Hogwarts Legacy",
-            description: "An upcoming action role-playing game set in the Harry Potter universe set in the 1800s.",
-            priceLabel: "PHP 3,200.00",
-            price: "3200",
-            image: hgImage,
+            title: "Oculus Quest",
+            description: "The first-generation Oculus Quest is a discontinued virtual reality headset developed by Oculus.",
+            priceLabel: "₱ 45,512",
+            price: "45512",
+            image: vrcontrollerImage,
         },
         {
-            title: "Spiderman",
-            description: "A 2018 action-adventure game where players control Peter Parker as he fights crime and protects New York City.",
-            priceLabel: "PHP 1,200.00",
-            price: "1200",
-            image: spideyImage,
+            title: "Ipad Air Wi-Fi",
+            description: "Apple's 2022 iPad Air is the epitome of a mobile tablet, with a nearly perfect balance of features and performance.",
+            priceLabel: "₱ 39,000",
+            price: "39000",
+            image: ipadAirImage,
         },
         {
-            title: "The Witcher 3: Wild Hunt",
-            description: "A 2015 action role-playing game developed and published by CD Projekt.",
-            priceLabel: "PHP 1,200.00",
-            price: "1200",
-            image: witcherImage,
+            title: "PS5 DualSense Controller",
+            description: "Meet the DualSense wireless controller featuring haptic feedback, adaptive triggers and an iconic new design.",
+            priceLabel: "₱ 3,450",
+            price: "3450",
+            image: controllerImage,
         },
         {
-            title: "Descenders",
-            description: "A cycling video game developed by Dutch studio RageSquid and published by No More Robots.",
-            priceLabel: "PHP 2,200.00",
-            price: "2200",
-            image: descendersImage,
+            title: "Samsung Odyssey",
+            description: "Enter a new frontier of immersion with a 55” curved screen featuring 4K resolution.",
+            priceLabel: "₱ 125,000",
+            price: "125000",
+            image: samsungOdysseyImage,
         },
         {
-            title: "Tyranny",
-            description: "A role-playing video game developed by Obsidian Entertainment and published by Paradox Interactive.",
-            priceLabel: "PHP 1,500.00",
-            price: "1500",
-            image: tyrannyImage,
+            title: "Iphone 12",
+            description: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
+            priceLabel: "₱ 44,570",
+            price: "44570",
+            image: iphone12Image,
         },
     ];
     let [roomKey, setRoomKey] = useState(null);
@@ -169,6 +174,10 @@ const Dashboard = () => {
         }
     };
 
+    const handleButtonClick = () => {
+        history.push("/order");
+    };
+
     const checkOut = async () => {
         let data;
 
@@ -185,13 +194,23 @@ const Dashboard = () => {
 
             alert("Your order has successfully submitted!");
 
-            window.location.reload()
-
-
-
+            window.location.reload();
+            // handleButtonClick();
         } else {
             alert("Please input email before checkout!");
         }
+    }
+
+    function formatPHPCurrency(amount, locale = 'en-PH') {
+        const options = {
+          style: 'currency',
+          currency: 'PHP', // ISO currency code for Philippine Peso
+          currencyDisplay: 'symbol', // Display currency symbol (₱)
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        };
+    
+        return new Intl.NumberFormat(locale, options).format(amount);
     }
 
     useEffect(() => {
@@ -219,7 +238,7 @@ const Dashboard = () => {
                     <div className="col-md-12">
                         <div className="container-wrapper">
                             <div className="landingpage">
-    <div>
+                                <div>
         <div>
             <div>
                 <h1 class="landing-header">Paragon Games</h1>
@@ -252,7 +271,7 @@ const Dashboard = () => {
                             </div>
                             <div className="d-flex">
                                 <h1 className="firstword-title">Featured</h1>
-                                <h1 className="secondword-title">Games</h1>
+                                <h1 className="secondword-title">Products</h1>
                             </div>
                             <div className="grid">
                                 {
@@ -276,9 +295,9 @@ const Dashboard = () => {
                                                                 <input type="radio" id="star1" name="rate" value="1" />
                                                                 <label for="star1" title="text">1 star</label>
                                                             </div>
-                                                        <large className="text-price">{item.priceLabel}</large>
+                                                        <large className="text-price">{formatPHPCurrency(item.price)}</large>
                                                         <div className="add-to-cart">                                                        
-                                                            <Button onClick={() => addToCart(item.title, item.price)} variant="primary">Add to cart</Button>
+                                                            <Button onClick={() => addToCart(item.title, item.price, item.image)} variant="primary">Add to cart</Button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -335,10 +354,10 @@ const Dashboard = () => {
                                                              {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                         </div>
                                                         <div className="col-3">
-                                                            PHP {item.price}
+                                                            PHP {formatPHPCurrency(item.price)}
                                                         </div>
-                                                        <div className="col-1">
-                                                            <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
+                                                        <div className="col-1 delete-icon">
+                                                            <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={24} />
                                                         </div>
                                                     </div>
                                                     
@@ -348,14 +367,13 @@ const Dashboard = () => {
                                             <div className="shopcart-border" />
                                             <div className="row">
                    
-                                                <div className="col-6">
+                                                <div className="col-5">
                                                     <b>Total:</b>
                                                 </div>
-                                                <div className="col-3">
-                                                    <b>PHP {total}</b>
+                                                <div className="col-7">
+                                                    <b>PHP {formatPHPCurrency(total)}</b>
                                                 </div>
-                                                <div className="col-3">
-                                                </div>
+                                        
                                             </div>
                                         </div>
                                         <div className="container">
@@ -363,7 +381,7 @@ const Dashboard = () => {
                                                 <div className="form-group">
                                                     <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                                 </div>
-                                                <button onClick={() => checkOut()} type="button" class="btn btn-block btn-primary">Checkout</button>
+                                                <button onClick={() => checkOut()} type="button">Checkout</button>
                                             </div>
                                         </div>
                                     </div>

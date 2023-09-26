@@ -9,35 +9,60 @@
     padding: 20px;
 }
 
+
+.shop-body button {
+    background-color: transparent;
+    border: 3px solid #8a2be2;
+    border-radius: 0;
+    padding: 10px 20px;
+    color: #8a2be2;
+}
+
+.shop-body button:hover, .shop-body button:active,
+.shop-body .btn:first-child:active {
+    background-color: #8a2be2;  
+    border: 3px solid #8a2be2;
+    color: white;
+}
+
 .order-body {
     padding: 20px;
 }
 
-.cart-wrapper {
+.card-body {
+    flex: 1 1 auto;
+    padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+    color: var(--bs-card-color);
+}
 
+.cart-wrapper {
     font-size:10pt;
+    background: #fff;
+    padding: 30px;
 
     h4 {
         border-bottom: 1px solid #b1b1b1;
         // padding-bottom: 10px;
         background: #250c3b;
         color: white;
-        padding: 8px;
+        padding: 15px;
         border-radius: 8px;
     }
-
-    background: #fff;
-    padding: 30px;
 
     button {
         width: 100%;
         margin-top: 10px;
         background: #250c3b;
-        border: 1px solid;
+        border: 3px solid #250c3b;
+        color: white;
     }
 
     .row {
         padding: 8px;
+    }
+
+    .delete-icon {
+        cursor: pointer;
     }
 }
 
@@ -59,8 +84,8 @@
 
 .shopcart-icon {
     position: absolute;
-    right: 7%;
-    top: 37px;
+    right: 45px;
+    top: 45px;
 }
 .shopcart-border{
     border-bottom: 1px solid black;
@@ -74,8 +99,8 @@
 }
 
 .grid-item {
-    flex-basis: calc(25% - 10px);
-    margin: 5px;
+    flex-basis: calc(25% - 20px);
+    margin: 10px 10px 20px;
     height: 100%;
 }
 
@@ -92,18 +117,6 @@
 
 }
 
-.grid-item button {
-    background-color: transparent;
-    border: 3px solid #8a2be2;
-    border-radius: 0;
-    padding: 10px 20px;
-    color: #8a2be2;
-}
-
-.grid-item button:hover {
-    background-color: #8a2be2;
-    color: white;
-}
 
 .add-to-cart {
     margin-top: 10px;
@@ -112,9 +125,10 @@
 
 /* star-shaped icons */
 .rate {
-    float: left;
+    display: flex;
+    justify-content: flex-start;
     height: 36px;
-    padding: 0 10px;
+    width: 100%;
 }
 .rate:not(:checked) > input {
     position:absolute;
@@ -143,15 +157,25 @@
 
 p.card-text {
     margin-bottom: 0px;
+    font-family: Helvetica, monospace;
 }
 
 h1.firstword-title {
     color: black;
     margin-right: 5px;
+    font-family: Helvetica, monospace;
+    font-weight: 800;
 }
 
 h1.secondword-title {
     color: #8a2be2;
+    font-family: Helvetica, monospace;
+    font-weight: 800;
+}
+
+.card-body h5.card-title {
+    font-family: Helvetica, monospace;
+    font-weight: bold;
 }
 
 // AddToCart Modal
@@ -164,14 +188,17 @@ h1.secondword-title {
     padding: 10px;
 }
 .col-3 img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
+    // width: 100%;
+    // height: 100%;
+    // border-radius: 50%;
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
     border: 1px solid #250c3b;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px;
+    // padding: 5px;
 }
 .col-3{
     
@@ -189,6 +216,23 @@ h1.secondword-title {
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+}
+
+.col-7{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+input#email {
+    border: var(--bs-border-width) solid #250c3b;
+}
+input#email:focus {
+    border: var(--bs-border-width) solid #250c3b;
+    box-shadow: 0 0 0 0.25rem rgba(37,12,59,.25);
+}
+button.btn.btn-checkout.btn-block.btn-primary {
+    background-color: #250c3b;
+    border-color: #250c3b;
 }
 
 //--------------------------- Dashboard ------------------
@@ -223,19 +267,3 @@ h1.secondword-title {
     height: 80px;
   }
   
-.col-7{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-input#email {
-    border: var(--bs-border-width) solid #250c3b;
-}
-input#email:focus {
-    border: var(--bs-border-width) solid #250c3b;
-    box-shadow: 0 0 0 0.25rem rgba(37,12,59,.25);
-}
-button.btn.btn-checkout.btn-block.btn-primary {
-    background-color: #250c3b;
-    border-color: #250c3b;
-}

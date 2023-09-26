@@ -20,14 +20,11 @@ const CollapsibleList = ({ items }) => {
                                         <div className="fw-bold">Emaill Address : {item.email}</div>
                                     </div>
                                     <div className="col-md-6">
-                                        <div className="fw-bold">Total games ordered : {item.cart?.length}</div>
+                                        <div className="fw-bold">Total items ordered : {item.cart?.length}</div>
                                         <div className="fw-bold">Total Price : {'PHP ' + item.total}</div>
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-md-12">
-                                        <div className="fw-bold">Games Ordered:</div>
-                                    </div>
                                     {
                                         item.cart.length > 0 ? (
                                             item.cart.map((cartItem, cartKey) => {
