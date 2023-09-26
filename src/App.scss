@@ -274,7 +274,20 @@ button.btn.btn-checkout.btn-block.btn-primary {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-  }
+}
+
+.outer-container{
+    display: flex;
+}
+
+.left-col{
+    flex: 60%;
+}
+
+/* Style for the right div (40%) */
+.right-col {
+    flex: 40%;
+}
 
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
