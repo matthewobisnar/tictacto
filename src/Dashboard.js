@@ -410,7 +410,7 @@ const Dashboard = () => {
                                                              {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                                         </div>
                                                         <div className="col-3">
-                                                            PHP {formatPHPCurrency(item.price)}
+                                                            {formatPHPCurrency(item.price)}
                                                         </div>
                                                         <div className="col-1 delete-icon">
                                                             <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={24} />
@@ -427,7 +427,7 @@ const Dashboard = () => {
                                                     <b>Total:</b>
                                                 </div>
                                                 <div className="col-7">
-                                                    <b>PHP {formatPHPCurrency(total)}</b>
+                                                    <b>{formatPHPCurrency(total)}</b>
                                                 </div>
                                         
                                             </div>
