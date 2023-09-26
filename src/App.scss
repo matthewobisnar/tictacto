@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.display-flex{
+    display: flex;
+}
+
 .shop-body {
     background: #fff;
     padding: 20px;
@@ -168,7 +172,7 @@ h1.firstword-title {
 }
 
 h1.secondword-title {
-    color: #8a2be2;
+    color: #8a2be2!important;
     font-family: Helvetica, monospace;
     font-weight: 800;
 }
@@ -251,10 +255,26 @@ button.btn.btn-checkout.btn-block.btn-primary {
     padding-top: 100px;
 }
 
+.landingpage h1{
+    font-family: Helvetica, monospace;
+    font-weight: 800;
+}
+
 .landing-navbar{
     display: flex;
     justify-content: space-between;
 }
+
+.svg-button {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
 
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
