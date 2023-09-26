@@ -269,8 +269,9 @@ const Dashboard = () => {
         const landing = document.getElementById('landingId');
         if (landing) {
           landing.style.backgroundImage = `url(${landingpageImage})`;
-          landing.style.padding = '10px 40px';
+          landing.style.padding = '25px 120px';
           landing.style.height = '100vh';
+          landing.style.marginBottom = '60px';
           landing.style.backgroundRepeat = 'no-repeat';
           landing.style.backgroundSize = 'auto';
           landing.style.backgroundAttachment = 'fixed';
@@ -285,21 +286,19 @@ const Dashboard = () => {
         rightCol.appendChild(image);
       });
 
-    return (
+    return (     
         <div className="shop-body">
-            <div className="container section">
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="container-wrapper">
-                            <div className="landingpage">
-                                <div>
+
+
+<div className="landingpage">
+     <div>
         <div id="landingId">
                 {/*landing page */}
                 <div id="landingwrapper">
                 <div class="landing-navbar">
                 <div class="display-flex">
                 <h1 class="landing-header">Paragon</h1>
-                <h1 className="secondword-title">Shop</h1>
+                <h1 className="secondword-title">Hub</h1>
                 </div>
                 <div>
                 <button type="button">Home</button>
@@ -318,17 +317,23 @@ const Dashboard = () => {
                 {/*landing page body*/}
             <div class="outer-container">
                 <div class="left-col">
-                    <h5 class="landing-bodyheader">Playstation Games</h5> 
-                    <p>The best place to buy videogames!</p>
+                    <h5 class="landing-bodyheader">Empowering the world with latest <span class="landing-bodyheader purple">Top Of The Line</span><span class="landing-bodyheader"> Tech</span> </h5>
+                    <p>Elevate Your Lifestyle Using The Latest Technological Marvels Of The 21st Century</p>
+                    <button class="shopnow">Shop Now</button>
                 </div>
                 <div class="right-col">
                 </div>
             </div>
+        </div>
     </div>
+</div>
 
 
-                                </div>
-                            </div>
+            <div className="container section">
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="container-wrapper">
+
                             <div className="d-flex">
                                 <h1 className="firstword-title">Featured</h1>
                                 <h1 className="secondword-title">Products</h1>
