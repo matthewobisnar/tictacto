@@ -165,7 +165,7 @@
 }
 
 .grid-item {
-    flex-basis: calc(25% - 20px);
+    flex-basis: auto;
     margin: 10px 10px 20px;
     height: 100%;
 
@@ -181,6 +181,10 @@
         border-radius: 8px;
     
     }
+
+    @media (min-width: 768px) {
+        flex-basis: calc(25% - 20px);
+  }
 } 
 
 .add-to-cart {
@@ -604,6 +608,10 @@ p.landing-bodyheader{
   .menu button:hover {
     background-color: lighten($color: #6b21af, $amount: 1);
     color: whitesmoke;
+  }
+
+  .container-wrapper {
+    transition: border-bottom 0.5s ease;
   }
   
 
