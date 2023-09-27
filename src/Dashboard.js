@@ -290,6 +290,99 @@ const Dashboard = () => {
         };
 
 
+    //Search
+    document.addEventListener("DOMContentLoaded", function () {
+        const showSearchButton = document.getElementById("showSearchButton");
+        const searchContainer = document.getElementById("searchContainer");
+        const searchInput = document.getElementById("searchInput");
+        const searchButton = document.getElementById("searchButton");
+        let clickCount = 0; 
+      
+        showSearchButton.addEventListener("click", function () {
+          searchContainer.style.display = "flex";
+          searchInput.style.display = "flex";
+          searchButton.style.display = "flex";
+          showSearchButton.style.display = "none";
+        });
+      
+        searchInput.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            performSearch(); 
+          }
+        });
+      
+        searchButton.addEventListener("click", function () {
+          performSearch(); 
+        });
+      
+        function performSearch() {
+          const searchText = searchInput.value.trim().toLowerCase();
+          const productList = document.querySelectorAll(".grid-item"); 
+      
+          if (searchText === "") {
+            showSearchButton.style.display = "block";
+            searchInput.style.display = "none";
+            searchButton.style.display = "none";
+          } else {
+            let found = false; 
+      
+            productList.forEach((productItem) => {
+              const productTitle = productItem.querySelector(".card-title");
+              const productDescription = productItem.querySelector(".card-text");
+      
+              if (
+                productTitle &&
+                productTitle.textContent.toLowerCase().includes(searchText)
+              ) {
+                productTitle.innerHTML = productTitle.textContent.replace(
+                  new RegExp(searchText, "gi"),
+                  (match) => `<span class="highlighted-text">${match}</span>`
+                );
+      
+                productItem.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+      
+                found = true;
+              }
+      
+              if (
+                productDescription &&
+                productDescription.textContent.toLowerCase().includes(searchText)
+              ) {
+                productDescription.innerHTML = productDescription.textContent.replace(
+                  new RegExp(searchText, "gi"),
+                  (match) => `<span class="highlighted-text">${match}</span>`
+                );
+      
+                if (!found) {
+                  productItem.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+      
+                  found = true; 
+                }
+              }
+            });
+          }
+        }
+    
+        document.addEventListener("click", function (event) {
+          const highlightedElements = document.querySelectorAll(".highlighted-text");
+          if (highlightedElements.length > 0) {
+            clickCount++;
+            if (clickCount === 2) {
+              highlightedElements.forEach((element) => {
+                element.classList.remove("highlighted-text");
+              });
+              clickCount = 0;
+            }
+          }
+        });
+      });
+
     return (
         <div className="shop-body">
 
@@ -304,11 +397,19 @@ const Dashboard = () => {
                                         <span className="purple">Hub</span>
                                     </h1>
                                 </div>
-                                <div>
+                                <div className="display-flex">
                                     <button type="button" className={isClassRemoved ? '' : 'active'}>Home</button>
                                     <button type="button" onClick={handleButtonClick}>Products</button>
                                     <button type="button">About</button>
-                                    <button className="svg-button">
+                                    <div id="searchContainer" className="display-flex justify" style={{ display: 'none' }}>
+                                    <input type="text" id="searchInput" placeholder="Search..." style={{ display: 'none' }} />
+                                    <button id="searchButton" style={{ display: 'none' }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
+                                            <path d="M448 768A320 320 0 1 0 448 128a320 320 0 0 0 0 640z m297.344-76.992l214.592 214.592-54.336 54.336-214.592-214.592a384 384 0 1 1 54.336-54.336z" fill="#FFFFFF" />
+                                        </svg>
+                                    </button>
+                                    </div>
+                                    <button className="svg-button" id="showSearchButton">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
                                             <path d="M448 768A320 320 0 1 0 448 128a320 320 0 0 0 0 640z m297.344-76.992l214.592 214.592-54.336 54.336-214.592-214.592a384 384 0 1 1 54.336-54.336z" fill="#FFFFFF" />
                                         </svg></button>
