@@ -139,6 +139,15 @@
     }
 }
 
+.exit-button{
+    position: absolute;
+    top: -15px;
+    left: 175px;
+    background: transparent!important;
+    border: none!important;
+    width: 10px;
+}
+
 // New Css
 .grid {
     display: flex;
