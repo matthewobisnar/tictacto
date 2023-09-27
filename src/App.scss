@@ -528,7 +528,7 @@ p.landing-bodyheader{
 
 // burger menu
 .desktopnavbar {
-    display: block; 
+    display: flex; 
     @media (max-width: 768px) {
         display: none;
       }
