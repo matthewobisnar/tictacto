@@ -296,7 +296,8 @@ const Dashboard = () => {
         const searchContainer = document.getElementById("searchContainer");
         const searchInput = document.getElementById("searchInput");
         const searchButton = document.getElementById("searchButton");
-        let clickCount = 0; 
+        let clickCount = 0;
+        let searchMethod = null;
       
         showSearchButton.addEventListener("click", function () {
           searchContainer.style.display = "flex";
@@ -307,24 +308,24 @@ const Dashboard = () => {
       
         searchInput.addEventListener("keypress", function (event) {
           if (event.key === "Enter") {
-            performSearch(); 
+            performSearch("enter");
           }
         });
       
         searchButton.addEventListener("click", function () {
-          performSearch(); 
+          performSearch("button");
         });
       
-        function performSearch() {
+        function performSearch(method) {
           const searchText = searchInput.value.trim().toLowerCase();
-          const productList = document.querySelectorAll(".grid-item"); 
+          const productList = document.querySelectorAll(".grid-item");
       
           if (searchText === "") {
             showSearchButton.style.display = "block";
             searchInput.style.display = "none";
             searchButton.style.display = "none";
           } else {
-            let found = false; 
+            let found = false;
       
             productList.forEach((productItem) => {
               const productTitle = productItem.querySelector(".card-title");
@@ -362,25 +363,35 @@ const Dashboard = () => {
                     block: "center",
                   });
       
-                  found = true; 
+                  found = true;
                 }
               }
             });
           }
+      
+          searchMethod = method;
+          clickCount = 0;
         }
-    
+      
         document.addEventListener("click", function (event) {
-          const highlightedElements = document.querySelectorAll(".highlighted-text");
-          if (highlightedElements.length > 0) {
+          if (searchMethod === "button") {
             clickCount++;
             if (clickCount === 2) {
-              highlightedElements.forEach((element) => {
-                element.classList.remove("highlighted-text");
-              });
-              clickCount = 0;
+              removeHighlightedText();
             }
+          } else if (searchMethod === "enter") {
+            removeHighlightedText();
           }
         });
+      
+        function removeHighlightedText() {
+          const highlightedElements = document.querySelectorAll(".highlighted-text");
+          if (highlightedElements.length > 0) {
+            highlightedElements.forEach((element) => {
+              element.classList.remove("highlighted-text");
+            });
+          }
+        }
       });
 
     return (
