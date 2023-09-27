@@ -464,6 +464,11 @@ button.btn.btn-checkout.btn-block.btn-primary {
 .right-col {
     flex: 50%;
     position: relative;
+    display: none;
+
+    @media (min-width:768px) {
+        display: initial;
+    }
 }
 
 .right-img {
@@ -479,7 +484,11 @@ button.btn.btn-checkout.btn-block.btn-primary {
 h5.landing-bodyheader{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
+
+    @media (min-width: 768px){
+        font-size: 50px;
+    }
 }
 
 p.landing-bodyheader{
