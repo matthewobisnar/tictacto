@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 import "./App.scss";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import skullcandyImage from './images/skullcandy.png';
 import nanoleafImage from './images/nanoleaf.jpg';
 import macbookairImage from './images/macbookair.jpg';
@@ -259,37 +259,14 @@ const Dashboard = () => {
 
     let itemTitles = [];
 
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     const landing = document.getElementById('landingId');
-    //     if (landing) {
-    //       landing.style.backgroundImage = `url(${landingpageImage})`;
-    //       landing.style.padding = '25px 120px';
-    //       landing.style.height = '100vh';
-    //       landing.style.marginBottom = '60px';
-    //       landing.style.backgroundRepeat = 'no-repeat';
-    //       landing.style.backgroundSize = 'cover';
-    //       landing.style.backgroundAttachment = 'fixed';
-    //     }
-    // })
-
-    // document.addEventListener('DOMContentLoaded', function () {
-    //     const image = document.createElement('img');
-    //     image.src = landingeagleImage;
-    //     image.alt = 'eagle'
-    //     image.style.marginTop = '55px';
-    //     const rightCol = document.querySelector('.right-col');
-    //     rightCol.appendChild(image);
-    // });
-
-    // document.addEventListener('click', function (event) {
-    //     const target = event.target;
-    //     if (target.classList.contains('shopnow')) {
-    //         const dFlexElement = target.closest('.d-flex');
-    //         if (dFlexElement) {
-    //             dFlexElement.scrollIntoView({ behavior: 'smooth' });
-    //         }
-    //     }
-    // });
+    const buttonRef = useRef(null);
+    const targetRef = useRef(null);
+    
+        const scrollToTarget = () => {
+            if (targetRef.current) {
+                targetRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+        };
 
 
     return (
@@ -327,7 +304,7 @@ const Dashboard = () => {
                             <div className="left-col">
                                 <h5 className="landing-bodyheader">Empowering the world with latest <span className="landing-bodyheader purple">Top Of The Line</span><span className="landing-bodyheader"> Tech</span> </h5>
                                 <p className="landing-bodyheader">Selling High-Quality, State-Of-The-Art Technologies and Equipment Guaranteed To Make Living Your Everyday Life <span className="orange"> 120% </span> Better</p>
-                                <button className="shopnow">Shop Now</button>
+                                <button className="shopnow" onClick={scrollToTarget}>Shop Now</button>
                             </div>
                             <div className="right-col">
                                 <img className="right-img" src={landingeagleImage} alt="Eagle"/>
@@ -342,7 +319,7 @@ const Dashboard = () => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="container-wrapper">
-                            <div className="d-flex">
+                            <div className="d-flex" ref={targetRef}>
                                 <h1 className="firstword-title">Featured</h1>
                                 <h1 className="secondword-title">Products</h1>
                             </div>
