@@ -365,6 +365,7 @@ button.btn.btn-checkout.btn-block.btn-primary {
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
+
 }
 
 .landingwrapper {
@@ -466,6 +467,9 @@ button.btn.btn-checkout.btn-block.btn-primary {
     width: 100%;
     bottom: 0;
     right: 0;
+    @media (max-width: 768px) {
+            display: none;
+      }
 }
 
 h5.landing-bodyheader{
