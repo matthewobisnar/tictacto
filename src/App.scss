@@ -393,13 +393,14 @@ button.btn.btn-checkout.btn-block.btn-primary {
     border-radius: 2px;
     text-transform: uppercase;
     transition: border-bottom 0.5s ease;
+
 }
 
 .landingpage .landing-navbar .active{
     border-bottom: 3px solid #8a2be2;
 }
 
-.landingpage .landing-navbar input{
+.landingpage .landing-navbar .display-flex input{
     box-sizing: border-box;
     font-family: inherit;
     font-size: 16px;
@@ -520,6 +521,83 @@ p.landing-bodyheader{
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
+
+// burger menu
+.desktopnavbar {
+    display: block; 
+    @media (max-width: 768px) {
+        display: none;
+      }
+  }
+
+  .hamburger-menu {
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 20px;
+    transition: background-color 0.3s ease;
+    @media (min-width: 768px) {
+        display: none;
+      }
+  }
+  
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .hamburger-menu:hover{
+    background-color: #6b21af;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 3px;
+    background-color: whitesmoke;
+  }
+  
+  .menu {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    top: 100%;
+    width: 300px;
+    right: 0;
+    background-image: url('/images/landingbg.png');
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    flex-direction: column;
+    border: 1px solid #000000;
+  }
+
+  
+  .open .menu {
+    display: flex;
+  }
+  
+  .landing-navbar .menu button {
+    padding: 10px 20px;
+    border: none;
+    background-color: transparent;
+    color: whitesmoke;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: right;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .menu button:hover {
+    background-color: lighten($color: #6b21af, $amount: 1);
+    color: whitesmoke;
+  }
+  
 
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
