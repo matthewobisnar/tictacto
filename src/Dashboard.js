@@ -269,18 +269,26 @@ const Dashboard = () => {
         };
 
 
-    // Create a boolean variable 'isTrue' with an initial value of 'false'
+    // Toggle Cart
     const [isTrue, setIsTrue] = useState(false);
 
     const toggleValue = () => {
-        console.log('Button clicked'); // Add this line to confirm the button click
+        console.log('Button clicked');
         console.log('Before toggling: isTrue is', isTrue);
         setIsTrue((prevIsTrue) => {
           console.log('Inside toggling: isTrue is', prevIsTrue);
-          return !prevIsTrue; // Toggles the value between true and false
+          return !prevIsTrue;
         });
       };
       
+      //Toggle Homebtn
+    const [isClassRemoved, setIsClassRemoved] = useState(false);
+
+    const handleButtonClick = () => {
+          setIsClassRemoved(true);
+          scrollToTarget();
+        };
+
 
     return (
         <div className="shop-body">
@@ -297,8 +305,8 @@ const Dashboard = () => {
                                     </h1>
                                 </div>
                                 <div>
-                                    <button type="button">Home</button>
-                                    <button type="button" onClick={scrollToTarget}>Products</button>
+                                    <button type="button" className={isClassRemoved ? '' : 'active'}>Home</button>
+                                    <button type="button" onClick={handleButtonClick}>Products</button>
                                     <button type="button">About</button>
                                     <button className="svg-button">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">

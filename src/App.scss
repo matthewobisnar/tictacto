@@ -359,19 +359,9 @@ button.btn.btn-checkout.btn-block.btn-primary {
     z-index: 100;
 }
 
-.landingpage{
- //   height: 100vh;
- //   background-repeat: no-repeat;
- //   background-size: auto;
- //   background-attachment: fixed;
-}
 
 .landingpage p, .landingpage h5, .landingpage h1{
     color: white;
-}
-
-.landingpage h5:first-child{
-    // padding-top: 180px;
 }
 
 .landingpage .purple h5{
@@ -379,7 +369,6 @@ button.btn.btn-checkout.btn-block.btn-primary {
 }
 
 .landingpage h1{
-    // font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 42px;
 }
@@ -387,6 +376,17 @@ button.btn.btn-checkout.btn-block.btn-primary {
 .landing-navbar{
     display: flex;
     justify-content: space-between;
+}
+
+.landingpage .landing-navbar button{
+    color: snow;
+    border: none;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+
+.landingpage .landing-navbar .active{
+    background-color: #8a2be2!important;  
 }
 
 .svg-button {
@@ -412,7 +412,6 @@ button.btn.btn-checkout.btn-block.btn-primary {
     justify-content: center;
 }
 
-/* Style for the right div (40%) */
 .right-col {
     flex: 50%;
     position: relative;
