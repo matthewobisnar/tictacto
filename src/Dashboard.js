@@ -531,7 +531,7 @@ const Dashboard = () => {
                 </div>
             </div>
             
-            <div className="cart-container">
+            <div className="col-md-12">
                 {
                     cartList.length > 0 || isTrue? (
                         <div>
