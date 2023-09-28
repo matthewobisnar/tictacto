@@ -279,7 +279,7 @@ const Dashboard = () => {
           console.log('Inside toggling: isTrue is', prevIsTrue);
           return !prevIsTrue;
         });
-      };
+    };
       
       //Toggle Homebtn
     const [isClassRemoved, setIsClassRemoved] = useState(false);
@@ -531,90 +531,89 @@ const Dashboard = () => {
                 </div>
             </div>
             
-            <div className="col-md-12">
-                {
-                    cartList.length > 0 || isTrue? (
-                        <div>
-                            <div className="card cart-wrapper box-shadow">
-                            <button className="exit-button" onClick={toggleValue}>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
-                                 <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
-                                </svg>
-                               </button>
-                                <div><h4>Your Cart</h4></div>
-                                <div className="shopcart-icon">
-                                    <FiShoppingCart size={28} color="#ffff" />
-                                </div>
-                                <div>
-                                    {
-                                        cartList.map((item, key) => {
-                                            if (!itemTitles.includes(item.title)) {
-                                                itemTitles.push(item.title)
+            <div className="cart">
+            {
+                cartList.length > 0 || isTrue? (
+                    <div className="card cart-wrapper box-shadow">
+                        <button className="exit-button" onClick={toggleValue}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                            </svg>
+                            </button>
+                            <div><h4>Your Cart</h4></div>
+                            <div className="shopcart-icon">
+                                <FiShoppingCart size={28} color="#ffff" />
+                            </div>
+                            <div>
+                                {
+                                    cartList.map((item, key) => {
+                                        if (!itemTitles.includes(item.title)) {
+                                            itemTitles.push(item.title)
 
-                                                keyCounts[item.title] = {
-                                                    title: item.title,
-                                                    quantity: 1,
-                                                    price: item.price * 1,
-                                                    image: item.image,
+                                            keyCounts[item.title] = {
+                                                title: item.title,
+                                                quantity: 1,
+                                                price: item.price * 1,
+                                                image: item.image,
 
 
-                                                };
-                                            } else {
-                                                keyCounts[item.title] = {
-                                                    title: item.title,
-                                                    quantity: parseInt(keyCounts[item.title].quantity) + 1,
-                                                    price: parseInt(item.price) * (parseInt(keyCounts[item.title].quantity) + 1),
-                                                    image: item.image,
+                                            };
+                                        } else {
+                                            keyCounts[item.title] = {
+                                                title: item.title,
+                                                quantity: parseInt(keyCounts[item.title].quantity) + 1,
+                                                price: parseInt(item.price) * (parseInt(keyCounts[item.title].quantity) + 1),
+                                                image: item.image,
 
-                                                };
-                                            }
-                                        })
-                                    }
+                                            };
+                                        }
+                                    })
+                                }
 
-                                    {
-                                        Object.values(keyCounts).map((item, key) => {
-                                            return <div className="cart-items">
+                                {
+                                    Object.values(keyCounts).map((item, key) => {
+                                        return <div className="cart-items">
 
-                                                <div className="cart-img-container"><img src={item.image} /></div>
-                                                <div className="">
-                                                    {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
-                                                </div>
-                                                <div className="">
-                                                    {formatPHPCurrency(item.price)}
-                                                </div>
-                                                <div className="delete-icon">
-                                                    <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
-                                                </div>
+                                            <div className="cart-img-container"><img src={item.image} /></div>
+                                            <div className="">
+                                                {item.title} {item.quantity > 1 ? "x" + item.quantity : ""}
                                             </div>
-
-                                        })
-                                    }
-
-                                    <div className="shopcart-border" />
-                                    <div className="row">
-
-                                        <div className="col-5">
-                                            <b>Total:</b>
-                                        </div>
-                                        <div className="col-7">
-                                            <b>{formatPHPCurrency(total)}</b>
+                                            <div className="">
+                                                {formatPHPCurrency(item.price)}
+                                            </div>
+                                            <div className="delete-icon">
+                                                <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
+                                            </div>
                                         </div>
 
+                                    })
+                                }
+
+                                <div className="shopcart-border" />
+                                <div className="row">
+
+                                    <div className="col-5">
+                                        <b>Total:</b>
                                     </div>
-                                </div>
-                                <div className="container">
-                                    <div>
-                                        <div className="form-group">
-                                            <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
-                                        </div>
-                                        <button onClick={() => checkOut()} type="button">Checkout</button>
+                                    <div className="col-7">
+                                        <b>{formatPHPCurrency(total)}</b>
                                     </div>
+
                                 </div>
                             </div>
+                            
+                            <div>
+                                <div className="form-group">
+                                    <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                </div>
+                                <button onClick={() => checkOut()} type="button">Checkout</button>
+                            </div>
                         </div>
-                    ) : null
-                }
+                ) : null
+            }
             </div>
+            
+           
         </div>
     );
 };
