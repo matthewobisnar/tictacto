@@ -745,6 +745,11 @@ p.landing-bodyheader{
     display: none;
 }
 
+.eagle-head {
+    width: 40px;
+    margin-left: 5px;
+}
+
 .admin-side-nav {
     background-color: #250c3b;
     width: 50px;
@@ -774,7 +779,6 @@ p.landing-bodyheader{
 
     li a {
         flex: none;
-        // font-weight: bold;
         font-size: 14px;
         color: #fff !important;
         display: flex;
@@ -792,6 +796,10 @@ p.landing-bodyheader{
 
         ul, .paragons-logo-admin {
             display: block;
+        }
+
+        .eagle-head {
+            display: none;
         }
     }
 }
