@@ -529,7 +529,7 @@ img.modal-img-top {
 
 .right-img {
     position: absolute;
-    width: 100%;
+    height: 90%;
     bottom: 0;
     right: 0;
     @media (max-width: 768px) {
@@ -679,7 +679,45 @@ p.landing-bodyheader{
     transition: border-bottom 0.5s ease;
   }
   
+//--------------- Login Button
+/* Modal Container */
+.modal {
+    display: none; // Initially set to 'none'
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+  }
 
+  .modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.modal p{
+    color: black;
+}
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
 
