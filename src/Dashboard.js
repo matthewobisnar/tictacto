@@ -34,6 +34,7 @@ const Dashboard = () => {
         {
             title: "Nanoleaf Remote",
             description: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
+            des: "sample",
             priceLabel: "PHP 850",
             price: "850",
             image: nanoleafImage,
@@ -406,8 +407,40 @@ const Dashboard = () => {
         
         const [show, setShow] = useState(false);
 
-        const productHandleClose = () => setShow(false);
-        const productHandleShow = () => setShow(true);
+        let [productModal, setproductModal] = useState([]);
+
+        const productHandleShow = async (title, image, description) => {
+            let data = {
+                "title": title,
+                "image": image,
+                "description": description
+            }
+            setShow(true);
+            socket.emit("join_room", data);
+            productModal.push(data);
+            setproductModal([...productModal]);
+        }
+
+        const productHandleClose = async (key, title) => {
+            let stoploop = false;
+    
+            productModal.forEach((item, cartKey) => {
+    
+                if (!stoploop) {
+                    if (item.title == title) {
+                        productModal.splice(cartKey, 1);
+                        stoploop = true;
+                    }
+                }
+    
+            });
+    
+            setproductModal([...productModal]);
+
+            setShow(false);
+        }
+
+        
           
 
     return (
@@ -507,23 +540,37 @@ const Dashboard = () => {
                                     productList.map((item, key) => {
                                         return <div key={key} className="grid-item">
                                             <div className="card">
-                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={productHandleShow}/>
+                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description)}/>
                                                 
                                                 <div className="productModal">
-                                                    <Modal show={show} onHide={productHandleClose}>
-                                                        <Modal.Header closeButton>
-                                                        <Modal.Title>{item.title}</Modal.Title>
-                                                        </Modal.Header>
-                                                        <Modal.Body>
-                                                            <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
-                                                            {item.description}
-                                                        </Modal.Body>
-                                                        <Modal.Footer>
-                                                        <Button variant="secondary" onClick={productHandleClose}>
-                                                            Close
-                                                        </Button>
-                                                        </Modal.Footer>
-                                                    </Modal>
+                                                    {
+                                                        productModal.map((item, key) => {
+                                                            keyCounts[item.title] = {
+                                                            title: item.title,
+                                                            image: item.image,
+                                                            description: item.description
+                                                            }; 
+                                                        })
+                                                    }
+                                                    {
+                                                        Object.values(keyCounts).map((item, key) => {
+                                                            return <Modal show={show} onHide={() => productHandleClose(key, item.title)}>
+                                                                <Modal.Header closeButton>
+                                                                <Modal.Title>{item.title}</Modal.Title>
+                                                                </Modal.Header>
+                                                                <Modal.Body>
+                                                                    <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
+                                                                    {item.description}
+                                                                </Modal.Body>
+                                                                <Modal.Footer>
+                                                                <Button variant="secondary" onClick={() => productHandleClose(key, item.title)}>
+                                                                    Close
+                                                                </Button>
+                                                                </Modal.Footer>
+                                                            </Modal>
+
+                                                        })
+                                                    }
                                                 </div>
 
                                                 <div className="card-body">
