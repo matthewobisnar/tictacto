@@ -734,6 +734,17 @@ p.landing-bodyheader{
     padding-block: 30px;
 }
 
+
+.paragons-logo-main {
+    height: 70px;
+}
+
+.paragons-logo-admin {
+    height: 30px;
+    margin: 0 0 20px 10px;
+    display: none;
+}
+
 .admin-side-nav {
     background-color: #250c3b;
     width: 50px;
@@ -766,16 +777,6 @@ p.landing-bodyheader{
         font-weight: bold;
         font-size: 16px;
         color: #fff !important;
-    }
-
-    .paragons-logo-main {
-        height: 70px;
-    }
-    
-    .paragons-logo-admin {
-        height: 30px;
-        margin: 0 0 20px 10px;
-        display: none;
     }
 
     &:hover {
