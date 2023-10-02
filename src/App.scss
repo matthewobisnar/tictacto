@@ -740,7 +740,7 @@ p.landing-bodyheader{
 }
 
 .paragons-logo-admin {
-    height: 30px;
+    height: 40px;
     margin: 0 0 20px 10px;
     display: none;
 }
@@ -763,7 +763,7 @@ p.landing-bodyheader{
 
     li {
         display: flex;
-        padding: 10px 20px;
+        padding: 15px 20px;
         transition: .5s cubic-bezier(.19,1,.22,1);
         cursor: pointer;
 
@@ -774,13 +774,21 @@ p.landing-bodyheader{
 
     li a {
         flex: none;
-        font-weight: bold;
-        font-size: 16px;
+        // font-weight: bold;
+        font-size: 14px;
         color: #fff !important;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-left: 10px;
+
+        svg path{
+            stroke: #fff;
+        }
     }
 
     &:hover {
-        width: 250px;
+        width: 300px;
 
         ul, .paragons-logo-admin {
             display: block;
