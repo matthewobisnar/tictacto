@@ -10,10 +10,6 @@
     font-family: 'Public Sans', sans-serif;
 }
 
-.paragons-logo-main {
-    height: 70px;
-}
-
 //zach uses this pls
 .purple{
     color: #8a2be2!important;
@@ -739,7 +735,7 @@ p.landing-bodyheader{
 }
 
 .admin-side-nav {
-    background-color: #8a2be2;
+    background-color: #250c3b;
     width: 50px;
     position: absolute;
     left: 0;
@@ -761,7 +757,7 @@ p.landing-bodyheader{
         cursor: pointer;
 
         &:hover {
-            background-color: #250c3b;
+            background-color: #8a2be2;
         }
     }
 
@@ -772,10 +768,20 @@ p.landing-bodyheader{
         color: #fff !important;
     }
 
+    .paragons-logo-main {
+        height: 70px;
+    }
+    
+    .paragons-logo-admin {
+        height: 30px;
+        margin: 0 0 20px 10px;
+        display: none;
+    }
+
     &:hover {
         width: 250px;
 
-        ul {
+        ul, .paragons-logo-admin {
             display: block;
         }
     }

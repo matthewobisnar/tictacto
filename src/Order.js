@@ -48,6 +48,7 @@ const Order = () => {
         <>
             <div className="shop order-body">
                 <div class="admin-side-nav">
+                    <img className="paragons-logo-admin" src={paragonsLogo} alt="Eagle"/>
                     <ul>
                         <li><a >Orders List</a></li>
                         <li><a >Registered Users</a></li>
