@@ -33,85 +33,96 @@ const Dashboard = () => {
     let productList = [
         {
             title: "Nanoleaf Remote",
-            description: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
-            des: "sample",
+            characterization: "Colour-changing, modular, smart light panels you can control with your voice, touch buttons, or the Nanoleaf App.",
+            description: "The Nanoleaf Remote is a product from Nanoleaf, a company known for its innovative smart lighting solutions. The Nanoleaf Remote is a unique and stylish device designed to control Nanoleaf light panels and other smart home devices. The Nanoleaf Remote has a distinctive dodecahedron shape, resembling a twelve-sided polygon. It is made of smooth, white plastic with touch-sensitive sides that allow you to interact with it.",
             priceLabel: "PHP 850",
             price: "850",
             image: nanoleafImage,
         },
         {
             title: "SkullCandy Earbuds",
-            description: "The Indy True Wireless Earbuds by Skullcandy combine premium sound quality and a great design.",
+            characterization: "The Indy True Wireless Earbuds by Skullcandy combine premium sound quality and a great design.",
+            description: "Skullcandy is a well-known brand that produces a variety of audio products, including earbuds. Skullcandy earbuds are popular for their stylish designs, affordable pricing, and decent audio quality. Skullcandy earbuds come in various designs and colors, catering to different style preferences. They often feature the iconic skull logo on the earpieces.",
             priceLabel: "PHP 3300",
             price: "3300",
             image: skullcandyImage,
         },
         {
             title: "Macbook Air",
-            description: "13-inch MacBook Air laptop supercharged by the M2 chip. All-day battery life and strikingly thin design.",
+            characterization: "13-inch MacBook Air laptop supercharged by the M2 chip. All-day battery life and strikingly thin design.",
+            description: "The MacBook Air is a line of lightweight and thin laptop computers developed and manufactured by Apple Inc. Since its initial release, the MacBook Air has become a popular choice for users seeking portability, sleek design, and reliable performance. The MacBook Air is known for its iconic thin and light design. It features an aluminum unibody construction, which not only adds to its durability but also gives it a premium look and feel.",
             priceLabel: "PHP 83,000",
             price: "83000",
             image: macbookairImage,
         },
         {
             title: "Oculus Quest",
-            description: "The first-generation Oculus Quest is a discontinued virtual reality headset developed by Oculus.",
+            characterization: "The first-generation Oculus Quest is a discontinued virtual reality headset developed by Oculus.",
+            description: "The Oculus Quest is a line of virtual reality (VR) headsets developed by Oculus, a subsidiary of Facebook (now Meta Platforms, Inc.). The Quest series is designed to provide a standalone VR experience, meaning it doesn't require a connected PC or external sensors to function. The Oculus Quest offers a wireless VR experience, allowing users to enjoy VR content without the need for a wired connection to a computer. This makes it more accessible and user-friendly.",
             priceLabel: "PHP 45,512",
             price: "45512",
             image: vrcontrollerImage,
         },
         {
             title: "Ipad Air Wi-Fi",
-            description: "Apple's 2022 iPad Air is the epitome of a mobile tablet, with a nearly perfect balance of features and performance.",
+            characterization: "Apple's 2022 iPad Air is the epitome of a mobile tablet, with a nearly perfect balance of features and performance.",
+            description: "The iPad Air is a line of tablet computers developed by Apple Inc. It is known for its balance between performance, features, and portability. The iPad Air typically features a sleek and thin design with a premium aluminum body. It's known for its lightweight build, making it easy to carry around. It is powered by Apple's custom-designed processors, which are known for their performance and efficiency. The specific chip may vary by generation, but they tend to offer smooth multitasking and app performance.",
             priceLabel: "PHP 39,000",
             price: "39000",
             image: ipadAirImage,
         },
         {
             title: "PS5 DualSense Controller",
-            description: "Meet the DualSense wireless controller featuring haptic feedback, adaptive triggers and an iconic new design.",
+            characterization: "Meet the DualSense wireless controller featuring haptic feedback, adaptive triggers and an iconic new design.",
+            description: "The PlayStation 5 (PS5) DualSense controller is the primary game controller designed for use with Sony's PlayStation 5 gaming console. Released alongside the PS5 in November 2020, the DualSense controller represents a significant upgrade over its predecessor, the DualShock 4, and introduces several innovative features. The DualSense controller features a fresh and modern design compared to previous PlayStation controllers. It has a two-tone color scheme, built-in LED lighting, and a larger and more ergonomic shape for comfortable gaming.",
             priceLabel: "PHP 3,450",
             price: "3450",
             image: controllerImage,
         },
         {
             title: "Samsung Odyssey",
-            description: "Get your head in the game with the 55” curved display, featuring 4K resolution, which matches the curve of the human eye.",
+            characterization: "Get your head in the game with the 55” curved display, featuring 4K resolution, which matches the curve of the human eye.",
+            description: "Samsung has a line of gaming monitors known as the Samsung Odyssey series. These monitors are designed to provide high refresh rates, low response times, and features tailored for gaming. Some of the common features you might find in Samsung Odyssey gaming monitors include curved screens, QLED panels for vibrant colors, and support for high resolutions like QHD (Quad High Definition) or 4K. Samsung has also ventured into the realm of virtual reality (VR) with the Samsung Odyssey series of VR headsets.",
             priceLabel: "PHP 125,000",
             price: "125000",
             image: samsungOdysseyImage,
         },
         {
             title: "Iphone 12",
-            description: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
+            characterization: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
+            description: "The iPhone 12 features a flat-edge design reminiscent of the iPhone 4 and 5, with an aluminum frame and a glass front and back. It's available in multiple colors, including black, white, red, green, and blue. It comes with a Super Retina XDR display, which offers excellent color accuracy and high brightness levels. It is available in two sizes: a 6.1-inch display for the standard iPhone 12 and a 5.4-inch display for the iPhone 12 mini. It was the first iPhone to support 5G connectivity, allowing for faster data speeds and improved network performance in areas with 5G coverage.",
             priceLabel: "PHP 44,570",
             price: "44570",
             image: iphone12Image,
         },
         {
             title: "Lenovo Laptop Bag",
-            description: "A 17 inches Armored Backpack II that utilizes a water-repellent fabric and a clean, streamlined design to create a case that's suited to modern life and aesthetic approach.",
+            characterization: "A 17 inches Armored Backpack II that utilizes a water-repellent fabric and a clean, streamlined design to create a case that's suited to modern life and aesthetic approach.",
+            description: "Lenovo laptop backpacks are a popular choice for users who need a comfortable and hands-free way to carry their laptops and other essentials. They typically have dedicated padded compartments to securely hold laptops of various sizes. Many Lenovo backpacks also offer additional pockets and compartments for organization and storage of accessories, such as chargers, cables, and notebooks. Lenovo also manufactures specialized gaming laptop backpacks designed to accommodate gaming laptops, gaming accessories, and gaming gear. These bags often have a distinctive gaming-inspired design.",
             priceLabel: "PHP 3,472",
             price: "3472",
             image: lenovoLaptopBagImage,
         },
         {
             title: "Fortnite The Raven Cosplay Hoodie",
-            description: "A polyester cotton with thin fleece, soft and comfortable, the power of Raven is unleashed.",
+            characterization: "A polyester cotton with thin fleece, soft and comfortable, the power of Raven is unleashed.",
+            description: "The Raven Cosplay Hoodie is a piece of clothing inspired by the popular video game Fortnite. Raven is a Legendary Outfit in Battle Royale that can be purchased from the Item Shop. The Iron Cage Back Bling is bundled with this Outfit. It is considered as one of the most popular character skin in the online multiplayer game Fortnite, known for its mysterious and dark appearance. It is a cool jet-black leather outfit with ragged feather-like details that resembles that of a raven. ",
             priceLabel: "PHP 1,975",
             price: "1975",
             image: forniteHoodieImage,
         },
         {
-            title: "NPKC Doubleshot Sidelit Keycaps",
-            description: "Standard ANSI Keycaps are truly unique gradual color gradient with charming appearance.",
+            title: "NPKC Doubleshot Sidelit Keycaps",   
+            characterization: "Standard ANSI Keycaps are truly unique gradual color gradient with charming appearance.",
+            description: "NPKC Doubleshot Sidelit Keycaps are specialized keycaps designed for mechanical keyboards. They are known for their unique feature of allowing light from the keyboard's backlighting to shine through the sides of the keycaps, creating a visually striking and vibrant lighting effect. What sets NPKC Doubleshot Sidelit Keycaps apart is their unique design that allows for sidelit illumination. Unlike standard keycaps that only let light shine through the top, these keycaps have translucent sides that allow light to emit from the sides, creating a glow around each key. This design adds a beautiful and eye-catching element to your keyboard's RGB lighting.",
             priceLabel: "PHP 1,250",
             price: "1250",
             image: keyboardImage,
         },
         {
             title: "Govee - Hexa Wall Light Panels",
-            description: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category. It is composed of 7/10 panels that can be assorted into various shapes.",
+            characterization: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category. It is composed of 7/10 panels that can be assorted into various shapes.",
+            description: "Govee Hexa Wall Light Panels are a product offered by Govee, a company specializing in smart home lighting solutions. These Hexa Wall Light Panels are designed to provide customizable and dynamic lighting effects for your home or workspace. Each hexagonal panel contains RGB (Red, Green, Blue) LED lights, which can produce a wide spectrum of colors. You can choose from millions of colors to create different lighting moods and atmospheres. These light panels are typically smart-enabled and can be controlled using a mobile app. Through the app, you can change colors, adjust brightness, set up lighting schedules, and choose from various pre-programmed lighting effects.",
             priceLabel: "PHP 6,500",
             price: "6500",
             image: lightpanelsImage,
@@ -409,11 +420,11 @@ const Dashboard = () => {
 
         let [productModal, setproductModal] = useState([]);
 
-        const productHandleShow = async (title, image, description) => {
+        const productHandleShow = async (title, image, characterization) => {
             let data = {
                 "title": title,
                 "image": image,
-                "description": description
+                "description": characterization
             }
             setShow(true);
             socket.emit("join_room", data);
@@ -607,7 +618,7 @@ const Dashboard = () => {
                                                 <div className="card-body">
                                                     <h5 className="card-title">{item.title}</h5>
                                                     <div className="inner-card-text">
-                                                        <p className="card-text">{item.description}</p>
+                                                        <p className="card-text">{item.characterization}</p>
                                                         <div className="rate">
                                                             <input type="radio" id="star5" name="rate" value="5" />
                                                             <label for="star5" title="text">5 stars</label>

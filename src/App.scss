@@ -388,10 +388,10 @@ button.btn.btn-checkout.btn-block.btn-primary {
 }
 
 /* Product List Modal */
-// .modal-backdrop {
-//     --bs-backdrop-bg: white !important;
-//     --bs-backdrop-opacity: 5% !important;
-// }
+.modal-backdrop {
+    --bs-backdrop-bg: white !important;
+    --bs-backdrop-opacity: 5% !important;
+}
 
 .modal-content {
     border: none;
