@@ -51,10 +51,6 @@
     color: white;
 }
 
-.order-body {
-    padding: 20px;
-}
-
 .card-body {
     padding: 10px 10px 10px 0px !important;
 }
@@ -336,6 +332,11 @@ button.btn.btn-checkout.btn-block.btn-primary {
 
 // Order Page
 .order-body {
+    display: flex;
+    flex-direction: row;    
+    padding-left: 50px;
+    position: relative;
+
     .list-group .list-group-item {
         padding: 24px;
         border: 1px solid #bdb6c4;
@@ -718,6 +719,50 @@ p.landing-bodyheader{
 .modal p{
     color: black;
 }
+
+// Admin Page
+.admin-content {
+    width: 100%;
+    padding-block: 30px;
+}
+
+.admin-side-nav {
+    background-color: #8a2be2;
+    width: 50px;
+    position: absolute;
+    left: 0;
+    height: 100%;
+    z-index: 150;
+    padding-top: 20px;
+    transition: width 0.5s ease, height 0.5s ease, background-color 0.3s ease-in-out;
+    overflow-x: hidden;
+
+    ul {
+        display: none;
+    }
+
+    li {
+        display: flex;
+        margin-block: 10px;
+        transition: .5s cubic-bezier(.19,1,.22,1);
+        cursor: pointer;
+    }
+
+    li a {
+        flex: none;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    &:hover {
+        width: 240px;
+
+        ul {
+            display: block;
+        }
+    }
+}
+
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
 

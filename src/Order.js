@@ -47,9 +47,16 @@ const Order = () => {
     return (
         <>
             <div className="shop order-body">
+                <div class="admin-side-nav">
+                    <ul>
+                        <li><a >Orders List</a></li>
+                        <li><a >Registered Users</a></li>
+                        <li><a >Most Viewable Products</a></li>
+                    </ul>
+                </div>
                 <div className="container section">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="admin-content">
                             <div className="d-flex">
                                 <h1 className="firstword-title">Order</h1>
                                 <h1 className="secondword-title">List</h1>
