@@ -573,7 +573,7 @@ const Dashboard = () => {
                                             <div className="card">
                                                 <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description)}/>
                                                 
-                                                <div className="productModal">
+                                                <div className="productmodal">
                                                     {
                                                         productModal.map((item, key) => {
                                                             keyCounts[item.title] = {
@@ -585,21 +585,21 @@ const Dashboard = () => {
                                                     }
                                                     {
                                                         Object.values(keyCounts).map((item, key) => {
-                                                            return <Modal show={show} onHide={() => productHandleClose(key, item.title)}>
-                                                                <Modal.Header closeButton>
-                                                                <Modal.Title>{item.title}</Modal.Title>
-                                                                </Modal.Header>
-                                                                <Modal.Body>
-                                                                    <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
-                                                                    {item.description}
-                                                                </Modal.Body>
-                                                                <Modal.Footer>
-                                                                <Button variant="secondary" onClick={() => productHandleClose(key, item.title)}>
-                                                                    Close
-                                                                </Button>
-                                                                </Modal.Footer>
-                                                            </Modal>
-
+                                                            return <div className="product-item-modal"> <Modal show={show} onHide={() => productHandleClose(key, item.title)}>
+                                                                    <Modal.Header closeButton>
+                                                                    <Modal.Title>{item.title}</Modal.Title>
+                                                                    </Modal.Header>
+                                                                    <Modal.Body>
+                                                                        <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
+                                                                        {item.description}
+                                                                    </Modal.Body>
+                                                                    <Modal.Footer>
+                                                                    <Button variant="secondary" onClick={() => productHandleClose(key, item.title)}>
+                                                                        Close
+                                                                    </Button>
+                                                                    </Modal.Footer>
+                                                                </Modal>
+                                                            </div>
                                                         })
                                                     }
                                                 </div>

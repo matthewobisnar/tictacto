@@ -387,21 +387,17 @@ button.btn.btn-checkout.btn-block.btn-primary {
 }
 
 /* Product List Modal */
-.modal-backdrop {
-    --bs-backdrop-bg: white !important;
-    --bs-backdrop-opacity: 5% !important;
-}
+// .modal-backdrop {
+//     --bs-backdrop-bg: white !important;
+//     --bs-backdrop-opacity: 5% !important;
+// }
 
-.productModal .modal-content {
+.modal-content {
     border: none;
 }
 
-.productModal .modal-header {
+.modal-header {
     background: #8a2be2;
-}
-
-.productModal .modal-body {
-    display: flex !important;
 }
 
 img.modal-img-top {
