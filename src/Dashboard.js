@@ -15,6 +15,7 @@ import keyboardImage from './images/keyboard.jpg';
 import lightpanelsImage from './images/lightpanel.jpg';
 import landingpageImage from './images/landingbg.png';
 import landingeagleImage from './images/landingeagle.png';
+import paragonsLogo from './images/paragons-logo.png';
 
 import { Button } from 'react-bootstrap';
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -476,9 +477,11 @@ const Dashboard = () => {
                         <div className="landingwrapper">
                             <div className="landing-navbar">
                                 <div className="display-flex">
-                                    <h1 className="landing-header">Paragon
+                                    {/* <h1 className="landing-header">Paragon
                                         <span className="purple">Hub</span>
-                                    </h1>
+                                    </h1> */}
+                                    
+                                    <img className="paragons-logo-main" src={paragonsLogo} alt="Eagle"/>
                                 </div>
                                 <div className="display-flex desktopnavbar">
                                     <button type="button" className={isClassRemoved ? '' : ''}>Home</button>

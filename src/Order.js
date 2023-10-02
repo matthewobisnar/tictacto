@@ -1,7 +1,7 @@
 import io from "socket.io-client";
 import "./App.scss";
 import React, { useEffect, useState } from "react";
-
+import paragonsLogo from './images/paragons-logo.png';
 import CollapsibleList from "./CollapsibleList";
 const socket = io.connect("http://localhost:3002");
 
