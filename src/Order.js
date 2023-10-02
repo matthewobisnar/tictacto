@@ -51,7 +51,7 @@ const Order = () => {
                     <ul>
                         <li><a >Orders List</a></li>
                         <li><a >Registered Users</a></li>
-                        <li><a >Most Viewable Products</a></li>
+                        <li><a >Most Viewed Products</a></li>
                     </ul>
                 </div>
                 <div className="container section">
