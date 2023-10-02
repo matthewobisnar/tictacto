@@ -602,13 +602,10 @@ const Dashboard = () => {
                                                                     </Modal.Header>
                                                                     <Modal.Body>
                                                                         <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
-                                                                        {item.description}
+                                                                        <div className="modal-description">
+                                                                            {item.description}
+                                                                        </div>
                                                                     </Modal.Body>
-                                                                    <Modal.Footer>
-                                                                    <Button variant="secondary" onClick={() => productHandleClose(key, item.title)}>
-                                                                        Close
-                                                                    </Button>
-                                                                    </Modal.Footer>
                                                                 </Modal>
                                                             </div>
                                                         })
