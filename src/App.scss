@@ -32,6 +32,7 @@
     background: #fff;
     font-family: 'Public Sans', sans-serif;
     position: relative;
+    transition: border-bottom 0.5s ease;
 }
 
 
@@ -58,10 +59,32 @@
     padding: 10px 10px 10px 0px !important;
 }
 
-.cart-wrapper {
+.cart {
+    position: relative;
+
+    .cart-wrapper .exit-button{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: transparent!important;
+        border: none;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.card.cart-wrapper {
     font-size:10pt;
     background: #fff;
     padding: 30px;
+    width: 100%;
+    z-index: 110;
+    border-radius: 0;
 
     h4 {
         border-bottom: 1px solid #b1b1b1;
@@ -86,6 +109,14 @@
 
     .delete-icon {
         cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 400px;
+        border-radius: 8px;
     }
 }
 
@@ -143,18 +174,13 @@
 
     .cart-img-container img {
         width: 100%;
-        height: 40px;
+        height: 60px;
         object-fit: cover;
-    }
-}
 
-.exit-button{
-    position: absolute;
-    top: -15px;
-    left: 175px;
-    background: transparent!important;
-    border: none!important;
-    width: 10px;
+        @media (min-width: 768px){
+            height: 40px;
+        }
+    }
 }
 
 // New Css
@@ -165,7 +191,7 @@
 }
 
 .grid-item {
-    flex-basis: calc(25% - 20px);
+    flex-basis: auto;
     margin: 10px 10px 20px;
     height: 100%;
 
@@ -181,6 +207,10 @@
         border-radius: 8px;
     
     }
+
+    @media (min-width: 768px) {
+        flex-basis: calc(25% - 20px);
+  }
 } 
 
 .add-to-cart {
@@ -324,7 +354,7 @@ button.btn.btn-checkout.btn-block.btn-primary {
 }
 
 .items-container {
-    box-shadow: 0 0 0 1px #c495f0;
+    background-color: #eddffa;
     border-radius: 0.375rem;
     padding: 5px 10px;    
     width: 100%;
@@ -347,7 +377,7 @@ button.btn.btn-checkout.btn-block.btn-primary {
 
 .order-counter {
     span {
-        background-color: #c495f0;
+        background-color: #eddffa;
         border-radius: 0.375rem;
         padding: 5px 10px;
         color: #250c3b;
@@ -365,6 +395,7 @@ button.btn.btn-checkout.btn-block.btn-primary {
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
+
 }
 
 .landingwrapper {
@@ -459,6 +490,11 @@ button.btn.btn-checkout.btn-block.btn-primary {
 .right-col {
     flex: 50%;
     position: relative;
+    display: none;
+
+    @media (min-width:768px) {
+        display: initial;
+    }
 }
 
 .right-img {
@@ -466,12 +502,19 @@ button.btn.btn-checkout.btn-block.btn-primary {
     width: 100%;
     bottom: 0;
     right: 0;
+    @media (max-width: 768px) {
+            display: none;
+      }
 }
 
 h5.landing-bodyheader{
     font-family: 'Poppins', sans-serif;
     font-weight: bold;
-    font-size: 50px;
+    font-size: 40px;
+
+    @media (min-width: 768px){
+        font-size: 50px;
+    }
 }
 
 p.landing-bodyheader{
@@ -600,6 +643,10 @@ p.landing-bodyheader{
   .menu button:hover {
     background-color: lighten($color: #6b21af, $amount: 1);
     color: whitesmoke;
+  }
+
+  .container-wrapper {
+    transition: border-bottom 0.5s ease;
   }
   
 
