@@ -205,6 +205,7 @@
         height: 250px;
         object-fit: cover;
         border-radius: 8px;
+        cursor: pointer;
     
     }
 
@@ -383,6 +384,31 @@ button.btn.btn-checkout.btn-block.btn-primary {
         color: #250c3b;
         font-size: 14px;
     }
+}
+
+/* Product List Modal */
+.modal-backdrop {
+    --bs-backdrop-bg: white !important;
+    --bs-backdrop-opacity: 5% !important;
+}
+
+.productModal .modal-content {
+    border: none;
+}
+
+.productModal .modal-header {
+    background: #8a2be2;
+}
+
+.productModal .modal-body {
+    display: flex !important;
+}
+
+img.modal-img-top {
+    object-fit: cover;
+    border-radius: 8px;
+    width: 100% !important;
+    height: 250px !important;
 }
 
 //--------------------------- Dashboard ------------------

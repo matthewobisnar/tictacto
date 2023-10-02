@@ -21,6 +21,8 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
 import { Link } from "@mui/material";
 
+import Modal from 'react-bootstrap/Modal';
+
 
 const socket = io.connect("http://localhost:3002");
 
@@ -287,7 +289,7 @@ const Dashboard = () => {
     const handleButtonClick = () => {
           setIsClassRemoved(true);
           scrollToTarget();
-        };
+    };
 
 
     //Search
@@ -401,6 +403,13 @@ const Dashboard = () => {
           setIsOpen(!isOpen);
         };
 
+        
+        const [show, setShow] = useState(false);
+
+        const productHandleClose = () => setShow(false);
+        const productHandleShow = () => setShow(true);
+          
+
     return (
         <div className="shop-body">
 
@@ -498,7 +507,25 @@ const Dashboard = () => {
                                     productList.map((item, key) => {
                                         return <div key={key} className="grid-item">
                                             <div className="card">
-                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" />
+                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={productHandleShow}/>
+                                                
+                                                <div className="productModal">
+                                                    <Modal show={show} onHide={productHandleClose}>
+                                                        <Modal.Header closeButton>
+                                                        <Modal.Title>{item.title}</Modal.Title>
+                                                        </Modal.Header>
+                                                        <Modal.Body>
+                                                            <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
+                                                            {item.description}
+                                                        </Modal.Body>
+                                                        <Modal.Footer>
+                                                        <Button variant="secondary" onClick={productHandleClose}>
+                                                            Close
+                                                        </Button>
+                                                        </Modal.Footer>
+                                                    </Modal>
+                                                </div>
+
                                                 <div className="card-body">
                                                     <h5 className="card-title">{item.title}</h5>
                                                     <div className="inner-card-text">
@@ -620,3 +647,5 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
