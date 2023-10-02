@@ -23,7 +23,6 @@ import { Link } from "@mui/material";
 
 import Modal from 'react-bootstrap/Modal';
 
-
 const socket = io.connect("http://localhost:3002");
 
 const Dashboard = () => {
