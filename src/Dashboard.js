@@ -420,11 +420,12 @@ const Dashboard = () => {
 
         let [productModal, setproductModal] = useState([]);
 
-        const productHandleShow = async (title, image, characterization) => {
+        const productHandleShow = async (title, image, description, price) => {
             let data = {
                 "title": title,
                 "image": image,
-                "description": characterization
+                "description": description,
+                "price": price
             }
             setShow(true);
             socket.emit("join_room", data);
@@ -585,7 +586,7 @@ const Dashboard = () => {
                                     productList.map((item, key) => {
                                         return <div key={key} className="grid-item">
                                             <div className="card">
-                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description)}/>
+                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description, item.price)}/>
                                                 
                                                 <div className="productmodal">
                                                     {
@@ -593,7 +594,8 @@ const Dashboard = () => {
                                                             keyCounts[item.title] = {
                                                             title: item.title,
                                                             image: item.image,
-                                                            description: item.description
+                                                            description: item.description,
+                                                            price: item.price
                                                             }; 
                                                         })
                                                     }
@@ -605,8 +607,32 @@ const Dashboard = () => {
                                                                     </Modal.Header>
                                                                     <Modal.Body>
                                                                         <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
-                                                                        <div className="modal-description">
-                                                                            {item.description}
+                                                                        <div className="productstar">
+                                                                            <div className="rate">
+                                                                                <input type="radio" id="star5" name="rate" value="5" />
+                                                                                <label for="star5" title="text">5 stars</label>
+                                                                                <input type="radio" id="star4" name="rate" value="4" />
+                                                                                <label for="star4" title="text">4 stars</label>
+                                                                                <input type="radio" id="star3" name="rate" value="3" />
+                                                                                <label for="star3" title="text">3 stars</label>
+                                                                                <input type="radio" id="star2" name="rate" value="2" />
+                                                                                <label for="star2" title="text">2 stars</label>
+                                                                                <input type="radio" id="star1" name="rate" value="1" />
+                                                                                <label for="star1" title="text">1 star</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr></hr>
+                                                                            <div className="modal-description">
+                                                                                {item.description}
+                                                                            </div>
+                                                                        <hr></hr>
+                                                                        <div className="modal-pricing">
+                                                                            <div className="left-part">
+                                                                                <p>Price: <b className="text-price">{formatPHPCurrency(item.price)}</b> </p>
+                                                                            </div>
+                                                                            <div className="right-part">
+                                                                                <Button onClick={() => addToCart(item.title, item.price, item.image)} variant="primary">Add to cart</Button>
+                                                                            </div>
                                                                         </div>
                                                                     </Modal.Body>
                                                                 </Modal>

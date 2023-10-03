@@ -424,6 +424,33 @@ img.modal-img-top {
     color: white;
 }
 
+.modal-pricing {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productstar .rate {
+    justify-content: center;
+}
+
+.left-part .text-price {
+    display: contents !important;
+}
+
+.right-part .btn {
+    background-color: white;
+    border: 3px solid #8a2be2;
+    color: #8a2be2;
+    font-family: Andale Mono, monospace !important;
+}
+
+.right-part .btn:hover {
+    background-color: #8a2be2;
+    border: 3px solid #8a2be2;
+    color: white;
+    font-family: Andale Mono, monospace !important;
+}
+
 //--------------------------- Dashboard ------------------
 #landingId {
     background-image: url('/images/landingbg.png');
