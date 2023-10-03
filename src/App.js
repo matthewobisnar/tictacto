@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const App = () => {
 
     return (
-        <div>
+        <div className="main">
             <Switch>
                 <Route exact path="/" component={Dashboard} />
                 <Route path="/dashboard" component={Dashboard} />
