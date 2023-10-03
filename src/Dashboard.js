@@ -620,7 +620,7 @@ const Dashboard = () => {
                             </button>
                                 <div className="header">
                                 <div className="text">Login</div>
-                                <p>Become a member and get the latest updates of the latest pieces of tech on stock!</p>
+                                <p>Join us and stay up-to-date with the latest in-stock tech innovations!</p>
                                 <div className="underline"></div>
                                 </div>
                                 <div className="inputs">
@@ -633,8 +633,9 @@ const Dashboard = () => {
                                         <input type="password" placeholder="Password"/>
                                     </div>
                                     <div className="border-bottom-grey">
-                                    <button className="modal-button">Login</button>
+                                    <button className="modal-button shopnow">Login</button>
                                     </div></div>
+                                    <p>Haven't joined yet?</p>
                                     <span className="create" onClick={openSignUpModal} style={{ cursor: 'pointer' }}>Create an account</span>
                                 </div>
                             </div>

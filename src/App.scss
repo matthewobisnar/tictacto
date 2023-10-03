@@ -762,7 +762,13 @@ p.landing-bodyheader{
     text-align: center;
     position:relative;
 }
-
+.modal-card p{
+    width: 380px;
+    font-size: 16px;
+}
+.modal-card p:last-child {
+    margin-bottom: -20px;
+}
 .modal-card .exit-button{
     position: absolute;
     top: 0;
@@ -822,6 +828,9 @@ p.landing-bodyheader{
     font-style: underline;
     font-family: "Poppins", sans-serif;
 }
+.create:hover{
+    color: rgb(196, 4, 196);
+}
 
 .input{
     display: flex;
@@ -856,6 +865,11 @@ p.landing-bodyheader{
     width: 218px;
     border-radius: 50px
 }
+.border-bottom-grey .shopnow{
+    width: 380px;
+    text-transform: uppercase!important;
+}
+
 // Admin Page
 .admin-content {
     width: 100%;
