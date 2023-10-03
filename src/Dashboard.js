@@ -635,7 +635,7 @@ const Dashboard = () => {
                                                                     </Modal.Header>
                                                                     <Modal.Body>
                                                                         <div className="video-player">
-                                                                            <video height="250" controls autoPlay loop>
+                                                                            <video height="250" controls loop autoPlay muted>
                                                                                 <source src={item.video} type="video/mp4" />
                                                                                 Your browser does not support the video tag.
                                                                             </video>
