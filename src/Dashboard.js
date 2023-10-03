@@ -556,7 +556,7 @@ const Dashboard = () => {
                                 <img className="right-img" src={landingeagleImage} alt="Eagle"/>
                             </div>
                         </div>
-
+                        <div className="modal-login">
                         {showLoginModal && (
                             <div className={`modal ${showLoginModal ? 'active' : ''}`}>
                                 <div className="modal-card">
@@ -566,6 +566,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         )}
+                        </div>
                     </div>
                 </div>
             </div>

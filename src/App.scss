@@ -690,7 +690,7 @@ p.landing-bodyheader{
   
 //--------------- Login Button
 /* Modal Container */
-.modal {
+.modal-login .modal {
     display: none; // Initially set to 'none'
     position: fixed;
     top: 0;
@@ -699,15 +699,15 @@ p.landing-bodyheader{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
-  }
+}
 
-  .modal.active {
+.modal.active {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .modal-card {
+.modal-card {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
