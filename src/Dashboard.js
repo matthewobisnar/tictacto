@@ -13,6 +13,20 @@ import lenovoLaptopBagImage from './images/lenovoLaptopBag.jpg';
 import forniteHoodieImage from './images/forniteHoodie.jpg';
 import keyboardImage from './images/keyboard.jpg';
 import lightpanelsImage from './images/lightpanel.jpg';
+import nanoleafVideo from './images/nanoleaf-remote.mp4';
+import skullcandyVideo from './images/skullcandy.mp4';
+import macbookairVideo from './images/macbookair.mp4';
+import oculusquestVideo from './images/oculusquest.mp4';
+import ipadairVideo from './images/ipadair.mp4';
+import dualsenseVideo from './images/dualsensecontroller.mp4';
+import samsungodysseyVideo from './images/odyssey.mp4';
+import iphone12Video from './images/iphone12.mp4';
+import lenovolaptopbagVideo from './images/lenovobag.mp4';
+import forniteraveVideo from './images/fornitetheraven.mp4';
+import npckkeyboardVideo from './images/npkckeyboard.mp4';
+import goveelightpanelsVideo from './images/goveelightpanels.mp4';
+
+
 import landingpageImage from './images/landingbg.png';
 import landingeagleImage from './images/landingeagle.png';
 import paragonsLogo from './images/paragons-logo.png';
@@ -41,6 +55,7 @@ const Dashboard = () => {
             priceLabel: "PHP 850",
             price: "850",
             image: nanoleafImage,
+            video: nanoleafVideo
         },
         {
             title: "SkullCandy Earbuds",
@@ -49,6 +64,7 @@ const Dashboard = () => {
             priceLabel: "PHP 3300",
             price: "3300",
             image: skullcandyImage,
+            video: skullcandyVideo
         },
         {
             title: "Macbook Air",
@@ -57,6 +73,7 @@ const Dashboard = () => {
             priceLabel: "PHP 83,000",
             price: "83000",
             image: macbookairImage,
+            video: macbookairVideo
         },
         {
             title: "Oculus Quest",
@@ -65,6 +82,7 @@ const Dashboard = () => {
             priceLabel: "PHP 45,512",
             price: "45512",
             image: vrcontrollerImage,
+            video: oculusquestVideo
         },
         {
             title: "Ipad Air Wi-Fi",
@@ -73,6 +91,7 @@ const Dashboard = () => {
             priceLabel: "PHP 39,000",
             price: "39000",
             image: ipadAirImage,
+            video: ipadairVideo
         },
         {
             title: "PS5 DualSense Controller",
@@ -81,6 +100,7 @@ const Dashboard = () => {
             priceLabel: "PHP 3,450",
             price: "3450",
             image: controllerImage,
+            video: dualsenseVideo
         },
         {
             title: "Samsung Odyssey",
@@ -89,6 +109,7 @@ const Dashboard = () => {
             priceLabel: "PHP 125,000",
             price: "125000",
             image: samsungOdysseyImage,
+            video: samsungodysseyVideo
         },
         {
             title: "Iphone 12",
@@ -97,6 +118,7 @@ const Dashboard = () => {
             priceLabel: "PHP 44,570",
             price: "44570",
             image: iphone12Image,
+            video: iphone12Video
         },
         {
             title: "Lenovo Laptop Bag",
@@ -105,6 +127,7 @@ const Dashboard = () => {
             priceLabel: "PHP 3,472",
             price: "3472",
             image: lenovoLaptopBagImage,
+            video: lenovolaptopbagVideo
         },
         {
             title: "Fortnite The Raven Cosplay Hoodie",
@@ -113,6 +136,7 @@ const Dashboard = () => {
             priceLabel: "PHP 1,975",
             price: "1975",
             image: forniteHoodieImage,
+            video: forniteraveVideo
         },
         {
             title: "NPKC Doubleshot Sidelit Keycaps",   
@@ -121,6 +145,7 @@ const Dashboard = () => {
             priceLabel: "PHP 1,250",
             price: "1250",
             image: keyboardImage,
+            video: npckkeyboardVideo
         },
         {
             title: "Govee - Hexa Wall Light Panels",
@@ -129,6 +154,7 @@ const Dashboard = () => {
             priceLabel: "PHP 6,500",
             price: "6500",
             image: lightpanelsImage,
+            video: goveelightpanelsVideo
         },
     ];
     let [roomKey, setRoomKey] = useState(null);
@@ -423,12 +449,13 @@ const Dashboard = () => {
 
         let [productModal, setproductModal] = useState([]);
 
-        const productHandleShow = async (title, image, description, price) => {
+        const productHandleShow = async (title, image, description, price, video) => {
             let data = {
                 "title": title,
                 "image": image,
                 "description": description,
-                "price": price
+                "price": price,
+                "video": video
             }
             setShow(true);
             socket.emit("join_room", data);
@@ -632,7 +659,7 @@ const Dashboard = () => {
                                     productList.map((item, key) => {
                                         return <div key={key} className="grid-item">
                                             <div className="card">
-                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description, item.price)}/>
+                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description, item.price, item.video)}/>
                                                 
                                                 <div className="productmodal">
                                                     {
@@ -641,7 +668,8 @@ const Dashboard = () => {
                                                             title: item.title,
                                                             image: item.image,
                                                             description: item.description,
-                                                            price: item.price
+                                                            price: item.price,
+                                                            video: item.video
                                                             }; 
                                                         })
                                                     }
@@ -652,7 +680,12 @@ const Dashboard = () => {
                                                                     <Modal.Title>{item.title}</Modal.Title>
                                                                     </Modal.Header>
                                                                     <Modal.Body>
-                                                                        <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
+                                                                        <div className="video-player">
+                                                                            <video height="250" controls autoPlay loop>
+                                                                                <source src={item.video} type="video/mp4" />
+                                                                                Your browser does not support the video tag.
+                                                                            </video>
+                                                                        </div>
                                                                         <div className="productstar">
                                                                             <div className="rate">
                                                                                 <input type="radio" id="star5" name="rate" value="5" />
