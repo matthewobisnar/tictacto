@@ -512,8 +512,14 @@ img.modal-img-top {
     border-radius: 2px;
     font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
-    transition: border-bottom 0.5s ease;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.5s ease-in-out;
+    height: 55px;
+}
 
+.landingpage .landing-navbar button:hover{
+    transform: scale(1.02);
+    border-bottom: 2px solid white;
 }
 
 .landingpage .landing-navbar .active{
@@ -543,10 +549,15 @@ img.modal-img-top {
         outline: 2px solid #0f62fe;
         outline-offset: -2px;
     }
+    margin-top: -12px;
 }
 
 .highlighted-text{ //this highlights searched text hehe
     background-color: yellow;
+}
+
+.searchbutton{
+    align-self: center;
 }
 
 .svg-button {
@@ -735,9 +746,20 @@ p.landing-bodyheader{
   }
   
 //--------------- Login Button
-/* Modal Container */
+.ease-in-modal {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 1.5s ease-in-out;
+  }
+  
+.ease-in-modal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 .modal-login .modal {
-    display: none; // Initially set to 'none'
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -782,6 +804,10 @@ p.landing-bodyheader{
     align-items: center;
     padding: 0;
     margin: 0;
+}
+.modal-card .exit-button:hover{
+    border:none;
+    transform: scale(1.25);
 }
 
 .modal-button {

@@ -540,8 +540,8 @@ const Dashboard = () => {
                                     <button type="button" onClick={handleButtonClick}>Products</button>
                                     <button type="button">About</button>
                                     <div id="searchContainer" className="display-flex justify" style={{ display: 'none' }}>
-                                    <input type="text" id="searchInput" placeholder="Search..." style={{ display: 'none' }} />
-                                    <button id="searchButton" style={{ display: 'none' }}>
+                                    <input type="text" id="searchInput" className="searchbar" placeholder="Search..." style={{ display: 'none' }} />
+                                    <button id="searchButton" className="searchbutton" style={{ display: 'none' }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 1024 1024">
                                             <path d="M448 768A320 320 0 1 0 448 128a320 320 0 0 0 0 640z m297.344-76.992l214.592 214.592-54.336 54.336-214.592-214.592a384 384 0 1 1 54.336-54.336z" fill="#FFFFFF" />
                                         </svg>
@@ -610,7 +610,7 @@ const Dashboard = () => {
                         </div>
                         <div className="modal-login">
                         {showLoginModal && (
-                            <div className={`modal ${showLoginModal ? 'active' : ''}`}>
+                            <div className={`modal ${showLoginModal ? 'active ease-in-modal' : ''}`}>
                                     {/*<button className="modal-button" onClick={openSignUpModal}>Sign Up</button>*/}
                                 <div className="modal-card">
                                 <button className="exit-button" onClick={closeLoginModal}>
