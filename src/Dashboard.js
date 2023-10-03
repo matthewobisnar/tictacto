@@ -87,7 +87,7 @@ const Dashboard = () => {
         {
             title: "Ipad Air Wi-Fi",
             characterization: "Apple's 2022 iPad Air is the epitome of a mobile tablet, with a nearly perfect balance of features and performance.",
-            description: "The iPad Air is a line of tablet computers developed by Apple Inc. It is known for its balance between performance, features, and portability. The iPad Air typically features a sleek and thin design with a premium aluminum body. It's known for its lightweight build, making it easy to carry around. It is powered by Apple's custom-designed processors, which are known for their performance and efficiency. The specific chip may vary by generation, but they tend to offer smooth multitasking and app performance.",
+            description: "The iPad Air is a line of tablet computers developed by Apple Inc. It is known for its balance between performance, features, and portability. It typically features a sleek and thin design with a premium aluminum body. It is powered by Apple's custom-designed processors, which are known for their performance and efficiency. The specific chip may vary by generation, but they tend to offer smooth multitasking and app performance.",
             priceLabel: "PHP 39,000",
             price: "39000",
             image: ipadAirImage,
@@ -105,7 +105,7 @@ const Dashboard = () => {
         {
             title: "Samsung Odyssey",
             characterization: "Get your head in the game with the 55” curved display, featuring 4K resolution, which matches the curve of the human eye.",
-            description: "Samsung has a line of gaming monitors known as the Samsung Odyssey series. These monitors are designed to provide high refresh rates, low response times, and features tailored for gaming. Some of the common features you might find in Samsung Odyssey gaming monitors include curved screens, QLED panels for vibrant colors, and support for high resolutions like QHD (Quad High Definition) or 4K. Samsung has also ventured into the realm of virtual reality (VR) with the Samsung Odyssey series of VR headsets.",
+            description: "Samsung has a line of gaming monitors known as the Samsung Odyssey series. These monitors are designed to provide high refresh rates, low response times, and features tailored for gaming. Some of the common features you might find in Samsung Odyssey gaming monitors include curved screens, QLED panels for vibrant colors, and support for high resolutions like QHD (Quad High Definition) or 4K.",
             priceLabel: "PHP 125,000",
             price: "125000",
             image: samsungOdysseyImage,
@@ -114,7 +114,7 @@ const Dashboard = () => {
         {
             title: "Iphone 12",
             characterization: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
-            description: "The iPhone 12 features a flat-edge design reminiscent of the iPhone 4 and 5, with an aluminum frame and a glass front and back. It's available in multiple colors, including black, white, red, green, and blue. It comes with a Super Retina XDR display, which offers excellent color accuracy and high brightness levels. It is available in two sizes: a 6.1-inch display for the standard iPhone 12 and a 5.4-inch display for the iPhone 12 mini. It was the first iPhone to support 5G connectivity.",
+            description: "The iPhone 12 features a flat-edge design reminiscent of the iPhone 4 and 5, with an aluminum frame and a glass front and back. It's available in multiple colors, including black, white, red, green, and blue. It comes with a Super Retina XDR display, which offers excellent color accuracy and high brightness levels. It is available in two sizes: a 6.1-inch display for the standard iPhone 12 and a 5.4-inch display for the iPhone 12 mini.",
             priceLabel: "PHP 44,570",
             price: "44570",
             image: iphone12Image,
@@ -132,7 +132,7 @@ const Dashboard = () => {
         {
             title: "Fortnite The Raven Cosplay Hoodie",
             characterization: "A polyester cotton with thin fleece, soft and comfortable, the power of Raven is unleashed.",
-            description: "The Raven Cosplay Hoodie is a piece of clothing inspired by the popular video game Fortnite. Raven is a Legendary Outfit in Battle Royale that can be purchased from the Item Shop. The Iron Cage Back Bling is bundled with this Outfit. It is considered as one of the most popular character skin in the online multiplayer game Fortnite, known for its mysterious and dark appearance. It is a cool jet-black leather outfit with ragged feather-like details that resembles that of a raven. ",
+            description: "The Raven Cosplay Hoodie is a piece of clothing inspired by the popular video game Fortnite. Raven is a Legendary Outfit in Battle Royale that can be purchased from the Item Shop. The Iron Cage Back Bling is bundled with this Outfit. It is considered as one of the most popular character skin in the online multiplayer game Fortnite, known for its mysterious and dark appearance.",
             priceLabel: "PHP 1,975",
             price: "1975",
             image: forniteHoodieImage,
@@ -141,7 +141,7 @@ const Dashboard = () => {
         {
             title: "NPKC Doubleshot Sidelit Keycaps",   
             characterization: "Standard ANSI Keycaps are truly unique gradual color gradient with charming appearance.",
-            description: "NPKC Doubleshot Sidelit Keycaps are specialized keycaps designed for mechanical keyboards. They are known for their unique feature of allowing light from the keyboard's backlighting to shine through the sides of the keycaps, creating a visually striking and vibrant lighting effect. What sets NPKC Doubleshot Sidelit Keycaps apart is their unique design that allows for sidelit illumination. Unlike standard keycaps that only let light shine through the top, these keycaps have translucent sides that allow light to emit from the sides, creating a glow around each key.",
+            description: "NPKC Doubleshot Sidelit Keycaps are specialized keycaps designed for mechanical keyboards. They are known for their unique feature of allowing light from the keyboard's backlighting to shine through the sides of the keycaps, creating a visually striking and vibrant lighting effect. What sets NPKC Doubleshot Sidelit Keycaps apart is their unique design that allows for sidelit illumination.",
             priceLabel: "PHP 1,250",
             price: "1250",
             image: keyboardImage,
@@ -150,7 +150,7 @@ const Dashboard = () => {
         {
             title: "Govee - Hexa Wall Light Panels",
             characterization: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category. It is composed of 7/10 panels that can be assorted into various shapes.",
-            description: "Govee Hexa Wall Light Panels are a product offered by Govee, a company specializing in smart home lighting solutions. These Hexa Wall Light Panels are designed to provide customizable and dynamic lighting effects for your home or workspace. Each hexagonal panel contains RGB (Red, Green, Blue) LED lights, which can produce a wide spectrum of colors. You can choose from millions of colors to create different lighting moods and atmospheres. These light panels are typically smart-enabled and can be controlled using a mobile app.",
+            description: "Govee Hexa Wall Light Panels are a product offered by Govee, a company specializing in smart home lighting solutions. These Hexa Wall Light Panels are designed to provide customizable and dynamic lighting effects for your home or workspace. Each hexagonal panel contains RGB (Red, Green, Blue) LED lights, which can produce a wide spectrum of colors. You can choose from millions of colors to create different lighting moods and atmospheres.",
             priceLabel: "PHP 6,500",
             price: "6500",
             image: lightpanelsImage,
