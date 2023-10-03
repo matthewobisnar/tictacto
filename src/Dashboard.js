@@ -22,7 +22,7 @@ import passwordimage from './images/password.png';
 
 import { Button } from 'react-bootstrap';
 import { FaRegTrashAlt } from "react-icons/fa";
-import { FiShoppingCart } from "react-icons/fi";
+import { FiItalic, FiShoppingCart } from "react-icons/fi";
 import { Link } from "@mui/material";
 
 import Modal from 'react-bootstrap/Modal';
@@ -588,12 +588,28 @@ const Dashboard = () => {
                         {showSignUpModal && (
                             <div className={`modal ${showSignUpModal ? 'active' : ''}`}>
                                 <div className="modal-card">
-                                    <h2>SignUp</h2>
-                                    {/* <p>Become a member and get the latest updates of the latest pieces of tech on stock!</p> */}
-                                    <button className="modal-button" onClick={openSignUpModal}>Sign Up</button>
+                                <div className="header">
+                                <div className="text">Sign Up</div>
+                                <div className="underline"></div>
+                                </div>
+                                <div className="inputs">
+                                    <div className="input">
+                                        <img src={personimage} alt=""/>
+                                        <input type="text" placeholder="Name" />
+                                    </div>
+                                    <div className="input">
+                                        <img src={emailimage} alt=""/>
+                                        <input type="email" placeholder="Email Id"/>
+                                    </div>
+                                    <div className="input">
+                                        <img src={passwordimage} alt=""/>
+                                        <input type="password" placeholder="Password"/>
+                                    </div>
+                                    <button className="modal-button" onClick="">Sign Up</button>
                                     <button className="modal-button" onClick={closeSignUpModal}>Close</button>
                                 </div>
                                 </div>
+                            </div>
                          )}       
 
                         </div>
