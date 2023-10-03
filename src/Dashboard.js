@@ -611,11 +611,31 @@ const Dashboard = () => {
                         <div className="modal-login">
                         {showLoginModal && (
                             <div className={`modal ${showLoginModal ? 'active' : ''}`}>
+                                    {/*<button className="modal-button" onClick={openSignUpModal}>Sign Up</button>*/}
                                 <div className="modal-card">
-                                    <h2>Login</h2>
-                                    <p>Become a member and get the latest updates of the latest pieces of tech on stock!</p>
-                                    <button className="modal-button" onClick={openSignUpModal}>Sign Up</button>
-                                    <button className="modal-button" onClick={closeLoginModal}>Close</button>
+                                <button className="exit-button" onClick={closeLoginModal}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                            </svg>
+                            </button>
+                                <div className="header">
+                                <div className="text">Login</div>
+                                <p>Become a member and get the latest updates of the latest pieces of tech on stock!</p>
+                                <div className="underline"></div>
+                                </div>
+                                <div className="inputs">
+                                    <div className="input">
+                                        <img src={emailimage} alt=""/>
+                                        <input type="email" placeholder="Email Id"/>
+                                    </div>
+                                    <div className="input">
+                                        <img src={passwordimage} alt=""/>
+                                        <input type="password" placeholder="Password"/>
+                                    </div>
+                                    <div className="border-bottom-grey">
+                                    <button className="modal-button">Login</button>
+                                    </div></div>
+                                    <span className="create" onClick={openSignUpModal} style={{ cursor: 'pointer' }}>Create an account</span>
                                 </div>
                             </div>
                         )}
@@ -623,6 +643,10 @@ const Dashboard = () => {
                         {showSignUpModal && (
                             <div className={`modal ${showSignUpModal ? 'active' : ''}`}>
                                 <div className="modal-card">
+                                <button className="exit-button" onClick={closeSignUpModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button>
                                 <div className="header">
                                 <div className="text">Sign Up</div>
                                 <div className="underline"></div>

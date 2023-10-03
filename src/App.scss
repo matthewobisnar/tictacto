@@ -19,6 +19,18 @@
     color: orange!important;
 }
 
+.gap-sm{
+    gap: 10px;
+}
+
+.gap-md{
+    gap: 20px;
+}
+
+.border-bottom-grey{
+    border-bottom: solid 1px lightgrey;
+}
+
 .display-flex{
     display: flex;
 }
@@ -748,6 +760,22 @@ p.landing-bodyheader{
     padding: 20px;
     width: fit-content;
     text-align: center;
+    position:relative;
+}
+
+.modal-card .exit-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: transparent!important;
+    border: none;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
 }
 
 .modal-button {
@@ -766,6 +794,8 @@ p.landing-bodyheader{
     color: #8a2be2;
     font-size:48px ;
     font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
 }
 
 // .underline{
@@ -782,7 +812,15 @@ p.landing-bodyheader{
     flex-direction: column;
     gap: 25px;
     align-items: center;
-    
+    margin-bottom: 20px;
+    border-bottom: solid 1px thistle;
+    padding-bottom: 20px;
+}
+
+.create{
+    color: purple;
+    font-style: underline;
+    font-family: "Poppins", sans-serif;
 }
 
 .input{
