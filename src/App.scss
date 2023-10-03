@@ -780,6 +780,8 @@ p.landing-bodyheader{
     display: flex;
     flex-direction: column;
     gap: 25px;
+    align-items: center;
+    
 }
 
 .input{
@@ -806,6 +808,14 @@ p.landing-bodyheader{
     font-size: 19px;
 }
 
+.signup-button{
+    width: 220px;
+}
+
+.inputs >button.modal-button {
+    width: 218px;
+    border-radius: 50px
+}
 // Admin Page
 .admin-content {
     width: 100%;
