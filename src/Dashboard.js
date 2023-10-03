@@ -77,7 +77,7 @@ const Dashboard = () => {
         {
             title: "PS5 DualSense Controller",
             characterization: "Meet the DualSense wireless controller featuring haptic feedback, adaptive triggers and an iconic new design.",
-            description: "The PlayStation 5 (PS5) DualSense controller is the primary game controller designed for use with Sony's PlayStation 5 gaming console. Released alongside the PS5 in November 2020, the DualSense controller represents a significant upgrade over its predecessor, the DualShock 4, and introduces several innovative features. The DualSense controller features a fresh and modern design compared to previous PlayStation controllers. It has a two-tone color scheme, built-in LED lighting, and a larger and more ergonomic shape for comfortable gaming.",
+            description: "The PlayStation 5 (PS5) DualSense controller is the primary game controller designed for use with Sony's PlayStation 5 gaming console. Released alongside the PS5 in November 2020, the DualSense controller represents a significant upgrade over its predecessor, the DualShock 4, and introduces several innovative features. The DualSense controller features a fresh and modern design compared to previous PlayStation controllers.",
             priceLabel: "PHP 3,450",
             price: "3450",
             image: controllerImage,
@@ -93,7 +93,7 @@ const Dashboard = () => {
         {
             title: "Iphone 12",
             characterization: "The iPhone 12 sports a gorgeous design, full 5G support, great cameras and strong performance.",
-            description: "The iPhone 12 features a flat-edge design reminiscent of the iPhone 4 and 5, with an aluminum frame and a glass front and back. It's available in multiple colors, including black, white, red, green, and blue. It comes with a Super Retina XDR display, which offers excellent color accuracy and high brightness levels. It is available in two sizes: a 6.1-inch display for the standard iPhone 12 and a 5.4-inch display for the iPhone 12 mini. It was the first iPhone to support 5G connectivity, allowing for faster data speeds and improved network performance in areas with 5G coverage.",
+            description: "The iPhone 12 features a flat-edge design reminiscent of the iPhone 4 and 5, with an aluminum frame and a glass front and back. It's available in multiple colors, including black, white, red, green, and blue. It comes with a Super Retina XDR display, which offers excellent color accuracy and high brightness levels. It is available in two sizes: a 6.1-inch display for the standard iPhone 12 and a 5.4-inch display for the iPhone 12 mini. It was the first iPhone to support 5G connectivity.",
             priceLabel: "PHP 44,570",
             price: "44570",
             image: iphone12Image,
@@ -101,7 +101,7 @@ const Dashboard = () => {
         {
             title: "Lenovo Laptop Bag",
             characterization: "A 17 inches Armored Backpack II that utilizes a water-repellent fabric and a clean, streamlined design to create a case that's suited to modern life and aesthetic approach.",
-            description: "Lenovo laptop backpacks are a popular choice for users who need a comfortable and hands-free way to carry their laptops and other essentials. They typically have dedicated padded compartments to securely hold laptops of various sizes. Many Lenovo backpacks also offer additional pockets and compartments for organization and storage of accessories, such as chargers, cables, and notebooks. Lenovo also manufactures specialized gaming laptop backpacks designed to accommodate gaming laptops, gaming accessories, and gaming gear. These bags often have a distinctive gaming-inspired design.",
+            description: "Lenovo laptop backpacks are a popular choice for users who need a comfortable and hands-free way to carry their laptops and other essentials. They typically have dedicated padded compartments to securely hold laptops of various sizes. Many Lenovo backpacks also offer additional pockets and compartments for organization and storage of accessories, such as chargers, cables, and notebooks.",
             priceLabel: "PHP 3,472",
             price: "3472",
             image: lenovoLaptopBagImage,
@@ -117,7 +117,7 @@ const Dashboard = () => {
         {
             title: "NPKC Doubleshot Sidelit Keycaps",   
             characterization: "Standard ANSI Keycaps are truly unique gradual color gradient with charming appearance.",
-            description: "NPKC Doubleshot Sidelit Keycaps are specialized keycaps designed for mechanical keyboards. They are known for their unique feature of allowing light from the keyboard's backlighting to shine through the sides of the keycaps, creating a visually striking and vibrant lighting effect. What sets NPKC Doubleshot Sidelit Keycaps apart is their unique design that allows for sidelit illumination. Unlike standard keycaps that only let light shine through the top, these keycaps have translucent sides that allow light to emit from the sides, creating a glow around each key. This design adds a beautiful and eye-catching element to your keyboard's RGB lighting.",
+            description: "NPKC Doubleshot Sidelit Keycaps are specialized keycaps designed for mechanical keyboards. They are known for their unique feature of allowing light from the keyboard's backlighting to shine through the sides of the keycaps, creating a visually striking and vibrant lighting effect. What sets NPKC Doubleshot Sidelit Keycaps apart is their unique design that allows for sidelit illumination. Unlike standard keycaps that only let light shine through the top, these keycaps have translucent sides that allow light to emit from the sides, creating a glow around each key.",
             priceLabel: "PHP 1,250",
             price: "1250",
             image: keyboardImage,
@@ -125,7 +125,7 @@ const Dashboard = () => {
         {
             title: "Govee - Hexa Wall Light Panels",
             characterization: "A multi-color hexagon light panels that comes with a selection of multiple colors and color category. It is composed of 7/10 panels that can be assorted into various shapes.",
-            description: "Govee Hexa Wall Light Panels are a product offered by Govee, a company specializing in smart home lighting solutions. These Hexa Wall Light Panels are designed to provide customizable and dynamic lighting effects for your home or workspace. Each hexagonal panel contains RGB (Red, Green, Blue) LED lights, which can produce a wide spectrum of colors. You can choose from millions of colors to create different lighting moods and atmospheres. These light panels are typically smart-enabled and can be controlled using a mobile app. Through the app, you can change colors, adjust brightness, set up lighting schedules, and choose from various pre-programmed lighting effects.",
+            description: "Govee Hexa Wall Light Panels are a product offered by Govee, a company specializing in smart home lighting solutions. These Hexa Wall Light Panels are designed to provide customizable and dynamic lighting effects for your home or workspace. Each hexagonal panel contains RGB (Red, Green, Blue) LED lights, which can produce a wide spectrum of colors. You can choose from millions of colors to create different lighting moods and atmospheres. These light panels are typically smart-enabled and can be controlled using a mobile app.",
             priceLabel: "PHP 6,500",
             price: "6500",
             image: lightpanelsImage,
@@ -423,11 +423,12 @@ const Dashboard = () => {
 
         let [productModal, setproductModal] = useState([]);
 
-        const productHandleShow = async (title, image, characterization) => {
+        const productHandleShow = async (title, image, description, price) => {
             let data = {
                 "title": title,
                 "image": image,
-                "description": characterization
+                "description": description,
+                "price": price
             }
             setShow(true);
             socket.emit("join_room", data);
@@ -572,7 +573,7 @@ const Dashboard = () => {
                                 <img className="right-img" src={landingeagleImage} alt="Eagle"/>
                             </div>
                         </div>
-
+                        <div className="modal-login">
                         {showLoginModal && (
                             <div className={`modal ${showLoginModal ? 'active' : ''}`}>
                                 <div className="modal-card">
@@ -583,6 +584,7 @@ const Dashboard = () => {
                                 </div>
                             </div>
                         )}
+
                         {showSignUpModal && (
                             <div className={`modal ${showSignUpModal ? 'active' : ''}`}>
                                 <div className="modal-card">
@@ -593,6 +595,9 @@ const Dashboard = () => {
                                 </div>
                                 </div>
                          )}       
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -611,7 +616,7 @@ const Dashboard = () => {
                                     productList.map((item, key) => {
                                         return <div key={key} className="grid-item">
                                             <div className="card">
-                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description)}/>
+                                                <img className="card-img-top" src={item.image} alt="NBA 2k23" onClick={() => productHandleShow(item.title, item.image, item.description, item.price)}/>
                                                 
                                                 <div className="productmodal">
                                                     {
@@ -619,7 +624,8 @@ const Dashboard = () => {
                                                             keyCounts[item.title] = {
                                                             title: item.title,
                                                             image: item.image,
-                                                            description: item.description
+                                                            description: item.description,
+                                                            price: item.price
                                                             }; 
                                                         })
                                                     }
@@ -631,8 +637,32 @@ const Dashboard = () => {
                                                                     </Modal.Header>
                                                                     <Modal.Body>
                                                                         <img className="modal-img-top" src={item.image} alt="NBA 2k23"/>
-                                                                        <div className="modal-description">
-                                                                            {item.description}
+                                                                        <div className="productstar">
+                                                                            <div className="rate">
+                                                                                <input type="radio" id="star5" name="rate" value="5" />
+                                                                                <label for="star5" title="text">5 stars</label>
+                                                                                <input type="radio" id="star4" name="rate" value="4" />
+                                                                                <label for="star4" title="text">4 stars</label>
+                                                                                <input type="radio" id="star3" name="rate" value="3" />
+                                                                                <label for="star3" title="text">3 stars</label>
+                                                                                <input type="radio" id="star2" name="rate" value="2" />
+                                                                                <label for="star2" title="text">2 stars</label>
+                                                                                <input type="radio" id="star1" name="rate" value="1" />
+                                                                                <label for="star1" title="text">1 star</label>
+                                                                            </div>
+                                                                        </div>
+                                                                        <hr></hr>
+                                                                            <div className="modal-description">
+                                                                                {item.description}
+                                                                            </div>
+                                                                        <hr></hr>
+                                                                        <div className="modal-pricing">
+                                                                            <div className="left-part">
+                                                                                <p>Price: <b className="text-price">{formatPHPCurrency(item.price)}</b> </p>
+                                                                            </div>
+                                                                            <div className="right-part">
+                                                                                <Button onClick={() => addToCart(item.title, item.price, item.image)} variant="primary">Add to cart</Button>
+                                                                            </div>
                                                                         </div>
                                                                     </Modal.Body>
                                                                 </Modal>
