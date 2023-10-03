@@ -425,6 +425,7 @@ img.modal-img-top {
 
 .modal-content {
     border: none !important;
+    width: 110% !important;
 }
 
 .modal-description {
@@ -437,6 +438,11 @@ img.modal-img-top {
     font-family: Helvetica, monospace;
     font-weight: 800;
     color: white;
+}
+
+button.btn-close {
+    filter: var(--bs-btn-close-white-filter);
+    opacity: 100%;
 }
 
 .modal-pricing {
