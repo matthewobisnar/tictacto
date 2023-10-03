@@ -666,7 +666,6 @@ const Dashboard = () => {
                                         <input type="password" placeholder="Password"/>
                                     </div>
                                     <button className="modal-button" onClick="">Sign Up</button>
-                                    <button className="modal-button" onClick={closeSignUpModal}>Close</button>
                                 </div>
                                 </div>
                             </div>
