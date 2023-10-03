@@ -498,6 +498,7 @@ img.modal-img-top {
     color: snow;
     border: none;
     border-radius: 2px;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     transition: border-bottom 0.5s ease;
 
@@ -591,8 +592,8 @@ h5.landing-bodyheader{
 
 p.landing-bodyheader{
     font-family: 'Poppins', sans-serif;
-    color: gray;
-    font-size: 15px;
+    color: thistle;
+    font-size: 14px;
     margin-right: 80px;
     margin-top: 20px;
 }
@@ -643,7 +644,7 @@ p.landing-bodyheader{
 
 // burger menu
 .desktopnavbar {
-    display: flex; 
+    display: flex;
     @media (max-width: 768px) {
         display: none;
       }
