@@ -986,6 +986,54 @@ p.landing-bodyheader{
     }
 }
 
+.users-table {
+    box-shadow: 0 0 0 1px #BDB6C4;
+    border-radius: 8px;
+    width: 100%;
+    background-color: transparent;
+
+    thead {
+        background-color: #eddffa;
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    thead tr {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    thead tr {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+
+    thead tr th:first-of-type {
+        border-top-left-radius: 8px;
+    }
+
+    thead tr th:last-of-type {
+        border-top-right-radius: 8px;
+    }
+
+    th, td {
+        padding: 20px;
+    }
+
+    td {
+        font-size: 14px;
+    }
+
+    tr {
+        border-bottom: 1px solid #bdb6c4;
+    }
+
+    tbody tr:last-of-type {
+        border-bottom: 0;
+    }
+    
+}
+
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
 
