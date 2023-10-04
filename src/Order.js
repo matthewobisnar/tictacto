@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import paragonsLogo from './images/paragons-logo.png';
 import eagleHead from './images/eagle-head.png';
 import CollapsibleList from "./CollapsibleList";
-import SideNav from "./SideNav";
 const socket = io.connect("http://localhost:3002");
 
 const Order = () => {
@@ -49,7 +48,7 @@ const Order = () => {
     return (
         <>
             <div className="shop order-body">
-                <SideNav />
+                {/* <SideNav /> */}
                 <div className="container section">
                     <div className="row">
                         <div className="admin-content">

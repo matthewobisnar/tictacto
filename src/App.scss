@@ -6,8 +6,15 @@
     box-sizing: border-box;
 }
 
-html, body, #root, .main {
+html, body, #root {
     height: 100%;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .shop {

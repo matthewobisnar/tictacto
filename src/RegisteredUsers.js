@@ -1,11 +1,10 @@
 import "./App.scss";
-import SideNav from "./SideNav";
 
 const RegisteredUsers = () => {
     return (
         <>
             <div className="shop order-body">
-                <SideNav />
+                {/* <SideNav /> */}
                 <div className="container section">
                     <div className="row">
                         <div className="admin-content">
