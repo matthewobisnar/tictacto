@@ -162,6 +162,13 @@ const Dashboard = () => {
     let [total, setTotal] = useState(parseInt(0));
     let [email, setEmail] = useState("");
 
+    //signup values//
+    let [emailSignup, setEmailSignup] = useState("");
+    let [nameSignup, setNameSignup] = useState("");
+    let [passwordSignup, setPasswordSignup] = useState("");
+    let signedUsers = localStorage.getItem('users');
+
+
 
     const generateRandomString = (length) => {
         let result = '';
@@ -245,8 +252,63 @@ const Dashboard = () => {
     const inputChangedHandler = (value, input) => {
         if (input === "email") {
             setEmail(value);
+        }else{
+            switch(input){
+                case "nameSignup":
+                    setNameSignup(value);
+                break ;
+                    
+                case "emailSignup":
+                    setEmailSignup(value);
+                break;
+                case "passwordSignup":
+                    setPasswordSignup(value);
+                break;
+            }
         }
     };
+
+    const resetValues = () => {
+        setNameSignup("");
+        setEmailSignup("");
+        setPasswordSignup("");
+    }
+
+    const signUp = () => {
+
+        let data = {
+            name:nameSignup,
+            email:emailSignup,
+            password:passwordSignup,
+        }
+
+        let userList;
+        let invalid = false;
+
+        if(signedUsers){
+            userList = JSON.parse(signedUsers);
+
+            userList.map((item)=>{
+                if(item.email == emailSignup){
+                    invalid = true;
+                }
+            });
+        }else{
+            userList = [];
+        }
+
+        if(invalid){
+            alert('Email already existing!');
+        }else{
+            userList.push(data);
+            localStorage.setItem('users', JSON.stringify(userList));
+            resetValues();
+            setShowSignUpModal(false);
+            setShowLoginModal(false);
+            alert('Nkapag sign up na!');
+        }
+        
+    }
 
     const checkOut = async () => {
         let data;
@@ -502,12 +564,10 @@ const Dashboard = () => {
     const [showSignUpModal, setShowSignUpModal] = useState(false);
 
       const openSignUpModal = () => {
-        console.log('Opening modal');
         setShowSignUpModal(true);
       };
     
       const closeSignUpModal = () => {
-        console.log('Closing modal'); 
         setShowSignUpModal(false);
       };
       
@@ -656,17 +716,17 @@ const Dashboard = () => {
                                 <div className="inputs">
                                     <div className="input">
                                         <img src={personimage} alt=""/>
-                                        <input type="text" placeholder="Name" />
+                                        <input onChange={(event) => inputChangedHandler(event.target.value, "nameSignup")} type="text" placeholder="Name" />
                                     </div>
                                     <div className="input">
                                         <img src={emailimage} alt=""/>
-                                        <input type="email" placeholder="Email Id"/>
+                                        <input onChange={(event) => inputChangedHandler(event.target.value, "emailSignup")} type="email" placeholder="Email Id"/>
                                     </div>
                                     <div className="input">
                                         <img src={passwordimage} alt=""/>
-                                        <input type="password" placeholder="Password"/>
+                                        <input onChange={(event) => inputChangedHandler(event.target.value, "passwordSignup")} type="password" placeholder="Password"/>
                                     </div>
-                                    <button className="modal-button" onClick="">Sign Up</button>
+                                    <button className="modal-button" onClick={() => signUp()}>Sign Up</button>
                                 </div>
                                 </div>
                             </div>
