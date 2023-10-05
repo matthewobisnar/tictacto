@@ -376,12 +376,13 @@ const Dashboard = () => {
 
     const checkOut = async () => {
         let data;
+        const checkoutEmail = sessionEmail || email;
 
-        if (email && email !== "") {
+        if (checkoutEmail && checkoutEmail !== "" && cartList.length > 0) {
             data = {
                 cart: cartList,
                 total: total,
-                email: email,
+                email: checkoutEmail,
                 room: roomKey,
                 timeStamp: `${new Date(Date.now()).toDateString()} ${new Date(Date.now()).toLocaleTimeString("en-PH")}`,
             }
@@ -393,7 +394,12 @@ const Dashboard = () => {
             window.location.reload();
             // handleButtonClick();
         } else {
-            alert("Please input email before checkout!");
+            if(checkoutEmail && checkoutEmail !== ""){
+            alert("No Items to Checkout!");
+            }
+            else{
+            alert("Please Input an Email before Checkout!");
+            }
         }
     }
 
@@ -616,14 +622,13 @@ const Dashboard = () => {
       const [showLoginModal, setShowLoginModal] = useState(false);
 
       const openLoginModal = () => {
-        console.log('Opening modal'); 
         setShowLoginModal(true);
       };
     
       const closeLoginModal = () => {
-        console.log('Closing modal'); 
         setShowLoginModal(false);
       };
+
     //    Add SignUp Modal
     const [showSignUpModal, setShowSignUpModal] = useState(false);
 
@@ -748,6 +753,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                         <div className="modal-login">
+
                         {showLoginModal && (
                             <div className={`modal ${showLoginModal ? 'active ease-in-modal' : ''}`}>
                                     {/*<button className="modal-button" onClick={openSignUpModal}>Sign Up</button>*/}
@@ -975,7 +981,10 @@ const Dashboard = () => {
                                                 {formatPHPCurrency(item.price)}
                                             </div>
                                             <div className="delete-icon">
-                                                <FaRegTrashAlt color="#8a2be2" onClick={() => removeToCart(key, item.title)} size={20} />
+                                                <FaRegTrashAlt color="#8a2be2" onClick={() => {removeToCart(key, item.title);
+                                                    if (cartList.length === 0) {
+                                                        resetTotal();
+                                                    } }}            size={20}/>
                                             </div>
                                         </div>
 
@@ -997,7 +1006,7 @@ const Dashboard = () => {
                             
                             <div>
                                 <div className="form-group">
-                                    <input value={sessionEmail} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                    <input value={sessionEmail || ''} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                 </div>
                                 <button onClick={() => checkOut()} type="button">Checkout</button>
                             </div>
