@@ -634,6 +634,17 @@ h5.landing-bodyheader{
     }
 }
 
+h5.landing-bodyheader-header{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+    text-transform: capitalize;
+
+    @media (min-width: 768px){
+        font-size: 50px;
+    }
+}
+
 p.landing-bodyheader{
     font-family: 'Poppins', sans-serif;
     color: thistle;
@@ -895,7 +906,8 @@ p.landing-bodyheader{
 
 .input input{
     height: 50px;
-    width: 400px;
+    width: 290px;
+    padding: 15px;
     background: transparent;
     border:none;
     outline: none;
