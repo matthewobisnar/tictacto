@@ -600,6 +600,21 @@ const Dashboard = () => {
                 "price": price,
                 "video": video
             }
+
+            let productsViewed;
+
+            if(localStorage.getItem('productsViewed')){
+                productsViewed = localStorage.getItem('productsViewed');
+                productsViewed = JSON.parse(productsViewed);
+            }else{
+                productsViewed = [];
+            }
+
+            productsViewed.push(product);
+
+            localStorage.setItem('productsViewed',JSON.stringify(productsViewed));
+
+            await socket.emit("addView", productsViewed);
             
             setShow(true);
             productModal.push(product);

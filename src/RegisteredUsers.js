@@ -34,7 +34,7 @@ const RegisteredUsers = () => {
                                 <h1 className="firstword-title">Registered</h1>
                                 <h1 className="secondword-title">Users</h1>
                             </div>
-                            <p className="order-counter">Users <span>4</span></p>
+                            <p className="order-counter">Users <span>{users.length}</span></p>
                             <table class="users-table">
                                 <thead>
                                     <tr>

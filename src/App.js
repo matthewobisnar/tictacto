@@ -6,6 +6,7 @@ import Order from "./Order";
 import Game from "./Game";
 import SideNav from "./SideNav";
 import RegisteredUsers from "./RegisteredUsers";
+import MostViewed from "./MostViewed";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -20,6 +21,7 @@ const App = () => {
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/order" component={Order} />                
                 <Route path="/registered-users" component={RegisteredUsers} />
+                <Route path="/most-viewed-products" component={MostViewed} />
                 <Route path="/game" component={Game} />
             </Switch>
         </div>

@@ -51,6 +51,11 @@ io.on("connection", (socket) => {
       socket.broadcast.emit("signedUp", data);
     });
 
+    socket.on("addView", (data) => {
+      console.log(data);
+      socket.broadcast.emit("RefreshView", data);
+    });
+
     console.log('A user connected');
     
     //   socket.on('disconnect', () => {
