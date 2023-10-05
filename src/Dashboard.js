@@ -371,6 +371,7 @@ const Dashboard = () => {
         localStorage.removeItem('session');
         sessionName = "";
         sessionEmail = "";
+        window.location.reload();
     }
 
     const checkOut = async () => {
@@ -680,10 +681,21 @@ const Dashboard = () => {
                                             <path id="Vector" d="M3 3H3.26835C3.74213 3 3.97943 3 4.17267 3.08548C4.34304 3.16084 4.48871 3.28218 4.59375 3.43604C4.71269 3.61026 4.75564 3.8429 4.84137 4.30727L7.00004 16L17.4218 16C17.875 16 18.1023 16 18.29 15.9199C18.4559 15.8492 18.5989 15.7346 18.7051 15.5889C18.8252 15.4242 18.8761 15.2037 18.9777 14.7631L18.9785 14.76L20.5477 7.95996L20.5481 7.95854C20.7023 7.29016 20.7796 6.95515 20.6947 6.69238C20.6202 6.46182 20.4635 6.26634 20.2556 6.14192C20.0184 6 19.6758 6 18.9887 6H5.5M18 21C17.4477 21 17 20.5523 17 20C17 19.4477 17.4477 19 18 19C18.5523 19 19 19.4477 19 20C19 20.5523 18.5523 21 18 21ZM8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20C9 20.5523 8.55228 21 8 21Z" stroke="#FFFFFF" fill="transparent" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </button>
-                                    <button className="svg-button" onClick={openLoginModal}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 1024 1024">
+
+                                    {sessionEmail && sessionEmail.length > 0 ? (
+                                        <button className="svg-button" onClick={() => logout()}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24">
+                                        <path d="M9.00195 7C9.01406 4.82497 9.11051 3.64706 9.87889 2.87868C10.7576 2 12.1718 2 15.0002 2L16.0002 2C18.8286 2 20.2429 2 21.1215 2.87868C22.0002 3.75736 22.0002 5.17157 22.0002 8L22.0002 16C22.0002 18.8284 22.0002 20.2426 21.1215 21.1213C20.2429 22 18.8286 22 16.0002 22H15.0002C12.1718 22 10.7576 22 9.87889 21.1213C9.11051 20.3529 9.01406 19.175 9.00195 17" stroke="#FFFFFF"  fill="transparent" stroke-width="1.5" stroke-linecap="round"/>
+                                        <path d="M15 12L2 12M2 12L5.5 9M2 12L5.5 15" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg></button>
+                                        ) : (
+                                        <button className="svg-button" onClick={openLoginModal}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" viewBox="0 0 1024 1024">
                                         <path d="M532.528 661.408c-12.512 12.496-12.513 32.752-.001 45.248 6.256 6.256 14.432 9.376 22.624 9.376s16.368-3.12 22.624-9.376l189.008-194L577.775 318.64c-12.496-12.496-32.752-12.496-45.248 0-12.512 12.496-12.512 32.752 0 45.248l115.744 115.76H31.839c-17.68 0-32 14.336-32 32s14.32 32 32 32h618.448zM960.159 0h-576c-35.36 0-64.017 28.656-64.017 64v288h64.432V103.024c0-21.376 17.344-38.72 38.72-38.72h496.704c21.408 0 38.72 17.344 38.72 38.72l1.007 818.288c0 21.376-17.311 38.72-38.72 38.72H423.31c-21.376 0-38.72-17.344-38.72-38.72V670.944l-64.432.08V960c0 35.344 28.656 64 64.017 64h576c35.344 0 64-28.656 64-64V64c-.016-35.344-28.672-64-64.016-64z"  fill="#FFFFFF" strokeWidth="2" />
                                         </svg></button>
+                                        )}
+
+
 
                                 </div>
                                 <div className={`hamburger-menu ${isOpen ? 'open' : ''}`}>
@@ -724,6 +736,9 @@ const Dashboard = () => {
                         {/*landing page body*/}
                         <div className="outer-container">
                             <div className="left-col">
+                            {sessionEmail && sessionEmail.length > 0 ? (
+                                <h5 className="landing-bodyheader-header">Hi <span className="landing-bodyheader purple">{sessionName}</span>! </h5>
+                            ) : null}
                                 <h5 className="landing-bodyheader">Empowering the world with latest <span className="landing-bodyheader purple">Top Of The Line</span><span className="landing-bodyheader"> Tech</span> </h5>
                                 <p className="landing-bodyheader">Selling High-Quality, State-Of-The-Art Technologies and Equipment Guaranteed To Make Living Your Everyday Life <span className="orange"> 120% </span> Better</p>
                                 <button className="shopnow" onClick={scrollToTarget}>Shop Now</button>
