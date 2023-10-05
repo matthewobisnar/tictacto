@@ -516,16 +516,17 @@ const Dashboard = () => {
         let [productModal, setproductModal] = useState([]);
 
         const productHandleShow = async (title, image, description, price, video) => {
-            let data = {
+
+            let product = {
                 "title": title,
                 "image": image,
                 "description": description,
                 "price": price,
                 "video": video
             }
+            
             setShow(true);
-            socket.emit("join_room", data);
-            productModal.push(data);
+            productModal.push(product);
             setproductModal([...productModal]);
         }
 
@@ -758,13 +759,13 @@ const Dashboard = () => {
                                                 
                                                 <div className="productmodal">
                                                     {
-                                                        productModal.map((item, key) => {
+                                                        productModal.map((item) => {
                                                             keyCounts[item.title] = {
-                                                            title: item.title,
-                                                            image: item.image,
-                                                            description: item.description,
-                                                            price: item.price,
-                                                            video: item.video
+                                                                title: item.title,
+                                                                image: item.image,
+                                                                description: item.description,
+                                                                price: item.price,
+                                                                video: item.video
                                                             }; 
                                                         })
                                                     }

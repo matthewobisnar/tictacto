@@ -6,8 +6,15 @@
     box-sizing: border-box;
 }
 
-html, body, #root, .main {
+html, body, #root {
     height: 100%;
+    box-sizing: border-box;
+}
+
+.main {
+    min-height: 100%;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .shop {
@@ -984,6 +991,54 @@ p.landing-bodyheader{
             display: none;
         }
     }
+}
+
+.users-table {
+    box-shadow: 0 0 0 1px #BDB6C4;
+    border-radius: 8px;
+    width: 100%;
+    background-color: transparent;
+
+    thead {
+        background-color: #eddffa;
+        border-top-right-radius: 0.375rem;
+        border-top-left-radius: 0.375rem;
+    }
+
+    thead tr {
+        border-top-right-radius: 0.375rem;
+        border-top-left-radius: 0.375rem;
+    }
+
+    thead tr {
+        border-top-right-radius: 0.375rem;
+        border-top-left-radius: 0.375rem;
+    }
+
+    thead tr th:first-of-type {
+        border-top-left-radius: 0.375rem;
+    }
+
+    thead tr th:last-of-type {
+        border-top-right-radius: 0.375rem;
+    }
+
+    th, td {
+        padding: 20px;
+    }
+
+    td {
+        font-size: 14px;
+    }
+
+    tr {
+        border-bottom: 1px solid #bdb6c4;
+    }
+
+    tbody tr:last-of-type {
+        border-bottom: 0;
+    }
+    
 }
 
 //--------------------------- tic tac toe css -----------------------------------
