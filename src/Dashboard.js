@@ -33,6 +33,8 @@ import paragonsLogo from './images/paragons-logo.png';
 import personimage from './images/person.png';
 import emailimage from './images/email.png';
 import passwordimage from './images/password.png';
+import approvedimage from './images/Approve.png';
+import errorimage from './images/error.png';
 
 import { Button } from 'react-bootstrap';
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -319,17 +321,19 @@ const Dashboard = () => {
         }
 
         if(invalid){
-            alert('Email already existing!');
+            setShowAlertErrorModal(true);
+            
+            // alert('Email already existing!');
         }else{
             userList.push(data);
             localStorage.setItem('users', JSON.stringify(userList));
             resetValues();
             setShowSignUpModal(false);
             setShowLoginModal(false);
-
+            setShowAlertSuccessSignUpModal(true);
             await socket.emit("addUser", userList);
 
-            alert('Nkapag sign up na!');
+            // alert('Nkapag sign up na!');
         }
         
     }
@@ -349,17 +353,19 @@ const Dashboard = () => {
             });
 
             if(success){
-                alert('Login successfully');
+                
                 resetValues();
                 setShowSignUpModal(false);
                 setShowLoginModal(false);
+                setShowAlertModal(true);
                 let loggedInUser = {
                     name:loggedinName,
                     email:emailLogin
                 }
                 localStorage.setItem('session', JSON.stringify(loggedInUser));
-            }else{
-                alert('Email or Password is incorrect');
+            }else{  
+                setShowAlertErrorCredModal(true);
+                // alert('Email or Password is incorrect');
             }
 
         }else{
@@ -633,7 +639,53 @@ const Dashboard = () => {
       const closeSignUpModal = () => {
         setShowSignUpModal(false);
       };
-      
+    
+    // Alert Success Modal
+    const [showAlertModal, setShowAlertModal] = useState(false);
+
+    const openAlertModal = () => {
+      setShowAlertModal(true);
+    };
+  
+    const closeAlertModal = () => {
+      setShowAlertModal(false);
+    };
+
+    // Alert Error Modal
+    const [showAlertErrorModal, setShowAlertErrorModal] = useState(false);
+
+    const openAlertErrorModal = () => {
+      setShowAlertModal(true);
+    };
+  
+    const closeAlertErrorModal = () => {
+      setShowAlertErrorModal(false);
+    };
+
+    // Alert Error-Incorrect Credentials Modal
+    const [showAlertErrorCredModal, setShowAlertErrorCredModal] = useState(false);
+
+    const openAlertErrorCredModal = () => {
+      setShowAlertErrorCredModal(true);
+    };
+  
+    const closeAlertErrorCredModal = () => {
+      setShowAlertErrorCredModal(false);
+    };
+    // Alert Success-SignUp Modal
+
+    const [showAlertSuccessSignUpModal, setShowAlertSuccessSignUpModal] = useState(false);
+
+    const openAlertSuccessSignUpModal = () => {
+      setShowAlertSuccessSignUpModal(true);
+    };
+  
+    const closeAlertSuccessSignUpModal = () => {
+      setShowAlertSuccessSignUpModal(false);
+    };
+
+
+
       // Reset Total
       const resetTotal = () => {
         if(total > 0){
@@ -793,7 +845,76 @@ const Dashboard = () => {
                                 </div>
                                 </div>
                             </div>
-                         )}       
+                         )}     
+
+
+                         {showAlertModal && (
+                            <div className={`modal ${showAlertModal ? 'active' : ''}`}>
+                                <div className="modal-card popup">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={approvedimage}></img>
+                                    <h2>Logged In successfully</h2>
+                                    <p>You have successfully logged into the ParagonsHub.</p>
+                                    <button type="button" onClick={closeAlertModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}
+
+                         {showAlertErrorModal && (
+                            <div className={`modal ${showAlertErrorModal ? 'active' : ''}`}>
+                                <div className="modal-card ">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={errorimage}></img>
+                                    <h2>Email Already Exists!</h2>
+                                    <p>Try a different email address.</p>
+                                    <button type="button" onClick={closeAlertErrorModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}  
+
+                        {showAlertErrorCredModal && (
+                            <div className={`modal ${showAlertErrorCredModal ? 'active' : ''}`}>
+                                <div className="modal-card ">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={errorimage}></img>
+                                    <h2>Incorrect Email or Password</h2>
+                                    <p>Please check your details and try again.</p>
+                                    <button type="button" onClick={closeAlertErrorCredModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}  
+
+                        {showAlertSuccessSignUpModal && (
+                            <div className={`modal ${showAlertSuccessSignUpModal ? 'active' : ''}`}>
+                                <div className="modal-card ">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={approvedimage}></img>
+                                    <h2>Thanks for signing up!</h2>
+                                    <p>Congratulations, your account has been successfully created.</p>
+                                    <button type="button" onClick={closeAlertSuccessSignUpModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}
 
                         </div>
 

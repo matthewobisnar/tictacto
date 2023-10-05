@@ -1041,6 +1041,39 @@ p.landing-bodyheader{
     
 }
 
+// Alert Modal
+
+.popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.popup img{
+    width: 100px;
+    margin-top: -50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0 10px;
+
+}
+
+.popup button{
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #6b21af;
+    color: #fff;
+    border: 0;
+    font-size: 18px;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 //--------------------------- tic tac toe css -----------------------------------
 /* App.css */
 
