@@ -500,7 +500,9 @@ button.btn-close {
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
-
+    @media (max-width: 1024px){
+        padding: 25px 32px;
+    }
 }
 
 .landingwrapper {
@@ -622,6 +624,9 @@ button.btn-close {
     @media (max-width: 768px) {
             display: none;
       }
+    @media (max-width: 1024px) {
+            right: -60px;
+    }  
 }
 
 h5.landing-bodyheader{
