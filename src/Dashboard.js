@@ -394,17 +394,19 @@ const Dashboard = () => {
             }
 
             await socket.emit("addOrder", data);
-
-            alert("Your order has successfully submitted!");
-
-            window.location.reload();
+            
+            // alert("Your order has successfully submitted!");
+            setShowAlertOrderSuccessModal(true);
+            // window.location.reload();
             // handleButtonClick();
         } else {
             if(checkoutEmail && checkoutEmail !== ""){
-            alert("No Items to Checkout!");
+            setShowAlertNoItemsModal(true);
+            // alert("No Items to Checkout!");
             }
             else{
-            alert("Please Input an Email before Checkout!");
+            setShowAlertNoEmailModal(true);
+            // alert("Please Input an Email before Checkout!");
             }
         }
     }
@@ -690,6 +692,38 @@ const Dashboard = () => {
       setShowAlertSuccessSignUpModal(false);
     };
 
+    // Alert Order Success Modal
+    const [showAlertOrderSuccessModal, setShowAlertOrderSuccessModal] = useState(false);
+
+    const openAlertOrderSuccessModal = () => {
+      setShowAlertOrderSuccessModal(true);
+    };
+  
+    const closeAlertOrderSuccessModal = () => {
+      setShowAlertOrderSuccessModal(false);
+    };
+
+    // Alert No Items To CheckOut Modal
+    const [showAlertNoItemsModal, setShowAlertNoItemsModal] = useState(false);
+
+    const openAlertNoItemsModal = () => {
+      setShowAlertNoItemsModal(true);
+    };
+  
+    const closeAlertNoItemsModal = () => {
+      setShowAlertNoItemsModal(false);
+    };
+
+    // Alert No Email for CheckOut Modal
+    const [showAlertNoEmailModal, setShowAlertNoEmailModal] = useState(false);
+
+    const openAlertNoEmailModal = () => {
+      setShowAlertNoEmailModal(true);
+    };
+  
+    const closeAlertNoEmailModal = () => {
+      setShowAlertNoEmailModal(false);
+    };
 
 
       // Reset Total
@@ -932,6 +966,57 @@ const Dashboard = () => {
                                     <h2>Thanks for signing up!</h2>
                                     <p>Congratulations, your account has been successfully created.</p>
                                     <button type="button" onClick={closeAlertSuccessSignUpModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}
+
+                        {showAlertOrderSuccessModal && (
+                            <div className={`modal ${showAlertOrderSuccessModal ? 'active' : ''}`}>
+                                <div className="modal-card ">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={approvedimage}></img>
+                                    <h2>Order Completed!</h2>
+                                    <p>Your order has successfully submitted.</p>
+                                    <button type="button" onClick={closeAlertOrderSuccessModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}
+
+                        {showAlertNoItemsModal && (
+                            <div className={`modal ${showAlertNoItemsModal ? 'active' : ''}`}>
+                                <div className="modal-card ">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={errorimage}></img>
+                                    <h2>No Items to Checkout!</h2>
+                                    <p>Please select a product to proceed.</p>
+                                    <button type="button" onClick={closeAlertNoItemsModal}>OK</button>
+                                </div>
+                                </div>
+                            </div>
+                         )}
+
+                        {showAlertNoEmailModal && (
+                            <div className={`modal ${showAlertNoEmailModal ? 'active' : ''}`}>
+                                <div className="modal-card ">
+                                {/* <button className="exit-button" onClick={closeAlertModal}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="gray" className="bi bi-x"viewBox="0 0 16 16">
+                                <path d="M10.293 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 7.293 4.853 4.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8l3.147-3.147a.5.5 0 0 0-.708-.708L8 8.293 4.853 5.146a.5.5 0 0 0-.708.708L7.293 8l-3.147 3.147a.5.5 0 0 0 .708.708L8 8.707l3.147 3.147a.5.5 0 0 0 .708-.708L8.707 8z" />
+                                </svg></button> */}
+                                <div className="popup" id="popup">
+                                    <img src={errorimage}></img>
+                                    <h2>Please Enter an Email!</h2>
+                                    <p>Please input an Email before Checkout!</p>
+                                    <button type="button" onClick={closeAlertNoEmailModal}>OK</button>
                                 </div>
                                 </div>
                             </div>
