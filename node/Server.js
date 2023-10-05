@@ -41,31 +41,17 @@ io.on("connection", (socket) => {
         // room = data.room;
     });
 
-    socket.on("addOrder", (data) => {
-        console.log(data);socket.broadcast.emit("receiveOrder", data);
+    socket.on("addOrdered", (data) => {
+        console.log(data);
+        socket.broadcast.emit("updateOrder", data);
     });
 
-    socket.emit('updateBoard', board);
-
-    socket.on('move', ({ board: newBoard, player }) => {
-    if (!winner && currentPlayer === player) {
-        board = newBoard;
-        socket.emit('updateBoard', board);
-        socket.broadcast.emit('updateBoard', board);
-
-        if (checkWinner()) {
-        winner = currentPlayer;
-        socket.emit('gameOver', winner);
-        socket.broadcast.emit('gameOver', winner);
-        } else {
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        }
-    }
+    socket.on("addUser", (data) => {
+      console.log(data);
+      socket.broadcast.emit("signedUp", data);
     });
 
-    socket.on('disconnect', () => {
-    console.log('A user disconnected');
-    });
+    console.log('A user connected');
     
     //   socket.on('disconnect', () => {
     //     console.log('A user disconnected');
@@ -80,26 +66,5 @@ io.on("connection", (socket) => {
     //     });
     // });
 });
-
-function checkWinner() {
-    const lines = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-  
-    for (let line of lines) {
-      const [a, b, c] = line;
-      if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-        return true;
-      }
-    }
-    return false;
-  }
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));

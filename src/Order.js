@@ -10,13 +10,34 @@ const Order = () => {
 
     let [orderList, setOrderList] = useState([]);
 
+    // useEffect(() => {
+    //     if (socket) {
+    //         socket.on("receiveOrder", (data) => {
+
+    //             let orders;
+
+    //             if (localStorage.getItem('orders')) {
+    //                 orders = localStorage.getItem('orders');
+    //                 orders = JSON.parse(orders);
+    //             } else {
+    //                 orders = [];
+    //             }
+
+    //             console.log(orders);
+    //             // orders.push(data);
+
+    //             // localStorage.setItem('orders', JSON.stringify(orders));
+
+    //             // setOrderList([...orders]);
+
+    //         });
+    //     }
+    // }, [socket]);
+
     useEffect(() => {
         if (socket) {
-            // socket.off("receiveOrder");
-            socket.on("receiveOrder", (data) => {
-
+            socket.on("updateOrder", (data) => {
                 let orders;
-
                 if (localStorage.getItem('orders')) {
                     orders = localStorage.getItem('orders');
                     orders = JSON.parse(orders);
@@ -25,13 +46,8 @@ const Order = () => {
                 }
 
                 orders.push(data);
-
                 localStorage.setItem('orders', JSON.stringify(orders));
-
                 setOrderList([...orders]);
-
-                // localStorage.setItem('orders', JSON.stringify(fileUnlockTimestamp));
-
             });
         }
     }, [socket]);

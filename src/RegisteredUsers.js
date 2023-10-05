@@ -1,6 +1,28 @@
 import "./App.scss";
+import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
+const socket = io.connect("http://localhost:3002");
 
 const RegisteredUsers = () => {
+    let [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        if (socket) {
+            socket.on("signedUp", (data) => {
+                setUsers(data);
+            });
+        }
+    }, [socket]);
+
+    useEffect(() => {
+        if (localStorage.getItem('users')) {
+            users = localStorage.getItem('users');
+            users = JSON.parse(users);
+
+            setUsers([...users]);
+        }
+    }, []);
+
     return (
         <>
             <div className="shop order-body">
@@ -22,26 +44,17 @@ const RegisteredUsers = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>John Doe</td>
-                                        <td>test@email.com</td>
-                                        <td>wobbleflop</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Alice Smith</td>
-                                        <td>alice@email.com</td>
-                                        <td>secretpass</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bob Johnson</td>
-                                        <td>bob@email.com</td>
-                                        <td>pass1234</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Eve Brown</td>
-                                        <td>eve@email.com</td>
-                                        <td>securepwd</td>
-                                    </tr>
+                                    {
+                                        users.length > 0 ? (
+                                            users.map((item)=>(
+                                                <tr>
+                                                    <td>{item.name}</td>
+                                                    <td>{item.email}</td>
+                                                    <td>{item.password}</td>
+                                                </tr>
+                                            ))
+                                        ) : "No registered Users"
+                                    }
                                 </tbody>
                             </table>
 

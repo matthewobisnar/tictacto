@@ -331,6 +331,7 @@ const Dashboard = () => {
             setShowSignUpModal(false);
             setShowLoginModal(false);
             setShowAlertSuccessSignUpModal(true);
+
             await socket.emit("addUser", userList);
 
             // alert('Nkapag sign up na!');
@@ -393,7 +394,7 @@ const Dashboard = () => {
                 timeStamp: `${new Date(Date.now()).toDateString()} ${new Date(Date.now()).toLocaleTimeString("en-PH")}`,
             }
 
-            await socket.emit("addOrder", data);
+            await socket.emit("addOrdered", data);
             
             // alert("Your order has successfully submitted!");
             setShowAlertOrderSuccessModal(true);
@@ -1212,7 +1213,7 @@ const Dashboard = () => {
                             
                             <div>
                                 <div className="form-group">
-                                    <input value={sessionEmail || ''} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                    <input value={sessionEmail} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                 </div>
                                 <button onClick={() => checkOut()} type="button">Checkout</button>
                             </div>
