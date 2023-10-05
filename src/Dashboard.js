@@ -168,6 +168,19 @@ const Dashboard = () => {
     let [passwordSignup, setPasswordSignup] = useState("");
     let signedUsers = localStorage.getItem('users');
 
+    //login values
+    let [emailLogin, setEmailLogin] = useState("");
+    let [passwordLogin, setPasswordLogin] = useState("");
+
+    let sessionName;
+    let sessionEmail;
+
+    if(localStorage.getItem('session')){
+        let session = JSON.parse(localStorage.getItem('session'));
+        sessionName = session.name;
+        sessionEmail = session.email;
+    }
+
 
 
     const generateRandomString = (length) => {
@@ -264,6 +277,12 @@ const Dashboard = () => {
                 case "passwordSignup":
                     setPasswordSignup(value);
                 break;
+                case "emailLogin":
+                    setEmailLogin(value);
+                break;
+                case "passwordLogin":
+                    setPasswordLogin(value);
+                break;
             }
         }
     };
@@ -272,6 +291,8 @@ const Dashboard = () => {
         setNameSignup("");
         setEmailSignup("");
         setPasswordSignup("");
+        setEmailLogin("");
+        setPasswordLogin("");
     }
 
     const signUp = async () => {
@@ -311,6 +332,45 @@ const Dashboard = () => {
             alert('Nkapag sign up na!');
         }
         
+    }
+
+    const login = async () => {
+        let userList;
+        let success = false;
+        let loggedinName;
+        if(signedUsers){
+            userList = JSON.parse(signedUsers);
+
+            userList.map((item)=>{
+                if(item.email == emailLogin && item.password == passwordLogin){
+                    success = true;
+                    loggedinName = item.name;
+                }
+            });
+
+            if(success){
+                alert('Login successfully');
+                resetValues();
+                setShowSignUpModal(false);
+                setShowLoginModal(false);
+                let loggedInUser = {
+                    name:loggedinName,
+                    email:emailLogin
+                }
+                localStorage.setItem('session', JSON.stringify(loggedInUser));
+            }else{
+                alert('Email or Password is incorrect');
+            }
+
+        }else{
+            alert('Email or Password is incorrect');
+        }
+    }
+
+    const logout = () => {
+        localStorage.removeItem('session');
+        sessionName = "";
+        sessionEmail = "";
     }
 
     const checkOut = async () => {
@@ -690,14 +750,14 @@ const Dashboard = () => {
                                 <div className="inputs">
                                     <div className="input">
                                         <img src={emailimage} alt=""/>
-                                        <input type="email" placeholder="Email Id"/>
+                                        <input onChange={(event) => inputChangedHandler(event.target.value, "emailLogin")}  type="email" placeholder="Email Id"/>
                                     </div>
                                     <div className="input">
                                         <img src={passwordimage} alt=""/>
-                                        <input type="password" placeholder="Password"/>
+                                        <input onChange={(event) => inputChangedHandler(event.target.value, "passwordLogin")}  type="password" placeholder="Password"/>
                                     </div>
                                     <div className="border-bottom-grey">
-                                    <button className="modal-button shopnow">Login</button>
+                                    <button className="modal-button shopnow" onClick={() => login()}>Login</button>
                                     </div></div>
                                     <p>Haven't joined yet?</p>
                                     <span className="create" onClick={openSignUpModal} style={{ cursor: 'pointer' }}>Create an account</span>
@@ -922,7 +982,7 @@ const Dashboard = () => {
                             
                             <div>
                                 <div className="form-group">
-                                    <input onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                    <input value={sessionEmail} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                 </div>
                                 <button onClick={() => checkOut()} type="button">Checkout</button>
                             </div>
