@@ -274,7 +274,7 @@ const Dashboard = () => {
         setPasswordSignup("");
     }
 
-    const signUp = () => {
+    const signUp = async () => {
 
         let data = {
             name:nameSignup,
@@ -305,6 +305,9 @@ const Dashboard = () => {
             resetValues();
             setShowSignUpModal(false);
             setShowLoginModal(false);
+
+            await socket.emit("addUser", userList);
+
             alert('Nkapag sign up na!');
         }
         
