@@ -1214,7 +1214,7 @@ const Dashboard = () => {
                             
                             <div>
                                 <div className="form-group">
-                                    <input value={sessionEmail} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
+                                    <input  value={sessionEmail || null} onChange={(event) => inputChangedHandler(event.target.value, "email")} type="email" className="form-control" id="email" placeholder="Enter your email" />
                                 </div>
                                 <button onClick={() => checkOut()} type="button">Checkout</button>
                             </div>
