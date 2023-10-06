@@ -31,6 +31,10 @@ html, body, #root {
     color: orange!important;
 }
 
+.d-flex .orange{
+    color: orange!important;    
+}
+
 .gap-sm{
     gap: 10px;
 }
@@ -510,6 +514,19 @@ button.btn-close {
     z-index: 100;
 }
 
+.landingwrapper .aboutus-text{
+    margin-top: 210px;
+    width: 50%;
+    font-family: 'Inter', sans-serif!important;
+    font-size: 26px;
+    font-weight: 600;
+    color: white;
+    text-transform: math-auto;
+}
+
+.aboutus .landingwrapper {
+    margin-top: 20px;
+}
 
 .landingpage p, .landingpage h5, .landingpage h1{
     color: white;
@@ -640,9 +657,9 @@ h5.landing-bodyheader{
 }
 
 h5.landing-bodyheader-header{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'inter', sans-serif;
     font-weight: bold;
-    font-size: 35px;
+    font-size: 50px;
     text-transform: capitalize;
 
     @media (min-width: 768px){

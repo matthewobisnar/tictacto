@@ -844,7 +844,7 @@ const Dashboard = () => {
                         <div className="outer-container">
                             <div className="left-col">
                             {sessionEmail && sessionEmail.length > 0 ? (
-                                <h5 className="landing-bodyheader-header">Hi <span className="landing-bodyheader purple">{sessionName}</span>! </h5>
+                                <h5 className="landing-bodyheader-header">Hi <span className="landing-bodyheader orange">{sessionName}</span>! </h5>
                             ) : null}
                                 <h5 className="landing-bodyheader">Empowering the world with latest <span className="landing-bodyheader purple">Top Of The Line</span><span className="landing-bodyheader"> Tech</span> </h5>
                                 <p className="landing-bodyheader">Selling High-Quality, State-Of-The-Art Technologies and Equipment Guaranteed To Make Living Your Everyday Life <span className="orange"> 120% </span> Better</p>
@@ -1237,8 +1237,24 @@ const Dashboard = () => {
             }
             </div>
             
+            <div className="landingpage">
+<div>
+    <div id="landingId" className="aboutus">
+        {/*landing page */}
+        <div className="landingwrapper">
+        <div className="d-flex">
+                                <h1 className="firstword-title">About</h1>
+                                <h1 className="secondword-title orange">Us</h1>
+                            </div>
+                            <div className="display-flex">
+                            <p className="landing-bodyheader aboutus-text"> We're a bunch of tech enthusiasts who love making cool stuff with computers. We come from different backgrounds, but our common bond is our passion for all things tech, and we want to share it with you!</p>
+                            <div className="display-grid">
+                            
+                            </div></div></div></div></div></div>
            
         </div>
+
+
     );
 };
 
