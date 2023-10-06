@@ -1055,6 +1055,11 @@ p.landing-bodyheader{
     tbody tr:last-of-type {
         border-bottom: 0;
     }
+
+    tbody p {
+        margin: 0;
+        padding: 20px;
+    }
     
 }
 

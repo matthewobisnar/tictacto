@@ -53,7 +53,7 @@ const RegisteredUsers = () => {
                                                     <td>{item.password}</td>
                                                 </tr>
                                             ))
-                                        ) : "No registered Users"
+                                        ) : <p>No registered Users</p>
                                     }
                                 </tbody>
                             </table>

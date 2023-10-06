@@ -226,7 +226,7 @@ const RegisteredUsers = () => {
                                                     <td>{productList[item].price}</td>
                                                 </tr>
                                             ))
-                                        ) : "No viewed products"
+                                        ) : <p>No viewed products</p>
                                     }
                                 </tbody>
                             </table>
